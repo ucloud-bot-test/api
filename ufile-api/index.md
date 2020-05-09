@@ -13,6 +13,8 @@
 |[DeleteUFileToken](api/ufile-api/delete_ufile_token)|删除令牌|
 |[DescribeBucket](api/ufile-api/describe_bucket)|获取Bucket信息|
 |[DescribeUFileToken](api/ufile-api/describe_ufile_token)|获取令牌信息|
+|[GetMultiUploadId](api/ufile-api/get_multi_upload_id)|获取正在执行的分片上传id|
+|[GetMultiUploadPart](api/ufile-api/get_multi_upload_part)|获取已上传成功的分片列表|
 |[GetUFileQuota](api/ufile-api/get_ufile_quota)|查看配额状态|
 |[GetUFileQuotaInfo](api/ufile-api/get_ufile_quota_info)|获取配额信息|
 |[GetUFileQuotaPrice](api/ufile-api/get_ufile_quota_price)|查询配额支付价格|

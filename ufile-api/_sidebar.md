@@ -10,6 +10,8 @@
     - [删除令牌 - DeleteUFileToken](api/ufile-api/delete_ufile_token)
     - [获取Bucket信息 - DescribeBucket](api/ufile-api/describe_bucket)
     - [获取令牌信息 - DescribeUFileToken](api/ufile-api/describe_ufile_token)
+    - [获取正在执行的分片上传id - GetMultiUploadId](api/ufile-api/get_multi_upload_id)
+    - [获取已上传成功的分片列表 - GetMultiUploadPart](api/ufile-api/get_multi_upload_part)
     - [查看配额状态 - GetUFileQuota](api/ufile-api/get_ufile_quota)
     - [获取配额信息 - GetUFileQuotaInfo](api/ufile-api/get_ufile_quota_info)
     - [查询配额支付价格 - GetUFileQuotaPrice](api/ufile-api/get_ufile_quota_price)
