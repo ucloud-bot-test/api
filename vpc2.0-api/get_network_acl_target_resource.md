@@ -37,11 +37,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TargetResourceList** | array[[*TargetResourceInfo*](#TargetResourceInfo)] | ACL规则应用目标资源列表，具体结构见下方TargetResourceInfo |**Yes**|
-| **TotalCount** | integer | ACL规则应用目标资源总数 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TargetResourceList** | array[[*TargetResourceInfo*](#TargetResourceInfo)] | ACL规则应用目标资源列表，具体结构见下方TargetResourceInfo |**Yes**|
+| **TotalCount** | int | ACL规则应用目标资源总数 |**Yes**|
 
 #### 数据模型
 
@@ -53,10 +53,10 @@
 | **SubnetworkId** | string | 子网ID |**Yes**|
 | **ResourceName** | string | 资源名称 |**Yes**|
 | **ResourceId** | string | 资源ID |**Yes**|
-| **ResourceType** | integer | 资源类型 |**Yes**|
+| **ResourceType** | int | 资源类型 |**Yes**|
 | **SubResourceName** | string | 资源绑定的虚拟网卡的名称 |**Yes**|
 | **SubResourceId** | string | 资源绑定的虚拟网卡的ID |**Yes**|
-| **SubResourceType** | integer | 资源绑定虚拟网卡的类型 |**Yes**|
+| **SubResourceType** | int | 资源绑定虚拟网卡的类型 |**Yes**|
 | **PrivateIP** | string | 资源内网IP |**Yes**|
 
 ## 示例
@@ -121,6 +121,7 @@ https://api.ucloud.cn/?Action=GetNetworkAclTargetResource
   "TotalCount": 2
 }
 ```
+
 
 
 

@@ -31,8 +31,8 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **FullDomain** | string | 要获取的白名单的域名 |**Yes**|
-| **Limit** | integer | 每个请求限制返回数量，等效于page size |**Yes**|
-| **Offset** | integer | 偏移，等效于 page number |**Yes**|
+| **Limit** | int | 每个请求限制返回数量，等效于page size |**Yes**|
+| **Offset** | int | 偏移，等效于 page number |**Yes**|
 | **Filter** | string | 想要查找的IP、网段或者IP段，传递数组（CIDRS） |No|
 | **Sort** | string | 排序参数，支持"CreateTime", "-CreateTime" |No|
 | **Name** | string | 规则名称 |No|
@@ -42,10 +42,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Res** | [*BWInfoRes*](#BWInfoRes) | 白名单返回结果，参考BWInfoRes |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Res** | [*BWInfoRes*](#BWInfoRes) | 白名单返回结果，参考BWInfoRes |**Yes**|
 
 #### 数据模型
 
@@ -54,21 +54,21 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Total** | integer | 总数 |No|
-| **Count** | integer | 返回数量 |No|
+| **Total** | int | 总数 |No|
+| **Count** | int | 返回数量 |No|
 | **Info** | array[[*BWInfo*](#BWInfo)] | 详情列表，参考BWInfo |No|
 
 #### BWInfo
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ID** | integer | 黑名单/白名单规则ID |No|
+| **ID** | int | 黑名单/白名单规则ID |No|
 | **Type** | string | 类型 |No|
 | **Source** | string | 加入方式(黑) |No|
 | **CIDRS** | array[string] | IP列表 |No|
 | **CreateTime** | string | 加入时间 |No|
-| **ExpireTime** | integer | 过期时间 |No|
-| **State** | integer | 状态 |No|
+| **ExpireTime** | int | 过期时间 |No|
+| **State** | int | 状态 |No|
 | **SRC** | string | 加入方式(白) |No|
 | **Geo** | array[string] | 位置信息 |No|
 | **Name** | string | 规则名称 |No|
@@ -115,6 +115,7 @@ https://api.ucloud.cn/?Action=DescribeWafDomainWhiteList
   "RetCode": 0
 }
 ```
+
 
 
 

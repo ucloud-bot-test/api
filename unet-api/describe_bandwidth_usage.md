@@ -31,19 +31,19 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Limit** | integer | 返回数据分页值, 取值范围为 [0,10000000] 之间的整数, 默认为20 |No|
-| **OffSet** | integer | 返回数据偏移量, 默认为0 |No|
+| **Limit** | int | 返回数据分页值, 取值范围为 [0,10000000] 之间的整数, 默认为20 |No|
+| **OffSet** | int | 返回数据偏移量, 默认为0 |No|
 | **EIPIds.N** | string | 弹性IP的资源Id. 如果为空, 则返回当前 Region中符合条件的所有EIP的带宽用量, n为自然数 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | EIPSet中的元素个数 |No|
-| **EIPSet** | array[[*UnetBandwidthUsageEIPSet*](#UnetBandwidthUsageEIPSet)] | 单个弹性IP的带宽用量详细信息, 详见 UnetBandwidthUsageEIPSet, 如没有弹性IP资源则没有该返回值。 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | EIPSet中的元素个数 |No|
+| **EIPSet** | array[[*UnetBandwidthUsageEIPSet*](#UnetBandwidthUsageEIPSet)] | 单个弹性IP的带宽用量详细信息, 详见 UnetBandwidthUsageEIPSet, 如没有弹性IP资源则没有该返回值。 |No|
 
 #### 数据模型
 
@@ -52,7 +52,7 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **CurBandwidth** | number | 最近5分钟带宽用量, 单位Mbps |No|
+| **CurBandwidth** | float | 最近5分钟带宽用量, 单位Mbps |No|
 | **EIPId** | string | 弹性IP资源ID |No|
 
 ## 示例
@@ -82,6 +82,7 @@ https://api.ucloud.cn/?Action=DescribeBandwidthUsage
   "RetCode": 0
 }
 ```
+
 
 
 

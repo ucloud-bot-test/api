@@ -35,10 +35,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **CleanRegion** | array[string] | 通过GetCleanServiceRegion 维护更新可用的地域列表以应对日益扩张的机房。截止至2019-01-24现网目前可用的列表如下：LosAngeles,Washington,Frankfurt,Singapore,Kaohsiung,Moscow,Tokyo,Taipei |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **CleanRegion** | array[string] | 通过GetCleanServiceRegion 维护更新可用的地域列表以应对日益扩张的机房。截止至2019-01-24现网目前可用的列表如下：LosAngeles,Washington,Frankfurt,Singapore,Kaohsiung,Moscow,Tokyo,Taipei |**Yes**|
 
 
 
@@ -72,6 +72,7 @@ https://api.ucloud.cn/?Action=GetCleanServiceRegion
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -30,21 +30,21 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
+| **SrcIP.N** | string | 源站IP信息 |**Yes**|
 | **WorkRegions** | string | 工作区域，用户已购买区域的子集，以逗号分隔，如：cn-bj,cn-sh |**Yes**|
 | **FullDomain** | string | 被编辑的域名,域名与记录ID必须选填一项 |**Yes**|
 | **HTTPRedirection** | string | 使用HTTP跳转，YES是，NO否，只允许HTTPS:YES,HTTP:NO的情况下使用 |No|
-| **CertificateID** | integer | HTTPS证书编号 |No|
+| **CertificateID** | int | HTTPS证书编号 |No|
 | **RealIPHeader** | string | 获取真实客户端地址字段，如对接CDN等其他代理时使用 |No|
 | **WorkMode** | string | 工作模式，Defence:启用防护规则,Alarm:记录不拦截,Inactive:放行；默认Alarm |No|
-| **SrcIP.N** | string | 源站IP信息 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -71,6 +71,7 @@ https://api.ucloud.cn/?Action=ModifyWafDomainHostInfo
   "RetCode": 0
 }
 ```
+
 
 
 

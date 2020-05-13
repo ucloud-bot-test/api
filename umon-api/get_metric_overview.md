@@ -33,21 +33,21 @@
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID，不填为默认项目。子账户必须填写项目ID |No|
 | **ResourceType** | string | 资源类型 |**Yes**|
-| **Limit** | integer | 数据分页值，默认为20 |No|
-| **Offset** | integer | 数据偏移量，默认为0 |No|
 | **MetricName.N** | string | 监控指标名称，若省略则返回所有监控指标数据 |No|
+| **Limit** | int | 数据分页值，默认为20 |No|
+| **Offset** | int | 数据偏移量，默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*ResourceItemSet*](#ResourceItemSet)] | JSON格式监控数据列表 |No|
-| **RefreshTime** | integer | 系统更新时间，格式为Unix Timestamp |No|
-| **ResourceType** | string | 资源类型 |No|
-| **TotalCount** | integer | 返回总数量 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*ResourceItemSet*](#ResourceItemSet)] | JSON格式监控数据列表 |No|
+| **RefreshTime** | int | 系统更新时间，格式为Unix Timestamp |No|
+| **ResourceType** | string | 资源类型 |No|
+| **TotalCount** | int | 返回总数量 |No|
 
 #### 数据模型
 
@@ -104,6 +104,7 @@ https://api.ucloud.cn/?action=GetMetricOverview
   "TotalCount": 1
 }
 ```
+
 
 
 

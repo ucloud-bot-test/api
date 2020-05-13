@@ -30,20 +30,20 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **BeginTime** | integer | 开始时间，时间戳，单位：秒 |**Yes**|
-| **EndTime** | integer | 结束时间，时间戳，单位：秒 |**Yes**|
+| **BeginTime** | int | 开始时间，时间戳，单位：秒 |**Yes**|
+| **EndTime** | int | 结束时间，时间戳，单位：秒 |**Yes**|
 | **Method** | string | min，avg，max，默认为‘max’ |No|
 | **Domain** | string | 域名 |No|
-| **Extent** | integer | 统计区间，单位：秒，取值范围0-7200 |No|
+| **Extent** | int | 统计区间，单位：秒，取值范围0-7200 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Result** | array[[*StatTXResult*](#StatTXResult)] | 下行流量统计信息，参考StatTXResult |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Result** | array[[*StatTXResult*](#StatTXResult)] | 下行流量统计信息，参考StatTXResult |No|
 
 #### 数据模型
 
@@ -52,7 +52,7 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Count** | integer | 返回节点个数 |**Yes**|
+| **Count** | int | 返回节点个数 |**Yes**|
 | **Unit** | string | 流量计量单位 |**Yes**|
 | **Detail** | array[[*StatTXDetail*](#StatTXDetail)] | 下行流量详情列表，参考StatTXDetail |**Yes**|
 
@@ -60,9 +60,9 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TimeStamp** | integer | 时间戳 |**Yes**|
-| **Waf** | integer | waf下行流量 |**Yes**|
-| **Src** | integer | 源站下行流量 |**Yes**|
+| **TimeStamp** | int | 时间戳 |**Yes**|
+| **Waf** | int | waf下行流量 |**Yes**|
+| **Src** | int | 源站下行流量 |**Yes**|
 
 ## 示例
 
@@ -97,6 +97,7 @@ https://api.ucloud.cn/?Action=StatWafTXTRend
   "RetCode": 0
 }
 ```
+
 
 
 

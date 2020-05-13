@@ -3,20 +3,16 @@
 
 - [概览](api/ufile-api/README.md)
 - **管理类 API**
-    - [购买配额 - BuyUFileQuota](api/ufile-api/buy_ufile_quota)
     - [创建Bucket - CreateBucket](api/ufile-api/create_bucket)
     - [创建UFile令牌 - CreateUFileToken](api/ufile-api/create_ufile_token)
     - [删除Bucket - DeleteBucket](api/ufile-api/delete_bucket)
     - [删除令牌 - DeleteUFileToken](api/ufile-api/delete_ufile_token)
     - [获取Bucket信息 - DescribeBucket](api/ufile-api/describe_bucket)
     - [获取令牌信息 - DescribeUFileToken](api/ufile-api/describe_ufile_token)
-    - [获取正在执行的分片上传id - GetMultiUploadId](api/ufile-api/get_multi_upload_id)
-    - [获取已上传成功的分片列表 - GetMultiUploadPart](api/ufile-api/get_multi_upload_part)
     - [查看配额状态 - GetUFileQuota](api/ufile-api/get_ufile_quota)
     - [获取配额信息 - GetUFileQuotaInfo](api/ufile-api/get_ufile_quota_info)
     - [查询配额支付价格 - GetUFileQuotaPrice](api/ufile-api/get_ufile_quota_price)
     - [查看配额使用报表 - GetUFileReport](api/ufile-api/get_ufile_report)
-    - [获取目录文件列表 - ListObjects](api/ufile-api/list_objects)
     - [更改Bucket属性 - UpdateBucket](api/ufile-api/update_bucket)
     - [更新令牌 - UpdateUFileToken](api/ufile-api/update_ufile_token)
 - **数据类 API**
@@ -31,6 +27,7 @@
   * [秒传文件-UploadHit](api/ufile-api/upload_hit)
   * [下载文件-GetFile](api/ufile-api/get_file)
   * [查询文件基本信息-HEADFile](api/ufile-api/head_file)
+  * [获取目录文件列表-ListObjects](api/ufile-api/list_objects)
   * [前缀列表查询-PrefixFileList](api/ufile-api/prefix_file_list)
   * [删除文件-DeleteFile](api/ufile-api/delete_file)
   * [文件存储类型转换-ClassSwitch](api/ufile-api/class_switch)

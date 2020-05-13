@@ -35,7 +35,7 @@
 | **VPCId** | string | 指定vip所属的VPC |**Yes**|
 | **SubnetId** | string | 子网id |**Yes**|
 | **Ip** | string | 指定ip |No|
-| **Count** | integer | 申请数量，默认: 1 |No|
+| **Count** | int | 申请数量，默认: 1 |No|
 | **Name** | string | vip名，默认：VIP |No|
 | **Tag** | string | 业务组名称，默认为Default |No|
 | **Remark** | string | 备注 |No|
@@ -45,11 +45,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **VIPSet** | array[[*VIPSet*](#VIPSet)] | 申请到的VIP资源相关信息 |No|
 | **DataSet** | array[string] | 申请到的VIP地址 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -94,6 +94,7 @@ https://api.ucloud.cn/?Action=AllocateVIP
   ]
 }
 ```
+
 
 
 

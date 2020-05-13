@@ -41,5 +41,11 @@
 |[DescribeUMemBackup](api/umem-api/describe_umem_backup)|查询分布式redis备份|
 |[DescribeUMemBackupURL](api/umem-api/describe_umem_backup_url)|获取分布式redis 备份下载链接|
 
+## API
+
+| API | 描述信息 |
+|:---|:---|
+|[DescribeUMemBlockInfo](api/umem-api/describe_umem_block_info)|拉取UDRedis分片信息|
+
 
 

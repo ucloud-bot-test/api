@@ -35,18 +35,18 @@
 | **RegionFlag** | boolean | 是否是跨机房URedis(默认false) |**Yes**|
 | **Version** | string | Redis版本号 |No|
 | **ConfigId** | string | 配置文件ID |No|
-| **Offset** | integer | 页显示的起始偏移, 默认值为0 |No|
-| **Limit** | integer | 页显示的条目数, 默认值为10 |No|
+| **Offset** | int | 页显示的起始偏移, 默认值为0 |No|
+| **Limit** | int | 页显示的条目数, 默认值为10 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 根据过滤条件得到的总数 |No|
-| **DataSet** | array[[*URedisConfigSet*](#URedisConfigSet)] | 配置文件列表 参见 URedisConfigSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 根据过滤条件得到的总数 |No|
+| **DataSet** | array[[*URedisConfigSet*](#URedisConfigSet)] | 配置文件列表 参见 URedisConfigSet |No|
 
 #### 数据模型
 
@@ -62,8 +62,8 @@
 | **Version** | string | 配置对应的Redis版本 |No|
 | **IsModify** | string | 置是否可以修改 |No|
 | **State** | string | 配置所处的状态 |No|
-| **CreateTime** | integer | 创建时间 (UNIX时间戳) |No|
-| **ModifyTime** | integer | 修改时间 (UNIX时间戳) |No|
+| **CreateTime** | int | 创建时间 (UNIX时间戳) |No|
+| **ModifyTime** | int | 修改时间 (UNIX时间戳) |No|
 | **RegionFlag** | boolean | 是否是跨机房URedis(默认false) |No|
 
 ## 示例
@@ -104,6 +104,7 @@ https://api.ucloud.cn/?Action=DescribeURedisConfig
   "TotalCount": 1
 }
 ```
+
 
 
 

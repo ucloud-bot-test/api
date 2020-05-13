@@ -36,10 +36,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Res** | [*AssurancePages*](#AssurancePages) | 防篡改信息，参考AssurancePages |No|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -49,15 +49,15 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **State** | string | 防篡改全局状态 |**Yes**|
-| **TotalCount** | integer | 防篡改配置总数 |**Yes**|
-| **Limit** | integer | 防篡改规则配额 |**Yes**|
+| **TotalCount** | int | 防篡改配置总数 |**Yes**|
+| **Limit** | int | 防篡改规则配额 |**Yes**|
 | **Items** | array[[*AssuracePagesDetail*](#AssuracePagesDetail)] | 防篡改规则列表，参考AssuracePagesDetail |**Yes**|
 
 #### AssuracePagesDetail
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ID** | integer | 反篡改规则ID |**Yes**|
+| **ID** | int | 反篡改规则ID |**Yes**|
 | **URL** | string | 防篡改页面url |**Yes**|
 | **State** | string | 防护状态 |**Yes**|
 | **Remark** | string | 备注信息 |No|
@@ -93,6 +93,7 @@ https://api.ucloud.cn/?Action=DescribeAssurancePages
   "RetCode": 0
 }
 ```
+
 
 
 

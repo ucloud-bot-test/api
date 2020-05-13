@@ -32,19 +32,19 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |No|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Offset** | integer | 数据偏移量，默认为0 |No|
-| **Limit** | integer | 返回数据长度，默认为20 |No|
 | **PHostId.N** | string | PHost资源ID，若为空，则返回当前Region所有PHost。 |No|
+| **Offset** | int | 数据偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 满足条件的PHost总数 |No|
-| **PHostSet** | array[[*PHostSet*](#PHostSet)] | PHost资源列表，参见 PHostSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的PHost总数 |No|
+| **PHostSet** | array[[*PHostSet*](#PHostSet)] | PHost资源列表，参见 PHostSet |No|
 
 #### 数据模型
 
@@ -62,12 +62,12 @@
 | **Tag** | string | 业务组 |No|
 | **ImageName** | string | 镜像名称 |No|
 | **OSname** | string | 操作系统名称 |No|
-| **CreateTime** | integer | 创建时间 |No|
-| **ExpireTime** | integer | 到期时间 |No|
+| **CreateTime** | int | 创建时间 |No|
+| **ExpireTime** | int | 到期时间 |No|
 | **ChargeType** | string | 计费模式，枚举值为： Year，按年付费； Month，按月付费； Dynamic，按需付费（需开启权限）； Trial，试用（需开启权限）默认为月付 |No|
 | **PowerState** | string | 电源状态，on 或 off |No|
 | **PHostType** | string | 物理机类型，参见DescribePHostMachineType返回值 |No|
-| **Memory** | integer | 内存大小，单位：MB |No|
+| **Memory** | int | 内存大小，单位：MB |No|
 | **CPUSet** | [*PHostCPUSet*](#PHostCPUSet) | CPU信息，见 PHostCPUSet |No|
 | **DiskSet** | array[[*PHostDiskSet*](#PHostDiskSet)] | 磁盘信息，见 PHostDiskSet |No|
 | **IPSet** | array[[*PHostIPSet*](#PHostIPSet)] | IP信息，见 PHostIPSet |No|
@@ -83,19 +83,19 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Model** | string | CPU型号 |No|
-| **Frequence** | number | CPU主频 |No|
-| **Count** | integer | CPU个数 |No|
-| **CoreCount** | integer | CPU核数 |No|
+| **Frequence** | float | CPU主频 |No|
+| **Count** | int | CPU个数 |No|
+| **CoreCount** | int | CPU核数 |No|
 
 #### PHostDiskSet
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Space** | integer | 单盘大小，单位GB |No|
-| **Count** | integer | 磁盘数量 |No|
+| **Space** | int | 单盘大小，单位GB |No|
+| **Count** | int | 磁盘数量 |No|
 | **Type** | string | 磁盘属性 |No|
 | **Name** | string | 磁盘名称，sys/data |No|
-| **IOCap** | integer | 磁盘IO性能，单位MB/s（待废弃） |No|
+| **IOCap** | int | 磁盘IO性能，单位MB/s（待废弃） |No|
 
 #### PHostIPSet
 
@@ -105,7 +105,7 @@
 | **IPId** | string | IP资源ID(内网IP无资源ID)（待废弃） |No|
 | **IPAddr** | string | IP地址， |No|
 | **MACAddr** | string | MAC地址 |No|
-| **Bandwidth** | integer | IP对应带宽，单位Mb，内网IP不显示带宽信息 |No|
+| **Bandwidth** | int | IP对应带宽，单位Mb，内网IP不显示带宽信息 |No|
 | **SubnetId** | string | 子网ID |No|
 | **VPCId** | string | VPC ID |No|
 
@@ -191,6 +191,7 @@ https://api.ucloud.cn/?Action=DescribePHost
   "TotalCount": 1
 }
 ```
+
 
 
 

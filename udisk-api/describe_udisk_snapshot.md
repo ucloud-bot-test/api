@@ -32,8 +32,8 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |No|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Offset** | integer | 数据偏移量, 默认为0 |No|
-| **Limit** | integer | 返回数据长度, 默认为20 |No|
+| **Offset** | int | 数据偏移量, 默认为0 |No|
+| **Limit** | int | 返回数据长度, 默认为20 |No|
 | **UDiskId** | string | UDiskId,返回该盘所做快照.(必须同时传Zone) |No|
 | **SnapshotId** | string | 快照id，SnapshotId , UDiskId 同时传SnapshotId优先 |No|
 
@@ -41,11 +41,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*UDiskSnapshotSet*](#UDiskSnapshotSet)] | JSON 格式的Snapshot列表, 详细参见 UDiskSnapshotSet |No|
-| **TotalCount** | integer | 根据过滤条件得到的总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*UDiskSnapshotSet*](#UDiskSnapshotSet)] | JSON 格式的Snapshot列表, 详细参见 UDiskSnapshotSet |No|
+| **TotalCount** | int | 根据过滤条件得到的总数 |No|
 
 #### 数据模型
 
@@ -58,11 +58,11 @@
 | **Name** | string | 快照名称 |**Yes**|
 | **UDiskId** | string | 快照的源UDisk的Id |**Yes**|
 | **UDiskName** | string | 快照的源UDisk的Name |**Yes**|
-| **CreateTime** | integer | 创建时间 |**Yes**|
-| **Size** | integer | 容量单位GB |**Yes**|
+| **CreateTime** | int | 创建时间 |**Yes**|
+| **Size** | int | 容量单位GB |**Yes**|
 | **Status** | string | 快照状态，Normal:正常,Failed:失败,Creating:制作中 |**Yes**|
-| **DiskType** | integer | 磁盘类型，0:数据盘，1:系统盘 |**Yes**|
-| **ExpiredTime** | integer | 过期时间 |No|
+| **DiskType** | int | 磁盘类型，0:数据盘，1:系统盘 |**Yes**|
+| **ExpiredTime** | int | 过期时间 |No|
 | **Comment** | string | 快照描述 |No|
 | **IsUDiskAvailable** | boolean | 对应磁盘是否处于可用状态 |No|
 | **Version** | string | 快照版本 |No|
@@ -110,6 +110,7 @@ https://api.ucloud.cn/?Action=DescribeUDiskSnapshot
   "TotalCount": 1
 }
 ```
+
 
 
 

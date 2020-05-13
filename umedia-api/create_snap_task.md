@@ -29,25 +29,25 @@
 
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **Url.N** | string | 原始视频地址，只支持http协议，不支持https以及其他协议。单次提交url数量最多为10条。 |**Yes**|
 | **SnapType** | string | 截图模式，single表示确定时间点单张截图，periodic表示周期截图, dynamic表示为gif截图 |**Yes**|
-| **SnapTime** | integer | 截图模式为single时表示截图时间点，periodic时表示时间间隔 |**Yes**|
+| **SnapTime** | int | 截图模式为single时表示截图时间点，periodic时表示时间间隔 |**Yes**|
 | **DestBucket** | string | 存放转码后视频文件的bucket，需使用bucket全名，如：video.cn-bj.ufileos.com |**Yes**|
 | **ImageFormat** | string | 图片类型，支持jpg、png、gif |**Yes**|
 | **ImageSize** | string | 目标图片尺寸大小，格式为像素宽度x像素高度，例如1280x720。不传此参数则表示使用原始视频尺寸。 |No|
 | **BaseDir** | string | 上传文件的路径。DestBucket、BaseDir、目标文件名三个参数共同决定了图片文件的下载url地址。 |No|
 | **CallbackUrl** | string | 任务结束后，回调客户的url地址。 |No|
-| **GifFrameRate** | number | Gif图片的播放速度，单位为帧/秒 |No|
-| **Url.N** | string | 原始视频地址，只支持http协议，不支持https以及其他协议。单次提交url数量最多为10条。 |**Yes**|
+| **GifFrameRate** | float | Gif图片的播放速度，单位为帧/秒 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalTaskCount** | integer | 生成的总的任务条数 |No|
-| **TaskIdList** | array[[*TaskIdList*](#TaskIdList)] | 生成的任务Id列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalTaskCount** | int | 生成的总的任务条数 |No|
+| **TaskIdList** | array[[*TaskIdList*](#TaskIdList)] | 生成的任务Id列表 |No|
 
 #### 数据模型
 
@@ -85,6 +85,7 @@ https://api.ucloud.cn/?Action=CreateSnapTask
   "TotalTaskCount": 1
 }
 ```
+
 
 
 

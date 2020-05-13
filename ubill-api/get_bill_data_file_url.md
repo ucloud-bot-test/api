@@ -29,19 +29,19 @@
 
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **BillPeriod** | integer | 账期（时间戳格式） |**Yes**|
-| **BillType** | integer | 账单类型，传 0 时获取账单总览报表，传 1 获取账单明细报表 |**Yes**|
-| **PaidType** | integer | 获取账单总览报表时，账单的支付状态，传 0 时获取待支付账单，传 1 时获取已支付账单。获取账单明细报表时该参数无效 |No|
+| **BillPeriod** | int | 账期（时间戳格式） |**Yes**|
+| **BillType** | int | 账单类型，传 0 时获取账单总览报表，传 1 获取账单明细报表 |**Yes**|
+| **PaidType** | int | 获取账单总览报表时，账单的支付状态，传 0 时获取待支付账单，传 1 时获取已支付账单。获取账单明细报表时该参数无效 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **FileUrl** | string | 交易账单数据下载URL |No|
 | **IsValid** | string | 生成的 URL是否有效，即有对应数据文件 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -67,6 +67,7 @@ https://api.ucloud.cn/?Action=GetBillDataFileUrl
   "RetCode": 0
 }
 ```
+
 
 
 

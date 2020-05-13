@@ -36,12 +36,12 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 规则数量 |No|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 规则数量 |No|
 | **WorkMode** | string | 工作模式 |No|
 | **RuleSetList** | array[[*ProtectionSummaryRuleSetEntry*](#ProtectionSummaryRuleSetEntry)] | 规则集列表，参考ProtectionSummaryRuleSetEntry |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -52,12 +52,12 @@
 |:---|:---|:---|:---|
 | **RuleName** | string | 规则名称 |No|
 | **RuleAction** | string | 规则动作 |No|
-| **Priority** | integer | 优先级 |No|
+| **Priority** | int | 优先级 |No|
 | **RiskRank** | string | 风险等级 |No|
 | **RiskType** | string | 风险类型 |No|
-| **RuleSetID** | integer | 规则集ID |No|
+| **RuleSetID** | int | 规则集ID |No|
 | **RuleSetType** | string | 规则集类型 |No|
-| **SysRuleset** | integer | 规则集起始ID |No|
+| **SysRuleset** | int | 规则集起始ID |No|
 | **RuleDescription** | string | 规则描述 |No|
 | **RuleList** | array[[*ProtectionSummaryRuleInfo*](#ProtectionSummaryRuleInfo)] | 规则详情，参考ProtectionSummaryRuleInfo |No|
 
@@ -68,7 +68,7 @@
 | **Field** | string | 匹配字段 |No|
 | **Operator** | string | 行为动作 |No|
 | **Content** | string | 匹配内容 |No|
-| **RuleId** | integer | 规则ID |No|
+| **RuleId** | int | 规则ID |No|
 | **Description** | string | 规则描述 |No|
 
 ## 示例
@@ -116,6 +116,7 @@ https://api.ucloud.cn/?Action=DescribeWafProtectionSummaryInfo
   "WorkMode": "Alarm"
 }
 ```
+
 
 
 

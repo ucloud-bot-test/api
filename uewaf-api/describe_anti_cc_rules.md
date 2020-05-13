@@ -36,10 +36,10 @@ CC防御规则列表
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Res** | [*AntiCcRes*](#AntiCcRes) | CC规则，参考AntiCcRes |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Res** | [*AntiCcRes*](#AntiCcRes) | CC规则，参考AntiCcRes |No|
 
 #### 数据模型
 
@@ -57,11 +57,11 @@ CC防御规则列表
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Id** | integer | 规则ID |**Yes**|
+| **Id** | int | 规则ID |**Yes**|
 | **Uri** | string | URI |**Yes**|
 | **Mode** | string | 模式 |**Yes**|
-| **Duration** | integer | 统计时长. 单位:秒 |**Yes**|
-| **Reqs** | integer | 请求次数 |**Yes**|
+| **Duration** | int | 统计时长. 单位:秒 |**Yes**|
+| **Reqs** | int | 请求次数 |**Yes**|
 | **Action** | string | 执行动作 |**Yes**|
 | **Validity** | string | 动作有效期,单位:分钟 |**Yes**|
 
@@ -108,6 +108,7 @@ https://api.ucloud.cn/?Action=DescribeAntiCCRules
   "RetCode": 0
 }
 ```
+
 
 
 

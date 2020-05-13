@@ -37,10 +37,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **SubnetList** | array[[*SubnetInfo*](#SubnetInfo)] | 子网信息列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **SubnetList** | array[[*SubnetInfo*](#SubnetInfo)] | 子网信息列表 |No|
 
 #### 数据模型
 
@@ -53,10 +53,10 @@
 | **SubnetName** | string | 子网名称 |**Yes**|
 | **IdcId** | string | 机房ID |**Yes**|
 | **CIDR** | string | 子网cidr |**Yes**|
-| **CreateTime** | integer | 创建时间 |**Yes**|
+| **CreateTime** | int | 创建时间 |**Yes**|
 | **Comment** | string | 备注 |**Yes**|
-| **TotalIpCnt** | integer | 总ip数 |**Yes**|
-| **AvailableIPCnt** | integer | 可用ip数 |**Yes**|
+| **TotalIpCnt** | int | 总ip数 |**Yes**|
+| **AvailableIPCnt** | int | 可用ip数 |**Yes**|
 
 ## 示例
 
@@ -89,6 +89,7 @@ https://api.ucloud.cn/?Action=DescribeUEdnSubnet
   ]
 }
 ```
+
 
 
 

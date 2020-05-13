@@ -33,7 +33,7 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **VPCId** | string | VPC资源ID |**Yes**|
 | **Subnet** | string | 子网网络地址，例如192.168.0.0 |**Yes**|
-| **Netmask** | integer | 子网网络号位数，默认为24 |No|
+| **Netmask** | int | 子网网络号位数，默认为24 |No|
 | **SubnetName** | string | 子网名称，默认为Subnet |No|
 | **Tag** | string | 业务组名称，默认为Default |No|
 | **Remark** | string | 备注 |No|
@@ -42,10 +42,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **SubnetId** | string | 子网ID |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **SubnetId** | string | 子网ID |No|
 
 
 
@@ -76,6 +76,7 @@ https://api.ucloud.cn/?Action=CreateSubnet
   "SubnetId": "subnet-XXXXX"
 }
 ```
+
 
 
 

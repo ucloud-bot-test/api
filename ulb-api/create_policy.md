@@ -33,18 +33,18 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **ULBId** | string | 需要添加内容转发策略的负载均衡实例ID |**Yes**|
 | **VServerId** | string | 需要添加内容转发策略的VServer实例ID |**Yes**|
+| **BackendId.N** | string | 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId |**Yes**|
 | **Match** | string | 内容转发匹配字段 |**Yes**|
 | **Type** | string | 内容转发匹配字段的类型 |No|
-| **BackendId.N** | string | 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **PolicyId** | string | 内容转发策略ID |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **PolicyId** | string | 内容转发策略ID |No|
 
 
 
@@ -73,6 +73,7 @@ https://api.ucloud.cn/?Action=CreatePolicy
   "RetCode": 0
 }
 ```
+
 
 
 

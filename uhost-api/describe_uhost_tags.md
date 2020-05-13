@@ -37,11 +37,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 已有主机的业务组总数 |No|
-| **TagSet** | array[[*UHostTagSet*](#UHostTagSet)] | 业务组集合见 UHostTagSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 已有主机的业务组总数 |No|
+| **TagSet** | array[[*UHostTagSet*](#UHostTagSet)] | 业务组集合见 UHostTagSet |No|
 
 #### 数据模型
 
@@ -51,7 +51,7 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Tag** | string | 业务组名称 |No|
-| **TotalCount** | integer | 该业务组中包含的主机个数 |No|
+| **TotalCount** | int | 该业务组中包含的主机个数 |No|
 | **Zone** | string | 可用区 |No|
 
 ## 示例
@@ -81,6 +81,7 @@ https://api.ucloud.cn/?Action=DescribeUHostTags
   "TotalCount": 1
 }
 ```
+
 
 
 

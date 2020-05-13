@@ -37,10 +37,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*UFileQuotaDataSetItem*](#UFileQuotaDataSetItem)] | 配额信息数据集 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*UFileQuotaDataSetItem*](#UFileQuotaDataSetItem)] | 配额信息数据集 |No|
 
 #### 数据模型
 
@@ -50,7 +50,7 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Region** | string | 可用地域 |No|
-| **Owe** | integer | 是否欠费：1表示欠费；0表示未欠费 |No|
+| **Owe** | int | 是否欠费：1表示欠费；0表示未欠费 |No|
 | **Storage** | [*UFileQuotaLeft*](#UFileQuotaLeft) | 剩余存储容量 |No|
 | **DownloadFlow** | [*UFileQuotaLeft*](#UFileQuotaLeft) | 剩余下载流量 |No|
 | **RequestCnt** | [*UFileQuotaLeft*](#UFileQuotaLeft) | 剩余请求次数 |No|
@@ -59,7 +59,7 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Left** | number | 配额剩余量 |No|
+| **Left** | float | 配额剩余量 |No|
 
 ## 示例
 
@@ -97,6 +97,7 @@ https://api.ucloud.cn/?Action=GetUFileQuotaInfo
   "RetCode": 0
 }
 ```
+
 
 
 

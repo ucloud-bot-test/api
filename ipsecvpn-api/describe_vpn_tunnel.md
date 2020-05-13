@@ -31,20 +31,20 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
-| **Offset** | integer | 数据偏移量, 默认为0 |No|
-| **Limit** | integer | 数据分页值, 默认为20 |No|
-| **Tag** | string | 业务组名称，若指定则返回指定的业务组下的所有VPN网关的信息 |No|
 | **VPNTunnelIds.N** | string | VPN隧道的资源ID，例如VPNTunnelIds.0代表希望获取信息的VPN隧道1，VPNTunneIds.1代表VPN隧道2，如果为空，则返回当前Region中所有的VPN隧道实例 |No|
+| **Offset** | int | 数据偏移量, 默认为0 |No|
+| **Limit** | int | 数据分页值, 默认为20 |No|
+| **Tag** | string | 业务组名称，若指定则返回指定的业务组下的所有VPN网关的信息 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | VPN隧道总数 |No|
-| **DataSet** | array[[*VPNTunnelDataSet*](#VPNTunnelDataSet)] | 获取的VPN隧道信息列表，每项参数详见 VPNTunnelDataSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | VPN隧道总数 |No|
+| **DataSet** | array[[*VPNTunnelDataSet*](#VPNTunnelDataSet)] | 获取的VPN隧道信息列表，每项参数详见 VPNTunnelDataSet |No|
 
 #### 数据模型
 
@@ -63,7 +63,7 @@
 | **RemoteVPNGatewayName** | string | 对端网关名字 |No|
 | **VPCId** | string | 所属VPCId |No|
 | **VPCName** | string | 所属VOC名字 |No|
-| **CreateTime** | integer | 创建时间 |No|
+| **CreateTime** | int | 创建时间 |No|
 | **IKEData** | [*IKEData*](#IKEData) | IKE参数 |No|
 | **IPSecData** | [*IPSecData*](#IPSecData) | IPSec参数 |No|
 
@@ -157,6 +157,7 @@ https://api.ucloud.cn/?Action=DescribeVPNTunnel
   "TotalCount": 1
 }
 ```
+
 
 
 

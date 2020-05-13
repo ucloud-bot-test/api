@@ -38,10 +38,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **DataSet** | array[[*DataSetUDDB*](#DataSetUDDB)] | UDDB实例信息列表, 参见DataSetUDDB项定义 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*DataSetUDDB*](#DataSetUDDB)] | UDDB实例信息列表, 参见DataSetUDDB项定义 |No|
 
 #### 数据模型
 
@@ -62,8 +62,8 @@
 | **ExpiredTime** | string | UDDB实例过期时间，采用UTC计时时间戳 |No|
 | **ChargeType** | string | 付费类型，可选值如下: Year: 按年付费 Month: 按月付费 Dynamic: 按需付费(单位: 小时) Trial: 免费试用 |No|
 | **RouterVersion** | string | UDDB路由节点的版本。分为三种： Trival(免费版)： 2中间件节点； QPS：1.5W FellFree(标准版)： 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w； EnjoyAlone(物理机版)：专享物理机，节点数让客户可选 |No|
-| **RouterNodeNum** | integer | 各版本下的节点个数。体验版： 固定为2节点； 畅享版：固定为4节点（后续可通过管理API调整）；专享版：物理机台数 |No|
-| **RefQps** | integer | 参考QPS。 免费版： 15000； 畅享版： 30000 - 100000 （根据节点数而定）； 专享版： 节点数 * 10w qps |No|
+| **RouterNodeNum** | int | 各版本下的节点个数。体验版： 固定为2节点； 畅享版：固定为4节点（后续可通过管理API调整）；专享版：物理机台数 |No|
+| **RefQps** | int | 参考QPS。 免费版： 15000； 畅享版： 30000 - 100000 （根据节点数而定）； 专享版： 节点数 * 10w qps |No|
 | **DataNodeCount** | string | 数据节点个数 |No|
 | **DataNodeMemory** | string | 数据节点的内存配置, 单位：MB |No|
 | **DataNodeDiskSpace** | string | 数据节点的磁盘大小配置. 单位: GB |No|
@@ -163,6 +163,7 @@ https://api.ucloud.cn/?Action=DescribeUDDBInstance
   "RetCode": 0
 }
 ```
+
 
 
 

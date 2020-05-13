@@ -30,8 +30,8 @@ WAF攻击发生次数概览
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID，不填表示默认项目 |No|
-| **BeginTime** | integer | 开始时间，时间戳表示,单位：秒 |**Yes**|
-| **EndTime** | integer | 结束时间，时间戳表示，单位：秒 |**Yes**|
+| **BeginTime** | int | 开始时间，时间戳表示,单位：秒 |**Yes**|
+| **EndTime** | int | 结束时间，时间戳表示，单位：秒 |**Yes**|
 | **Domain** | string | 要统计的域名 |No|
 | **Extent** | string | 统计区间，单位：秒，取值范围0-7200 |No|
 
@@ -39,10 +39,10 @@ WAF攻击发生次数概览
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Result** | [*StatAttackResult*](#StatAttackResult) | 攻击详情，参考StatAttackResult |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Result** | [*StatAttackResult*](#StatAttackResult) | 攻击详情，参考StatAttackResult |No|
 
 #### 数据模型
 
@@ -51,15 +51,15 @@ WAF攻击发生次数概览
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Count** | integer | 返回节点个数 |**Yes**|
+| **Count** | int | 返回节点个数 |**Yes**|
 | **Detail** | array[[*StatAttackDetail*](#StatAttackDetail)] | 攻击次数详情数组，参考StatAttackDetail |**Yes**|
 
 #### StatAttackDetail
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Timestamp** | integer | 时间戳 |**Yes**|
-| **Count** | integer | 攻击次数 |**Yes**|
+| **Timestamp** | int | 时间戳 |**Yes**|
+| **Count** | int | 攻击次数 |**Yes**|
 
 ## 示例
 
@@ -98,6 +98,7 @@ https://api.ucloud.cn/?Action=StatWafAttacksTrend
   "RetCode": 0
 }
 ```
+
 
 
 

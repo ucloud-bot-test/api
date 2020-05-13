@@ -30,22 +30,22 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
+| **Url.N** | string | 原始视频地址，只支持http协议，不支持https以及其他协议。单次提交url数量最多为10条。 |**Yes**|
 | **DestBucket** | string | 存放转码后视频文件的bucket，需使用bucket全名，如：video.cn-bj.ufileos.com |**Yes**|
+| **CodecPattenId.N** | string | 转码模版Id，单次提交支持最多3个转码模版。下标相同的转码模版、水印模版、片头片尾模版进行组合。 |**Yes**|
 | **BaseDir** | string | 上传到ufile上文件的路径 |No|
 | **WatermarkPattenId** | string | 水印模版Id |No|
 | **HeadTailPattenId** | string | 片头片尾模版Id |No|
-| **Url.N** | string | 原始视频地址，只支持http协议，不支持https以及其他协议。单次提交url数量最多为10条。 |**Yes**|
-| **CodecPattenId.N** | string | 转码模版Id，单次提交支持最多3个转码模版。下标相同的转码模版、水印模版、片头片尾模版进行组合。 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalTaskCount** | integer | 生成的总的任务条数 |No|
-| **TaskIdList** | array[[*TaskIdList*](#TaskIdList)] | 生成的任务Id列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalTaskCount** | int | 生成的总的任务条数 |No|
+| **TaskIdList** | array[[*TaskIdList*](#TaskIdList)] | 生成的任务Id列表 |No|
 
 #### 数据模型
 
@@ -86,6 +86,7 @@ https://api.ucloud.cn/?Action=CreateCodecTaskByPatten
   "TotalTaskCount": 2
 }
 ```
+
 
 
 

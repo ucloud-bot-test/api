@@ -32,18 +32,18 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **VolumeId** | string | 文件系统ID |No|
-| **Offset** | integer | 文件列表起始 |No|
-| **Limit** | integer | 文件列表长度 |No|
+| **Offset** | int | 文件列表起始 |No|
+| **Limit** | int | 文件列表长度 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 文件系统总数 |**Yes**|
-| **DataSet** | array[[*UFSVolumeInfo2*](#UFSVolumeInfo2)] | 文件系统详细信息列表 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 文件系统总数 |**Yes**|
+| **DataSet** | array[[*UFSVolumeInfo2*](#UFSVolumeInfo2)] | 文件系统详细信息列表 |**Yes**|
 
 #### 数据模型
 
@@ -54,16 +54,16 @@
 |:---|:---|:---|:---|
 | **VolumeName** | string | 文件系统名称 |**Yes**|
 | **VolumeId** | string | 文件系统ID |**Yes**|
-| **TotalMountPointNum** | integer | 当前文件系统已创建的挂载点数目 |**Yes**|
-| **MaxMountPointNum** | integer | 文件系统允许创建的最大挂载点数目 |**Yes**|
+| **TotalMountPointNum** | int | 当前文件系统已创建的挂载点数目 |**Yes**|
+| **MaxMountPointNum** | int | 文件系统允许创建的最大挂载点数目 |**Yes**|
 | **StorageType** | string | 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型 |**Yes**|
 | **ProtocolType** | string | 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议 |**Yes**|
 | **Remark** | string | 文件系统备注信息 |No|
 | **Tag** | string | 文件系统所属业务组 |No|
-| **CreateTime** | integer | 文件系统创建时间（unix时间戳） |No|
-| **ExpiredTime** | integer | 文件系统过期时间（unix时间戳） |No|
-| **Size** | integer | 文件系统大小，单位GB |No|
-| **UsedSize** | integer | 文件系统当前使用容量，单位GB |No|
+| **CreateTime** | int | 文件系统创建时间（unix时间戳） |No|
+| **ExpiredTime** | int | 文件系统过期时间（unix时间戳） |No|
+| **Size** | int | 文件系统大小，单位GB |No|
+| **UsedSize** | int | 文件系统当前使用容量，单位GB |No|
 | **IsExpired** | string | 是否过期 |No|
 
 ## 示例
@@ -135,6 +135,7 @@ https://api.ucloud.cn/?Action=DescribeUFSVolume2
   "TotalCount": 3
 }
 ```
+
 
 
 

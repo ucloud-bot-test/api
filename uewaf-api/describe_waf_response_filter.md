@@ -36,10 +36,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Data** | array[[*HttpReponseFilter*](#HttpReponseFilter)] | 信息安全过滤规则列表，参考HttpReponseFilter |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Data** | array[[*HttpReponseFilter*](#HttpReponseFilter)] | 信息安全过滤规则列表，参考HttpReponseFilter |**Yes**|
 
 #### 数据模型
 
@@ -48,7 +48,7 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ID** | integer | 规则ID |No|
+| **ID** | int | 规则ID |No|
 | **Name** | string | 规则名称 |No|
 | **Type** | string | 防护类型；可选项：Status（状态码），Sensitive（敏感内容），Customize（自定义字符串） |No|
 | **Content** | string | 过滤内容 |No|
@@ -99,6 +99,7 @@ https://api.ucloud.cn/?Action=DescribeWafResponseFilter
   "RetCode": 0
 }
 ```
+
 
 
 

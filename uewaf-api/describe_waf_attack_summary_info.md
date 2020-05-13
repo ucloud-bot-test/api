@@ -30,20 +30,20 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **BeginTime** | integer | 起始时间戳 |No|
+| **BeginTime** | int | 起始时间戳 |No|
 | **FullDomain** | string | 域名，为空则查询所有域名 |No|
-| **EndTime** | integer | 截止时间戳 |No|
-| **AttackType** | string | 攻击统计类型，查询 IP TOP10 时生效，默认全选；参数选项: protocol: 协议违规, xss: XSS攻击, sql: SQL注入, loopholes: 漏洞攻击, exec: 命令执行, webshell: WebShell上传, eaa: 越权访问, infoleak: 信息泄露, scan: 恶意扫描, cc: CC攻击, other: 其他 |No|
+| **EndTime** | int | 截止时间戳 |No|
 | **SearchType.N** | string | 统计类别数组，默认"attack,uri,client,riskrank" |No|
+| **AttackType** | string | 攻击统计类型，查询 IP TOP10 时生效，默认全选；参数选项: protocol: 协议违规, xss: XSS攻击, sql: SQL注入, loopholes: 漏洞攻击, exec: 命令执行, webshell: WebShell上传, eaa: 越权访问, infoleak: 信息泄露, scan: 恶意扫描, cc: CC攻击, other: 其他 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Data** | [*WafAttackSummaryInfo*](#WafAttackSummaryInfo) | 返回数据 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Data** | [*WafAttackSummaryInfo*](#WafAttackSummaryInfo) | 返回数据 |No|
 
 #### 数据模型
 
@@ -136,6 +136,7 @@ https://api.ucloud.cn/?Action=DescribeWafAttackSummaryInfo
   }
 }
 ```
+
 
 
 

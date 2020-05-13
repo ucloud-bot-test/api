@@ -38,10 +38,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **MachineTypes** | array[[*PHostMachineTypeSet*](#PHostMachineTypeSet)] | 机型列表，模型：PHostMachineTypeSet |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **MachineTypes** | array[[*PHostMachineTypeSet*](#PHostMachineTypeSet)] | 机型列表，模型：PHostMachineTypeSet |**Yes**|
 
 #### 数据模型
 
@@ -53,7 +53,7 @@
 | **Type** | string | 物理云主机机型别名，全网唯一。 |**Yes**|
 | **Name** | string | 机型名 |No|
 | **CPU** | [*PHostCPUSet*](#PHostCPUSet) | CPU信息 |No|
-| **Memory** | integer | 内存大小，单位GB |No|
+| **Memory** | int | 内存大小，单位GB |No|
 | **Disks** | array[[*PHostDiskSet*](#PHostDiskSet)] | 磁盘信息 |No|
 | **Components** | [*PHostComponentSet*](#PHostComponentSet) | 其他组件信息 |No|
 | **Clusters** | array[[*PHostClusterSet*](#PHostClusterSet)] | 集群库存信息 |No|
@@ -64,19 +64,19 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Model** | string | CPU型号 |No|
-| **Frequence** | number | CPU主频 |No|
-| **Count** | integer | CPU个数 |No|
-| **CoreCount** | integer | CPU核数 |No|
+| **Frequence** | float | CPU主频 |No|
+| **Count** | int | CPU个数 |No|
+| **CoreCount** | int | CPU核数 |No|
 
 #### PHostDiskSet
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Space** | integer | 单盘大小，单位GB |No|
-| **Count** | integer | 磁盘数量 |No|
+| **Space** | int | 单盘大小，单位GB |No|
+| **Count** | int | 磁盘数量 |No|
 | **Type** | string | 磁盘属性 |No|
 | **Name** | string | 磁盘名称，sys/data |No|
-| **IOCap** | integer | 磁盘IO性能，单位MB/s（待废弃） |No|
+| **IOCap** | int | 磁盘IO性能，单位MB/s（待废弃） |No|
 
 #### PHostComponentSet
 
@@ -149,6 +149,7 @@ https://api.ucloud.cn/?Action=DecribePHostMachineType
   "RetCode": 0
 }
 ```
+
 
 
 

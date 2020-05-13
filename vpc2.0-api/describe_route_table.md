@@ -33,19 +33,19 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **VPCId** | string | 所属VPC的资源ID |No|
 | **RouteTableId** | string | 路由表资源ID |No|
-| **OffSet** | integer | 数据偏移量。默认为0 |No|
-| **Limit** | integer | 数据分页值。默认为20 |No|
+| **OffSet** | int | 数据偏移量。默认为0 |No|
+| **Limit** | int | 数据分页值。默认为20 |No|
 | **BusinessId** | string | 业务组ID |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RouteTables** | array[[*RouteTableInfo*](#RouteTableInfo)] | 路由表信息 |No|
-| **TotalCount** | integer | RouteTables字段的数量 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **RouteTables** | array[[*RouteTableInfo*](#RouteTableInfo)] | 路由表信息 |No|
+| **TotalCount** | int | RouteTables字段的数量 |No|
 
 #### 数据模型
 
@@ -55,32 +55,32 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **RouteTableId** | string | 路由表资源ID |No|
-| **RouteTableType** | integer | 路由表类型。1为默认路由表，0为自定义路由表 |No|
-| **SubnetCount** | integer | 绑定该路由表的子网数量 |No|
+| **RouteTableType** | int | 路由表类型。1为默认路由表，0为自定义路由表 |No|
+| **SubnetCount** | int | 绑定该路由表的子网数量 |No|
 | **VPCId** | string | 路由表所属的VPC资源ID |No|
 | **VPCName** | string | 路由表所属的VPC资源名称 |No|
 | **Tag** | string | 路由表所属业务组 |No|
 | **Remark** | string | 路由表备注 |No|
-| **CreateTime** | integer | 创建时间戳 |No|
+| **CreateTime** | int | 创建时间戳 |No|
 | **RouteRules** | array[[*RouteRuleInfo*](#RouteRuleInfo)] | 路由规则 |No|
 
 #### RouteRuleInfo
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **AccountId** | integer | 项目ID信息 |No|
+| **AccountId** | int | 项目ID信息 |No|
 | **DstAddr** | string | 目的地址 |No|
-| **DstPort** | integer | 保留字段，暂未使用 |No|
+| **DstPort** | int | 保留字段，暂未使用 |No|
 | **NexthopId** | string | 路由下一跳资源ID |No|
 | **NexthopType** | string | 路由表下一跳类型。LOCAL，本VPC内部通信路由；PUBLIC，公共服务路由；CNAT，外网路由；UDPN，跨域高速通道路由；HYBRIDGW，混合云路由；INSTANCE，实例路由；VNET，VPC联通路由；IPSEC VPN，指向VPN网关的路由。 |No|
 | **OriginAddr** | string | 保留字段，暂未使用 |No|
-| **Priority** | integer | 保留字段，暂未使用 |No|
+| **Priority** | int | 保留字段，暂未使用 |No|
 | **Remark** | string | 路由规则备注 |No|
 | **RouteRuleId** | string | 规则ID |No|
 | **RouteTableId** | string | 路由表资源ID |No|
-| **RuleType** | integer | 路由规则类型。0，系统路由规则；1，自定义路由规则 |No|
+| **RuleType** | int | 路由规则类型。0，系统路由规则；1，自定义路由规则 |No|
 | **SrcAddr** | string | 保留字段，暂未使用 |No|
-| **SrcPort** | integer | 保留字段，暂未使用 |No|
+| **SrcPort** | int | 保留字段，暂未使用 |No|
 | **VNetId** | string | 所属的VPC |No|
 
 ## 示例
@@ -106,6 +106,7 @@ https://api.ucloud.cn/?Action=DescribeRouteTable
   "RetCode": 0
 }
 ```
+
 
 
 

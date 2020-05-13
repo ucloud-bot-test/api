@@ -36,11 +36,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 证书数量 |No|
-| **CertificateInfo** | [*DoaminCertificateInfo*](#DoaminCertificateInfo) | 证书详情列表，参考DoaminCertificateInfo |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 证书数量 |No|
+| **CertificateInfo** | [*DoaminCertificateInfo*](#DoaminCertificateInfo) | 证书详情列表，参考DoaminCertificateInfo |No|
 
 #### 数据模型
 
@@ -49,10 +49,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **CertificateID** | integer | 证书ID |No|
+| **CertificateID** | int | 证书ID |No|
 | **CertificateName** | string | 证书名称 |No|
 | **Domain** | string | 证书一级域名 |No|
-| **UploadTime** | string | 证书入库时间，utc时间格式，如：2020-02-06T18:46:17+08:00 |No|
+| **UploadTime** | object | 证书入库时间，utc时间格式，如：2020-02-06T18:46:17+08:00 |No|
 
 ## 示例
 
@@ -81,6 +81,7 @@ https://api.ucloud.cn/?Action=DescribeWafDomainCertificateInfo
   "TotalCount": 1
 }
 ```
+
 
 
 

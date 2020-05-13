@@ -38,11 +38,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **MasterDBId** | string | DB实例ID（主库） |No|
 | **RWIP** | string | 读写分离访问IP |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -68,6 +68,7 @@ https://api.ucloud.cn/?Action=EnableUDBRWSplitting
   "RetCode": 0
 }
 ```
+
 
 
 

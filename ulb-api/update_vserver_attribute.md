@@ -37,7 +37,7 @@
 | **Method** | string | VServer负载均衡模式，枚举值：Roundrobin -> 轮询;Source -> 源地址；ConsistentHash -> 一致性哈希；SourcePort -> 源地址（计算端口）；ConsistentHashPort -> 一致性哈希（计算端口）; WeightRoundrobin -> 加权轮询; Leastconn -> 最小连接数。<br />ConsistentHash，SourcePort，ConsistentHashPort 只在报文转发中使用；Leastconn只在请求代理中使用；Roundrobin、Source和WeightRoundrobin在请求代理和报文转发中使用。<br />默认为："Roundrobin" |No|
 | **PersistenceType** | string | VServer会话保持模式，若无此字段则不做修改。枚举值：None：关闭；ServerInsert：自动生成KEY；UserDefined：用户自定义KEY。 |No|
 | **PersistenceInfo** | string | 根据PersistenceType确定: None或ServerInsert, 此字段无意义; UserDefined, 则此字段传入用户自定义会话保持String. 若无此字段则不做修改 |No|
-| **ClientTimeout** | integer | 请求代理的VServer下表示空闲连接的回收时间，单位：秒，取值范围：时(0，86400]，默认值为60；报文转发的VServer下表示回话保持的时间，单位：秒，取值范围：[60，900]，0 表示禁用连接保持 |No|
+| **ClientTimeout** | int | 请求代理的VServer下表示空闲连接的回收时间，单位：秒，取值范围：时(0，86400]，默认值为60；报文转发的VServer下表示回话保持的时间，单位：秒，取值范围：[60，900]，0 表示禁用连接保持 |No|
 | **MonitorType** | string | 健康检查的类型，Port:端口,Path:路径 |No|
 | **Domain** | string | MonitorType 为 Path 时指定健康检查发送请求时HTTP HEADER 里的域名 |No|
 | **Path** | string | MonitorType 为 Path 时指定健康检查发送请求时的路径，默认为 / |No|
@@ -46,9 +46,9 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -80,6 +80,7 @@ https://api.ucloud.cn/?Action=UpdateVServerAttribute
   "RetCode": 0
 }
 ```
+
 
 
 

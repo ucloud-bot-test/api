@@ -36,7 +36,7 @@
 | **Grade** | string | 购买的VPN网关规格，枚举值为: Standard, 标准型; Enhanced, 增强型 |**Yes**|
 | **Remark** | string | 备注，默认为空 |No|
 | **Tag** | string | 业务组名称，默认为 "Default" |No|
-| **Quantity** | integer | 购买时长, 默认: 1 |No|
+| **Quantity** | int | 购买时长, 默认: 1 |No|
 | **ChargeType** | string | 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费；Dynamic, 按需付费(需开启权限)；Trial, 试用(需开启权限)；默认为按月付费 |No|
 | **BusinessId** | string | 业务组ID |No|
 | **EIPId** | string | 若要绑定EIP，在此填上EIP的资源ID |No|
@@ -46,10 +46,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **VPNGatewayId** | string | 新建VPN网关的资源ID |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **VPNGatewayId** | string | 新建VPN网关的资源ID |No|
 
 
 
@@ -79,6 +79,7 @@ https://api.ucloud.cn/?Action=CreateVPNGateway
   "VPNGatewayId": "vpngw-XXXX"
 }
 ```
+
 
 
 

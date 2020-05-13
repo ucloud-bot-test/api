@@ -30,7 +30,7 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **ID** | integer | 要修改的规则ID |**Yes**|
+| **ID** | int | 要修改的规则ID |**Yes**|
 | **FullDomain** | string | 要操作的域名 |**Yes**|
 | **Name** | string | 规则名称 |**Yes**|
 | **Type** | string | 	<br />过滤类型；可选项：Status（状态码），Sensitive（敏感内容），Customize（自定义字符串） |**Yes**|
@@ -42,9 +42,9 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -72,6 +72,7 @@ https://api.ucloud.cn/?Action=ModifyWafResponseFilter
   "RetCode": 0
 }
 ```
+
 
 
 

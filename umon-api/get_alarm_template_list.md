@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list) |No|
-| **Limit** | integer | 返回数据长度，默认为20 |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 总数量 |**Yes**|
-| **DataSet** | array[[*AlarmTemplate*](#AlarmTemplate)] | 告警模板列表 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 总数量 |**Yes**|
+| **DataSet** | array[[*AlarmTemplate*](#AlarmTemplate)] | 告警模板列表 |**Yes**|
 
 #### 数据模型
 
@@ -51,11 +51,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **AlarmTemplateId** | integer | 告警模板id |**Yes**|
+| **AlarmTemplateId** | int | 告警模板id |**Yes**|
 | **AlarmTemplateName** | string | 告警模板名称 |**Yes**|
 | **ResourceType** | string | 资源类型 |**Yes**|
-| **BoundResourceCount** | integer | 绑定的资源数量 |**Yes**|
-| **IsGlobal** | integer | 是否是全局机房模版，0不是，1是 |**Yes**|
+| **BoundResourceCount** | int | 绑定的资源数量 |**Yes**|
+| **IsGlobal** | int | 是否是全局机房模版，0不是，1是 |**Yes**|
 | **IsDefault** | string | 是否为默认模板 |No|
 | **Remark** | string | 备注 |No|
 
@@ -147,6 +147,7 @@ https://api.ucloud.cn/?Action=GetAlarmTemplateList
   "TotalCount": 4
 }
 ```
+
 
 
 

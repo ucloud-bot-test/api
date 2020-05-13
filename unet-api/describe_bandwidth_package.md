@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Limit** | integer | 返回数据分页值, 取值范围为 [0,10000000] 之间的整数, 默认为20 |No|
-| **Offset** | integer | 返回数据偏移量, 默认为0 |No|
+| **Limit** | int | 返回数据分页值, 取值范围为 [0,10000000] 之间的整数, 默认为20 |No|
+| **Offset** | int | 返回数据偏移量, 默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 满足条件的带宽包总数 |No|
-| **DataSets** | array[[*UnetBandwidthPackageSet*](#UnetBandwidthPackageSet)] | 带宽包详细信息, 参见 UnetBandwidthPackageSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的带宽包总数 |No|
+| **DataSets** | array[[*UnetBandwidthPackageSet*](#UnetBandwidthPackageSet)] | 带宽包详细信息, 参见 UnetBandwidthPackageSet |No|
 
 #### 数据模型
 
@@ -52,10 +52,10 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **BandwidthPackageId** | string | 带宽包的资源ID |No|
-| **EnableTime** | integer | 生效时间, 格式为 Unix Timestamp |No|
-| **DisableTime** | integer | 失效时间, 格式为 Unix Timestamp |No|
-| **CreateTime** | integer | 创建时间, 格式为 Unix Timestamp |No|
-| **Bandwidth** | integer | 带宽包的临时带宽值, 单位Mbps |No|
+| **EnableTime** | int | 生效时间, 格式为 Unix Timestamp |No|
+| **DisableTime** | int | 失效时间, 格式为 Unix Timestamp |No|
+| **CreateTime** | int | 创建时间, 格式为 Unix Timestamp |No|
+| **Bandwidth** | int | 带宽包的临时带宽值, 单位Mbps |No|
 | **EIPId** | string | 带宽包所绑定弹性IP的资源ID |No|
 | **EIPAddr** | array[[*EIPAddrSet*](#EIPAddrSet)] | 带宽包所绑定弹性IP的详细信息,只有当EIPId对应双线IP时, EIPAddr的长度为2, 其他情况, EIPAddr长度均为1.参见 EIPAddrSet |No|
 
@@ -100,6 +100,7 @@ https://api.ucloud.cn/?Action=DescribeBandwidthPackage
   "TotalCount": 1
 }
 ```
+
 
 
 

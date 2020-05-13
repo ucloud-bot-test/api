@@ -36,10 +36,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **Data** | [*OutTemplate*](#OutTemplate) | 短信模板明细信息，各字段说明详见OutTemplate |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Data** | [*OutTemplate*](#OutTemplate) | 短信模板明细信息，各字段说明详见OutTemplate |No|
 
 #### 数据模型
 
@@ -49,14 +49,14 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **TemplateId** | string | 短信模板ID |**Yes**|
-| **Purpose** | integer | 模板类型，选项：1-验证码类 2-通知类 3-会员推广类 |**Yes**|
+| **Purpose** | int | 模板类型，选项：1-验证码类 2-通知类 3-会员推广类 |**Yes**|
 | **TemplateName** | string | 短信模板名称 |**Yes**|
 | **Template** | string | 短信模板内容 |**Yes**|
 | **UnsubscribeInfo** | string | 退订信息；一般填写方式“回T退订”，当purpose为3（也即会员推广类）时，为必填项 |**Yes**|
-| **Status** | integer | 短信模板状态；状态说明：0-待审核，1-审核中，2-审核通过，3-审核未通过，4-被禁用 |**Yes**|
+| **Status** | int | 短信模板状态；状态说明：0-待审核，1-审核中，2-审核通过，3-审核未通过，4-被禁用 |**Yes**|
 | **Remark** | string | 模板说明 |**Yes**|
 | **ErrDesc** | string | 审核失败原因 |**Yes**|
-| **CreateTime** | integer | 创建时间 |**Yes**|
+| **CreateTime** | int | 创建时间 |**Yes**|
 
 ## 示例
 
@@ -85,6 +85,7 @@ https://api.ucloud.cn/?Action=QueryUSMSTemplate
   "RetCode": 0
 }
 ```
+
 
 
 

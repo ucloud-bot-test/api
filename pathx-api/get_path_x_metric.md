@@ -31,20 +31,20 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **ResourceId** | string | ResourceId，如upath ID  和 uga ID  |**Yes**|
-| **BeginTime** | integer | 查询起始时间，10位长度时间戳 |**Yes**|
-| **EndTime** | integer | 查询结束时间，10位长度时间戳 |**Yes**|
+| **BeginTime** | int | 查询起始时间，10位长度时间戳 |**Yes**|
+| **EndTime** | int | 查询结束时间，10位长度时间戳 |**Yes**|
+| **MetricName.N** | string | 查询监控的指标项。目前仅允许以下四项：NetworkOut:出向带宽，NetworkIn:入向带宽，NetworkOutUsage:出向带宽使用率，NetworkInUsage:入向带宽使用率 |**Yes**|
 | **ResourceType** | string | upath:加速线路,uga:加速实例 |**Yes**|
 | **LineId** | string | 具体线路id，调用DescribePathXLineConfig接口获取线路列表 |**Yes**|
-| **MetricName.N** | string | 查询监控的指标项。目前仅允许以下四项：NetworkOut:出向带宽，NetworkIn:入向带宽，NetworkOutUsage:出向带宽使用率，NetworkInUsage:入向带宽使用率 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*MetricPeriod*](#MetricPeriod)] | 监控数据结果集 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*MetricPeriod*](#MetricPeriod)] | 监控数据结果集 |No|
 
 #### 数据模型
 
@@ -62,8 +62,8 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Timestamp** | integer | 时间戳  |No|
-| **Value** | integer | 监控点数值 |No|
+| **Timestamp** | int | 时间戳  |No|
+| **Value** | int | 监控点数值 |No|
 
 ## 示例
 
@@ -130,6 +130,7 @@ https://api.ucloud.cn/?Action=GetPathXMetric
   "RetCode": 0
 }
 ```
+
 
 
 

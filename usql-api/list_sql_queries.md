@@ -31,19 +31,19 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID，不填则为默认项目 |No|
-| **Limit** | integer | 查询个数（最大1000，默认100） |No|
-| **Offset** | integer | 偏移（默认0） |No|
+| **Limit** | int | 查询个数（最大1000，默认100） |No|
+| **Offset** | int | 偏移（默认0） |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Request** | string | API请求ID |No|
-| **TotalCount** | integer | 历史SQL查询总数 |No|
-| **Queries** | array[[*QuerySummary*](#QuerySummary)] | SQL查询集合 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Request** | string | API请求ID |No|
+| **TotalCount** | int | 历史SQL查询总数 |No|
+| **Queries** | array[[*QuerySummary*](#QuerySummary)] | SQL查询集合 |No|
 
 #### 数据模型
 
@@ -56,11 +56,11 @@
 | **QueryType** | string | 查询类型 |No|
 | **QueryString** | string | 查询语句 |No|
 | **State** | string | 查询状态 |No|
-| **ScannedBytes** | integer | 扫描字节数量 |No|
+| **ScannedBytes** | int | 扫描字节数量 |No|
 | **ErrorMessage** | string | 错误信息 |No|
-| **ElapsedTimeMillis** | integer | 查询耗时， 单位:：毫秒 |No|
-| **StartTime** | integer | 查询启动时间 |No|
-| **EndTime** | integer | 查询结束时间 |No|
+| **ElapsedTimeMillis** | int | 查询耗时， 单位:：毫秒 |No|
+| **StartTime** | int | 查询启动时间 |No|
+| **EndTime** | int | 查询结束时间 |No|
 
 ## 示例
 
@@ -102,6 +102,7 @@ https://api.ucloud.cn/?Action=ListSQLQueries
   "TotalCount": 124
 }
 ```
+
 
 
 

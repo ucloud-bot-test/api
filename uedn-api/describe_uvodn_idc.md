@@ -30,21 +30,21 @@ UEDN
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Cpu** | integer | 节点cpu核数 |**Yes**|
-| **Memory** | integer | 节点内存大小， 单位GB |**Yes**|
-| **Type** | integer | 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通 |No|
-| **ProductType** | string | 产品类型：normal（通用型），hf（高主频型） |No|
+| **Cpu** | int | 节点cpu核数 |**Yes**|
+| **Memory** | int | 节点内存大小， 单位GB |**Yes**|
 | **IdcId.N** | string | Idc机房id。默认全部机房 |No|
+| **Type** | int | 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通 |No|
+| **ProductType** | string | 产品类型：normal（通用型），hf（高主频型） |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **TotalCount** | integer | 满足条件的镜像 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的镜像 |No|
 | **IdcList** | array[[*IdcInfo*](#IdcInfo)] | 获取的机房信息，具体参考下面IdcInfo |No|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -58,8 +58,8 @@ UEDN
 | **Isp** | string | 运营商 |No|
 | **Province** | string | 省份 |No|
 | **City** | string | 城市 |No|
-| **Type** | integer | 运营商类型：0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通 |No|
-| **MaxNodeCnt** | integer | 机房可创建节点最大数量 |No|
+| **Type** | int | 运营商类型：0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通 |No|
+| **MaxNodeCnt** | int | 机房可创建节点最大数量 |No|
 
 ## 示例
 
@@ -104,6 +104,7 @@ https://api.ucloud.cn/?Action=DescribeUvodnIDC
   "TotalCount": 9
 }
 ```
+
 
 
 

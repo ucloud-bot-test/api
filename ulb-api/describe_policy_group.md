@@ -31,17 +31,17 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **GroupId** | string | 内容转发策略组ID |No|
-| **Offset** | integer | 数据偏移量，默认值为0 |No|
-| **Limit** | integer | 数据分页值，默认为20 |No|
+| **Offset** | int | 数据偏移量，默认值为0 |No|
+| **Limit** | int | 数据分页值，默认为20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*UlbPolicyGroupSet*](#UlbPolicyGroupSet)] | 内容转发策略组列表，具体结构见 UlbPolicyGroupSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*UlbPolicyGroupSet*](#UlbPolicyGroupSet)] | 内容转发策略组列表，具体结构见 UlbPolicyGroupSet |No|
 
 #### 数据模型
 
@@ -70,7 +70,7 @@
 |:---|:---|:---|:---|
 | **BackendId** | string | 后端资源实例的ID |No|
 | **PrivateIP** | string | 后端资源实例的内网IP |No|
-| **Port** | integer | 后端资源实例的服务端口 |No|
+| **Port** | int | 后端资源实例的服务端口 |No|
 
 ## 示例
 
@@ -125,6 +125,7 @@ https://api.ucloud.cn/?Action=DescribePolicyGroup
   "TotalCount": 2
 }
 ```
+
 
 
 

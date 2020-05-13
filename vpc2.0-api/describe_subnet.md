@@ -31,24 +31,24 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
+| **SubnetIds.N** | string | 子网id数组，适用于一次查询多个子网信息 |No|
 | **SubnetId** | string | 子网id，适用于一次查询一个子网信息 |No|
 | **RouteTableId** | string | 路由表Id |No|
 | **VPCId** | string | VPC资源id |No|
 | **Tag** | string | 业务组名称，默认为Default |No|
-| **Offset** | integer | 偏移量，默认为0 |No|
-| **Limit** | integer | 列表长度，默认为20 |No|
+| **Offset** | int | 偏移量，默认为0 |No|
+| **Limit** | int | 列表长度，默认为20 |No|
 | **ShowAvailableIPs** | boolean | 是否返回子网的可用IP数，true为是，false为否，默认不返回 |No|
-| **SubnetIds.N** | string | 子网id数组，适用于一次查询多个子网信息 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 子网总数量 |**Yes**|
-| **DataSet** | array[[*SubnetInfo*](#SubnetInfo)] | 子网信息数组，具体资源见下方SubnetInfo |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 子网总数量 |**Yes**|
+| **DataSet** | array[[*SubnetInfo*](#SubnetInfo)] | 子网信息数组，具体资源见下方SubnetInfo |**Yes**|
 
 #### 数据模型
 
@@ -65,14 +65,14 @@
 | **SubnetName** | string | 子网名称 |No|
 | **Remark** | string | 备注 |No|
 | **Tag** | string | 业务组 |No|
-| **SubnetType** | integer | 子网类型 |No|
+| **SubnetType** | int | 子网类型 |No|
 | **Subnet** | string | 子网网段 |No|
 | **Netmask** | string | 子网掩码 |No|
 | **Gateway** | string | 子网网关 |No|
-| **CreateTime** | integer | 创建时间 |No|
+| **CreateTime** | int | 创建时间 |No|
 | **HasNATGW** | boolean | 是否有natgw |No|
 | **RouteTableId** | string | 路由表Id |No|
-| **AvailableIPs** | integer | 可用IP数量 |No|
+| **AvailableIPs** | int | 可用IP数量 |No|
 
 ## 示例
 
@@ -120,6 +120,7 @@ https://api.ucloud.cn/?Action=DescribeSubnet
   "TotalCount": 1
 }
 ```
+
 
 
 

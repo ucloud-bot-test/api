@@ -31,17 +31,17 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。<br /> |No|
+| **EIPIds.N** | string | 要加入共享带宽的EIP的资源Id |**Yes**|
 | **ShareBandwidthId** | string | 共享带宽ID |**Yes**|
 | **IPVersion** | string | 共享带宽类型，IPv4或者IPv6，不传默认IPv4 |No|
-| **EIPIds.N** | string | 要加入共享带宽的EIP的资源Id |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -68,6 +68,7 @@ https://api.ucloud.cn/?Action=AssociateEIPWithShareBandwidth
   "RetCode": 0
 }
 ```
+
 
 
 

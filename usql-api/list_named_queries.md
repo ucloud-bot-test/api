@@ -31,19 +31,19 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID，不填则为默认项目 |No|
-| **Limit** | integer | 个数（最大1000，默认100） |No|
-| **Offset** | integer | 偏移（默认0） |No|
+| **Limit** | int | 个数（最大1000，默认100） |No|
+| **Offset** | int | 偏移（默认0） |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Request** | string | API请求ID |No|
-| **TotalCount** | integer | 保存的SQL查询总数 |No|
-| **NamedQueries** | array[[*NamedQuery*](#NamedQuery)] | 保存的SQL查询集合 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Request** | string | API请求ID |No|
+| **TotalCount** | int | 保存的SQL查询总数 |No|
+| **NamedQueries** | array[[*NamedQuery*](#NamedQuery)] | 保存的SQL查询集合 |No|
 
 #### 数据模型
 
@@ -52,11 +52,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **NamedQueryId** | integer | 已保存查询ID |**Yes**|
+| **NamedQueryId** | int | 已保存查询ID |**Yes**|
 | **QueryName** | string | 查询名称 |No|
 | **QueryDescription** | string | 查询描述 |No|
 | **QueryString** | string | 查询SQL语句 |No|
-| **CreateTime** | integer | 查询创建时间 |No|
+| **CreateTime** | int | 查询创建时间 |No|
 
 ## 示例
 
@@ -90,6 +90,7 @@ https://api.ucloud.cn/?Action=ListNamedQueries
   "TotalCount": 1
 }
 ```
+
 
 
 

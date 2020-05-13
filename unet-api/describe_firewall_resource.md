@@ -32,18 +32,18 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **FWId** | string | 防火墙ID |**Yes**|
-| **Limit** | integer | 返回数据长度，默认为20，最大10000000 |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20，最大10000000 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ResourceSet** | array[[*ResourceSet*](#ResourceSet)] | 资源列表，见 ResourceSet |No|
-| **TotalCount** | integer | 绑定资源总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **ResourceSet** | array[[*ResourceSet*](#ResourceSet)] | 资源列表，见 ResourceSet |No|
+| **TotalCount** | int | 绑定资源总数 |No|
 
 #### 数据模型
 
@@ -52,13 +52,13 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Zone** | integer | 可用区 |No|
+| **Zone** | int | 可用区 |No|
 | **Name** | string | 名称 |No|
 | **PrivateIP** | string | 内网IP |No|
 | **Remark** | string | 备注 |No|
 | **ResourceID** | string | 绑定该防火墙的资源id |No|
 | **ResourceType** | string | 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计. |No|
-| **Status** | integer | 状态 |No|
+| **Status** | int | 状态 |No|
 | **Tag** | string | 业务组 |No|
 
 ## 示例
@@ -95,6 +95,7 @@ https://api.ucloud.cn/?Action=DescribeFirewallResource
   "TotalCount": 6
 }
 ```
+
 
 
 

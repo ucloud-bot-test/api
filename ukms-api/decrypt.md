@@ -37,12 +37,12 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **KeyId** | string | 加密该数据密钥的主密钥的 KeyId |**Yes**|
 | **Plaintext** | string | 解密后数据密钥的明文 |**Yes**|
 | **Status** | string | 操作结果 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -70,6 +70,7 @@ https://api.ucloud.cn/?Action=Decrypt
   "Status": "success"
 }
 ```
+
 
 
 

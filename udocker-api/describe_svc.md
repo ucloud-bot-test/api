@@ -39,10 +39,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **SvcSet** | array[[*SvcSet*](#SvcSet)] | 服务信息 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **SvcSet** | array[[*SvcSet*](#SvcSet)] | 服务信息 |No|
 
 #### 数据模型
 
@@ -53,8 +53,8 @@
 |:---|:---|:---|:---|
 | **SvcName** | string | 服务名 |**Yes**|
 | **ClusterId** | string | 集群ID |**Yes**|
-| **ProxyCount** | integer | 代理数目 |**Yes**|
-| **PodCount** | integer | Pod数目 |**Yes**|
+| **ProxyCount** | int | 代理数目 |**Yes**|
+| **PodCount** | int | Pod数目 |**Yes**|
 
 ## 示例
 
@@ -89,6 +89,7 @@ https://api.ucloud.cn/?Action=DescribeSVC
   ]
 }
 ```
+
 
 
 

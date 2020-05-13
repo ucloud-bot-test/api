@@ -32,17 +32,17 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目id |No|
 | **GroupId** | string | 待查的硬件隔离组id |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
-| **Limit** | integer | 返回数据长度，默认为20，最大100 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20，最大100 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **IsolationGroupSet** | array[[*IsolationGroup*](#IsolationGroup)] | 硬件隔离组集合。参见数据结构IsolationGroup。 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **IsolationGroupSet** | array[[*IsolationGroup*](#IsolationGroup)] | 硬件隔离组集合。参见数据结构IsolationGroup。 |No|
 
 #### 数据模型
 
@@ -61,7 +61,7 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Zone** | string | 可用区信息 |No|
-| **UHostCount** | integer | 可用区中硬件隔离组中云主机的数量，不超过7。 |No|
+| **UHostCount** | int | 可用区中硬件隔离组中云主机的数量，不超过7。 |No|
 
 ## 示例
 
@@ -438,6 +438,7 @@ https://api.ucloud.cn/?Action=DescribeIsolationGroup
   "RetCode": 0
 }
 ```
+
 
 
 

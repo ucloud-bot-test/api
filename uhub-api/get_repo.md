@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **Type** | string | private私有仓库，public公共仓库，默认public |No|
-| **Offset** | integer | 偏移量，默认0 |No|
-| **Limit** | integer | 数量，默认20 |No|
+| **Offset** | int | 偏移量，默认0 |No|
+| **Limit** | int | 数量，默认20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 总的仓库数量 |**Yes**|
-| **RepoSet** | array[[*RepoSet*](#RepoSet)] | 镜像仓库列表 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 总的仓库数量 |**Yes**|
+| **RepoSet** | array[[*RepoSet*](#RepoSet)] | 镜像仓库列表 |**Yes**|
 
 #### 数据模型
 
@@ -91,6 +91,7 @@ https://api.ucloud.cn/?Action=GetRepo
   "TotalCount": 2
 }
 ```
+
 
 
 

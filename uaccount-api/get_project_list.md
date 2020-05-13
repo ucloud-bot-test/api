@@ -35,11 +35,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ProjectCount** | integer | 项目总数 |**Yes**|
-| **ProjectSet** | array[[*ProjectListInfo*](#ProjectListInfo)] | JSON格式的项目列表实例 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **ProjectCount** | int | 项目总数 |**Yes**|
+| **ProjectSet** | array[[*ProjectListInfo*](#ProjectListInfo)] | JSON格式的项目列表实例 |**Yes**|
 
 #### 数据模型
 
@@ -50,10 +50,10 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID |**Yes**|
 | **ProjectName** | string | 项目名称 |**Yes**|
-| **CreateTime** | integer | 创建时间(Unix时间戳) |**Yes**|
+| **CreateTime** | int | 创建时间(Unix时间戳) |**Yes**|
 | **IsDefault** | boolean | 是否为默认项目 |**Yes**|
-| **ResourceCount** | integer | 项目下资源数量（已废弃，不建议使用） |**Yes**|
-| **MemberCount** | integer | 项目下成员数量 |**Yes**|
+| **ResourceCount** | int | 项目下资源数量（已废弃，不建议使用） |**Yes**|
+| **MemberCount** | int | 项目下成员数量 |**Yes**|
 | **ParentId** | string | 父项目ID（已废弃） |No|
 | **ParentName** | string | 父项目名称（已废弃） |No|
 
@@ -92,6 +92,7 @@ https://api.ucloud.cn/?Action=GetProjectList
   "RetCode": 0
 }
 ```
+
 
 
 

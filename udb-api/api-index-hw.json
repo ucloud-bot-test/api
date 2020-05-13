@@ -6,9 +6,6 @@
       "navigated": true,
       "apis": [
         {
-          "api": "DescribeUDBInstanceBackupState"
-        },
-        {
           "api": "DescribeUDBLogBackupURL"
         },
         {
@@ -28,12 +25,6 @@
         },
         {
           "api": "DescribeUDBBackupBlacklist"
-        },
-        {
-          "api": "DescribeUDBLogPackage"
-        },
-        {
-          "api": "DescribeUDBType"
         },
         {
           "api": "FetchUDBInstanceEarliestRecoverTime"
@@ -99,7 +90,9 @@
         {"api": "ResizeUDBInstance"},
         {"api": "ChangeUDBParamGroup"},
         {"api": "DescribeUDBInstanceLog"},
+        {"api": "DescribeUDBLogPackage"},
         {"api": "DescribeUDBInstanceState"},
+        {"api": "DescribeUDBInstanceBackupState"},
         {"api": "ModifyUDBInstanceName"},
         {"api": "StartUDBInstance"},
         {"api": "ModifyUDBInstancePassword"},

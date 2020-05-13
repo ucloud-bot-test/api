@@ -31,19 +31,19 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
-| **Tag** | string | 业务组名称 |No|
-| **Offset** | integer |  |No|
-| **Limit** | integer |  |No|
 | **VPCIds.N** | string | VPCId |No|
+| **Tag** | string | 业务组名称 |No|
+| **Offset** | int |  |No|
+| **Limit** | int |  |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*VPCInfo*](#VPCInfo)] | vpc信息，具体结构见下方VPCInfo |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*VPCInfo*](#VPCInfo)] | vpc信息，具体结构见下方VPCInfo |No|
 
 #### 数据模型
 
@@ -53,9 +53,9 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **NetworkInfo** | array[[*VPCNetworkInfo*](#VPCNetworkInfo)] |  |**Yes**|
-| **SubnetCount** | integer |  |**Yes**|
-| **CreateTime** | integer |  |**Yes**|
-| **UpdateTime** | integer |  |**Yes**|
+| **SubnetCount** | int |  |**Yes**|
+| **CreateTime** | int |  |**Yes**|
+| **UpdateTime** | int |  |**Yes**|
 | **Tag** | string |  |**Yes**|
 | **Name** | string |  |**Yes**|
 | **VPCId** | string | VPCId |No|
@@ -68,7 +68,7 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Network** | string | vpc地址空间 |No|
-| **SubnetCount** | integer | 地址空间中子网数量 |No|
+| **SubnetCount** | int | 地址空间中子网数量 |No|
 
 ## 示例
 
@@ -133,6 +133,7 @@ https://api.ucloud.cn/?Action=DescribeVPC
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -30,19 +30,19 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Areacode** | string | 查询流量区域 cn代表国内 abroad代表海外，默认全部区域。 |No|
-| **BeginTime** | integer | 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。 |No|
-| **EndTime** | integer | 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。 |No|
 | **DomainId.N** | string | 域名ID，创建加速域名时生成。默认全部域名 |No|
+| **Areacode** | string | 查询流量区域 cn代表国内 abroad代表海外，默认全部区域。 |No|
+| **BeginTime** | int | 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。 |No|
+| **EndTime** | int | 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TrafficSet** | array[[*UcdnDomainTrafficSet*](#UcdnDomainTrafficSet)] | 流量实例表，具体结构见 UcdnDomainTrafficSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TrafficSet** | array[[*UcdnDomainTrafficSet*](#UcdnDomainTrafficSet)] | 流量实例表，具体结构见 UcdnDomainTrafficSet |No|
 
 #### 数据模型
 
@@ -51,8 +51,8 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Time** | integer | 流量获取的时间点，格式为Unix Timestamp |No|
-| **Value** | number | 查询每日流量总值，单位：GB |No|
+| **Time** | int | 流量获取的时间点，格式为Unix Timestamp |No|
+| **Value** | float | 查询每日流量总值，单位：GB |No|
 
 ## 示例
 
@@ -88,6 +88,7 @@ http://api.ucloud.cn/?Action=GetUcdnDomainTraffic
   "RetCode": 0
 }
 ```
+
 
 
 

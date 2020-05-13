@@ -33,19 +33,19 @@
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **ImageType** | string | 镜像类别，枚举为：Base,标准镜像；默认为标准镜像。 |No|
-| **Offset** | integer | 数据偏移量，默认为0 |No|
-| **Limit** | integer | 返回数据长度，默认为20 |No|
 | **ImageId.N** | string | 镜像ID |No|
+| **Offset** | int | 数据偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 满足条件的镜像总数 |No|
-| **ImageSet** | array[[*PHostImageSet*](#PHostImageSet)] | 镜像列表 PHostImageSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的镜像总数 |No|
+| **ImageSet** | array[[*PHostImageSet*](#PHostImageSet)] | 镜像列表 PHostImageSet |No|
 
 #### 数据模型
 
@@ -86,6 +86,7 @@ https://api.ucloud.cn/?Action=DescribePHostImage
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -30,19 +30,19 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Limit** | integer | 每页数量限制(等效page size) |**Yes**|
-| **Offset** | integer | 页面偏移(等效page number) |**Yes**|
+| **Limit** | int | 每页数量限制(等效page size) |**Yes**|
+| **Offset** | int | 页面偏移(等效page number) |**Yes**|
 | **FullDomain** | string | 域名，用于查询单一域名 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **TotalCount** | string | 域名总数 |No|
 | **DomainHostList** | array[[*HostStatausInfo*](#HostStatausInfo)] | 域名信息列表，参考HostStatausInfo |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -53,13 +53,13 @@
 |:---|:---|:---|:---|
 | **FullDomain** | string | 域名 |No|
 | **WorkMode** | string | 工作模式 |No|
-| **RecordID** | integer | 域名记录ID |No|
-| **CertificateID** | integer | 证书ID |No|
+| **RecordID** | int | 域名记录ID |No|
+| **CertificateID** | int | 证书ID |No|
 | **Cname** | string | CNAME记录值 |No|
 | **WorkRegions** | string | 部署区域 |No|
 | **AntiCC** | string | 是否开启CC防护 |No|
 | **Assurance** | string | 是否开启网页防篡改 |No|
-| **CreateTime** | integer | 创建时间戳 |No|
+| **CreateTime** | int | 创建时间戳 |No|
 | **SrcIPInfo** | array[[*SrcIPInfo*](#SrcIPInfo)] | 源站IP地址信息，参考SrcIPInfo |No|
 | **HTTPRedirection** | string | http是否重定向 |No|
 | **HTTPStatus** | string | http状态描述 |No|
@@ -68,9 +68,9 @@
 | **HTTPSException** | string | https异常描述 |No|
 | **UniqueIP** | string | 是否独享IP地址 |No|
 | **RealIPHeader** | string | 真实IP头部 |No|
-| **AttackCount** | integer | 攻击次数 |No|
+| **AttackCount** | int | 攻击次数 |No|
 | **DomainStatus** | array[[*DomainStatus*](#DomainStatus)] | 域名状态信息，参考DomainStatus |No|
-| **DefenceIps** | string | 防御IP地址表(map)，如：{"cn-gd":["192.168.1.2","192.168.1.3"] |No|
+| **DefenceIps** | object | 防御IP地址表(map)，如：{"cn-gd":["192.168.1.2","192.168.1.3"] |No|
 
 #### SrcIPInfo
 
@@ -78,7 +78,7 @@
 |:---|:---|:---|:---|
 | **Proto** | string | 协议 |No|
 | **Ip** | string | 源IP地址 |No|
-| **Ports** | array[integer] | 源端口 |No|
+| **Ports** | array[int] | 源端口 |No|
 | **URI** | string | URI |No|
 
 #### DomainStatus
@@ -163,6 +163,7 @@ https://api.ucloud.cn/?Action=DescribeWafDomainHostInfo
   "TotalCount": 1
 }
 ```
+
 
 
 

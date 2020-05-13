@@ -36,17 +36,17 @@
 | **Password** | string | 如果创建UHost实例时LoginMode为Password，则必须填写，如果LoginMode为KeyPair，不需要填写 （密码格式使用BASE64编码；LoginMode不可变更） |No|
 | **ImageId** | string | 镜像Id，默认使用原镜像 参见 [DescribeImage](api/uhost-api/describe_image) |No|
 | **ReserveDisk** | string | 是否保留数据盘，保留：Yes，不报留：No， 默认：Yes |No|
-| **ResourceType** | integer | 云灾备指明191 |No|
+| **ResourceType** | int | 云灾备指明191 |No|
 | **DNSServers.N** | string | 针对非私有子网主机，可自定义DNS。n可为0-2 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **UhostId** | string | UHost实例资源ID |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **UhostId** | string | UHost实例资源ID |No|
 
 
 
@@ -72,6 +72,7 @@ https://api.ucloud.cn/?Action=ReinstallUHostInstance
   "UHostId": "uhost-qs20fr"
 }
 ```
+
 
 
 

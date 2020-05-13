@@ -32,9 +32,9 @@
 | **ProjectId** | string | 项目ID,如org-xxxx。请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **Name** | string | UPath名字 |**Yes**|
 | **LineId** | string | 选择的线路 |**Yes**|
-| **Bandwidth** | integer | 线路带宽，最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。 |**Yes**|
+| **Bandwidth** | int | 线路带宽，最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。 |**Yes**|
 | **ChargeType** | string | 计费模式，默认为Month 按月收费,可选范围['Month','Year','Dynamic'] |No|
-| **Quantity** | integer | 购买周期，ChargeType为Month时，Quantity默认为0代表购买到月底，按时和按年付费该参数必须大于0 |No|
+| **Quantity** | int | 购买周期，ChargeType为Month时，Quantity默认为0代表购买到月底，按时和按年付费该参数必须大于0 |No|
 | **PostPaid** | boolean | 是否开启后付费, 默认为false |No|
 | **CouponId** | string | 代金券Id |No|
 
@@ -42,10 +42,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **UPathId** | string | 加速线路实例Id |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **UPathId** | string | 加速线路实例Id |**Yes**|
 
 
 
@@ -75,6 +75,7 @@ https://api.ucloud.cn/?Action=CreateUPath
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -36,14 +36,14 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 满足条件的直播加速个数 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的直播加速个数 |**Yes**|
 | **ChargeType** | string | 表示当前的计费方式，traffic代表按流量包计费，bandwidth按带宽付费 |**Yes**|
 | **LastChargeType** | string | 表示最后一次切换的计费方式，traffic代表按流量包计费，bandwidth按带宽付费 |**Yes**|
-| **Arrearage** | array[integer] | 是否欠费，1-国内流量欠费 2-国外流量欠费 3-国内日带宽欠费 4-国外日带宽欠费 (线下按月带宽不需要) |No|
+| **Arrearage** | array[int] | 是否欠费，1-国内流量欠费 2-国外流量欠费 3-国内日带宽欠费 4-国外日带宽欠费 (线下按月带宽不需要) |No|
 | **DomainSet** | array[[*DomainSet*](#DomainSet)] | 获取的域名信息，具体参考下面DomainSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -57,7 +57,7 @@
 | **PublishDomain** | string | 推流域名(拉流加速时，该字段为空) |**Yes**|
 | **PublishCname** | string | 推流Cname域名，客户推流域名需要CNAME到该域名(拉流加速时，该字段为空) |**Yes**|
 | **AccessPoint** | string | 接入点 |**Yes**|
-| **CreatTime** | integer | 创建时间，格式：unix时间戳 |**Yes**|
+| **CreatTime** | int | 创建时间，格式：unix时间戳 |**Yes**|
 | **DomainInfoSet** | array[[*DomainInfoSet*](#DomainInfoSet)] | 播放域名信息列表，参考DomainInfoSet |**Yes**|
 | **Status** | string | 加速状态。checking：配置中；enabled：加速中；failed：失败；deleting：删除中；disabling：禁用中；disabled：禁用 |No|
 | **SourceIp** | string | 源站域名或ip，如不为空，则为拉流域名；如为空则为推流域名 |No|
@@ -122,6 +122,7 @@ https://api.ucloud.cn/?Action=GetUliveDomainDetail
   "TotalCount": 1
 }
 ```
+
 
 
 

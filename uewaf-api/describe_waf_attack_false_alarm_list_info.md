@@ -30,19 +30,19 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Offset** | integer | 记录 偏移，等效于PageNum |**Yes**|
-| **Limit** | integer | 记录限制数目，等效于PageSize |**Yes**|
+| **Offset** | int | 记录 偏移，等效于PageNum |**Yes**|
+| **Limit** | int | 记录限制数目，等效于PageSize |**Yes**|
 | **Domain** | string | 要查询的域名，不填查询所有 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 误报记录总数 |**Yes**|
-| **DetailList** | array[[*WafAttack*](#WafAttack)] | 误报记录列表，参考WafAttack |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 误报记录总数 |**Yes**|
+| **DetailList** | array[[*WafAttack*](#WafAttack)] | 误报记录列表，参考WafAttack |**Yes**|
 
 #### 数据模型
 
@@ -62,10 +62,10 @@
 | **Method** | string | 请求方法 |No|
 | **FalsePositive** | boolean | 是否误报 |No|
 | **RiskRank** | string | 风险等级 |No|
-| **TimeStamp** | integer | 攻击时间戳 |No|
+| **TimeStamp** | int | 攻击时间戳 |No|
 | **Host** | string | 主机名 |No|
 | **Referer** | string | 引用地址 |No|
-| **Count** | integer | 攻击次数 |No|
+| **Count** | int | 攻击次数 |No|
 | **Uri** | string | URI |No|
 | **Client** | string | 客户端 |No|
 | **Mode** | string | 工作模式 |No|
@@ -79,8 +79,8 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Description** | string | 规则描述 |No|
-| **Match** | string | 匹配规则 |No|
-| **Id** | integer | 匹配规则ID |No|
+| **Match** | object | 匹配规则 |No|
+| **Id** | int | 匹配规则ID |No|
 
 #### RequestHeader
 
@@ -190,6 +190,7 @@ https://api.ucloud.cn/?Action=DescribeWafAttackFalseAlarmListInfo
   "TotalCount": 1
 }
 ```
+
 
 
 

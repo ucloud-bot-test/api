@@ -31,21 +31,21 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID，不填则为默认项目 |No|
-| **NamedQueryId** | integer | 已命名查询的Id |**Yes**|
+| **NamedQueryId** | int | 已命名查询的Id |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Request** | string | API请求ID |No|
 | **QueryName** | string | SQL查询名称 |No|
 | **QueryDescription** | string | SQL查询描述 |No|
 | **QueryString** | string | SQL查询语句 |No|
-| **CreateTime** | integer | SQL查询保存时间 |No|
-| **NamedQueryId** | integer | SQL查询ID |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **CreateTime** | int | SQL查询保存时间 |No|
+| **NamedQueryId** | int | SQL查询ID |No|
 
 
 
@@ -75,6 +75,7 @@ https://api.ucloud.cn/?Action=GetNamedQuery
   "RetCode": 0
 }
 ```
+
 
 
 

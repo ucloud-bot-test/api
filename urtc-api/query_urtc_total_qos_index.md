@@ -32,18 +32,18 @@
 | **AppId** | string | 待查询的应用id |**Yes**|
 | **RoomId** | string | 	<br />待查询的房间名 |**Yes**|
 | **QueryUser** | string | 待查询的用户名 |**Yes**|
-| **StartTime** | integer | 秒时间戳 |**Yes**|
-| **EndTime** | integer | 秒时间戳 |**Yes**|
+| **StartTime** | int | 秒时间戳 |**Yes**|
+| **EndTime** | int | 秒时间戳 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Msg** | string | RetCode为0时返回succed,不为0返回具体的错误消息提示内容 |**Yes**|
 | **Data** | [*TotalQosIndex*](#TotalQosIndex) | 参见TotalQosIndex |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -60,7 +60,7 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TimeStamp** | integer | 时间 |**Yes**|
+| **TimeStamp** | int | 时间 |**Yes**|
 | **Value** | string | 数值 |**Yes**|
 
 ## 示例
@@ -117,6 +117,7 @@ https://api.ucloud.cn/?Action=QueryURtcTotalQosIndex
   "RetCode": 0
 }
 ```
+
 
 
 

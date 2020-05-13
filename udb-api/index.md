@@ -6,7 +6,6 @@
 
 | API | 描述信息 |
 |:---|:---|
-|[DescribeUDBInstanceBackupState](api/udb-api/describe_udb_instance_backup_state)|获取实例备份状态|
 |[DescribeUDBLogBackupURL](api/udb-api/describe_udb_log_backup_url)|获取UDB的slowlog备份地址|
 |[SwitchUDBInstanceToHA](api/udb-api/switch_udb_instance_to_ha)|普通UDB切换为高可用|
 |[CheckUDBInstanceToHAAllowance](api/udb-api/check_udb_instance_to_ha_allowance)|核查db是否可以升级为高可用|
@@ -14,8 +13,6 @@
 |[DescribeUDBBinlogBackupURL](api/udb-api/describe_udb_binlog_backup_url)|获取UDB的Binlog备份地址|
 |[DescribeUDBInstanceBinlog](api/udb-api/describe_udb_instance_binlog)|获取UDBbinlog列表|
 |[DescribeUDBBackupBlacklist](api/udb-api/describe_udb_backup_blacklist)|获取备份黑名单|
-|[DescribeUDBLogPackage](api/udb-api/describe_udb_log_package)|列表UDB实例日志备份信息|
-|[DescribeUDBType](api/udb-api/describe_udb_type)|获取云数据库支持类型|
 |[FetchUDBInstanceEarliestRecoverTime](api/udb-api/fetch_udb_instance_earliest_recover_time)|获取最早可回档时间|
 |[CheckRecoverUDBInstance](api/udb-api/check_recover_udb_instance)|核查db是否可以使用回档功能|
 |[EditUDBBackupBlacklist](api/udb-api/edit_udb_backup_blacklist)|编辑备份黑名单|
@@ -50,7 +47,9 @@
 |[ResizeUDBInstance](api/udb-api/resize_udb_instance)|修改UDB实例的配置|
 |[ChangeUDBParamGroup](api/udb-api/change_udb_param_group)|修改配置文件|
 |[DescribeUDBInstanceLog](api/udb-api/describe_udb_instance_log)|获取UDB错误日志或慢查询日志|
+|[DescribeUDBLogPackage](api/udb-api/describe_udb_log_package)|列表UDB实例日志备份信息|
 |[DescribeUDBInstanceState](api/udb-api/describe_udb_instance_state)|获取云数据库状态|
+|[DescribeUDBInstanceBackupState](api/udb-api/describe_udb_instance_backup_state)|获取实例备份状态|
 |[ModifyUDBInstanceName](api/udb-api/modify_udb_instance_name)|修改云数据库名称|
 |[StartUDBInstance](api/udb-api/start_udb_instance)|启动云数据库|
 |[ModifyUDBInstancePassword](api/udb-api/modify_udb_instance_password)|修改DB实例的管理员密码|

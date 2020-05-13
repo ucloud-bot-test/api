@@ -32,20 +32,20 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |No|
 | **Peer1** | string | 专线可用区1，支持地域：北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg, 洛杉矶：us-la， 华盛顿：us-ws， 东京：jpn-tky |**Yes**|
 | **Peer2** | string | 专线可用区2，支持地域：北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg, 洛杉矶：us-la， 华盛顿：us-ws， 东京：jpn-tky |**Yes**|
-| **Bandwidth** | integer | 带宽信息 |**Yes**|
+| **Bandwidth** | int | 带宽信息 |**Yes**|
 | **ChargeType** | string | 计费类型 |No|
-| **Quantity** | integer | 购买时长 |No|
+| **Quantity** | int | 购买时长 |No|
 | **PayMode** | string | PayMode，枚举值，Bandwidth：带宽；Traffic：流量  默认不填写：带宽 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **PurchaseValue** | integer | 资源有效期 unix 时间戳 |**Yes**|
-| **Price** | number | 专线价格 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **PurchaseValue** | int | 资源有效期 unix 时间戳 |**Yes**|
+| **Price** | float | 专线价格 |**Yes**|
 
 
 
@@ -76,6 +76,7 @@ https://api.ucloud.cn/?Action=GetUDPNPrice
   "RetCode": 0
 }
 ```
+
 
 
 

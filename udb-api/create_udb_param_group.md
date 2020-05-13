@@ -34,7 +34,7 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **GroupName** | string | 新配置参数组名称 |**Yes**|
 | **Description** | string | 参数组描述 |**Yes**|
-| **SrcGroupId** | integer | 源参数组id |**Yes**|
+| **SrcGroupId** | int | 源参数组id |**Yes**|
 | **DBTypeId** | string | DB类型id，mysql/mongodb/postgesql按版本细分 1：mysql-5.1，2：mysql-5.5，3：percona-5.5，4：mysql-5.6，5：percona-5.6，6：mysql-5.7，7：percona-5.7，8：mariadb-10.0，9：mongodb-2.4，10：mongodb-2.6，11：mongodb-3.0，12：mongodb-3.2,13：postgresql-9.4，14：postgresql-9.6 |**Yes**|
 | **RegionFlag** | boolean | 是否是地域级别的配置文件，默认是false |No|
 
@@ -42,10 +42,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **GroupId** | integer | 新配置参数组id |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **GroupId** | int | 新配置参数组id |No|
 
 
 
@@ -73,6 +73,7 @@ https://api.ucloud.cn/?Action=CreateUDBParamGroup
   "RetCode": 0
 }
 ```
+
 
 
 

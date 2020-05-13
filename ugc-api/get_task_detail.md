@@ -36,6 +36,9 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **ImageName** | string | 任务使用的镜像名 |No|
 | **Cmd** | string | 镜像运行参数 |No|
 | **OutputDir** | string | 输出文件目录 |No|
@@ -45,16 +48,13 @@
 | **TaskType** | string | 同步任务Sync，异步任务Async |No|
 | **Owner** | string | 任务创建者 |No|
 | **State** | string | Running：运行中，Success：成功，Fail：失败 |No|
-| **CreateTime** | integer | 创建时间，格式为Unix时间戳 |No|
-| **StartTime** | integer | 开始时间，格式为Unix时间戳 |No|
-| **EndTime** | integer | 结束时间，格式为Unix时间戳 |No|
-| **Timeout** | integer | 超时时间 |No|
+| **CreateTime** | int | 创建时间，格式为Unix时间戳 |No|
+| **StartTime** | int | 开始时间，格式为Unix时间戳 |No|
+| **EndTime** | int | 结束时间，格式为Unix时间戳 |No|
+| **Timeout** | int | 超时时间 |No|
 | **StdoutBrief** | string | 任务标准输出概要 |No|
 | **StderrBrief** | string | 任务标准错误概要 |No|
-| **CPUUsage** | integer | CPU使用情况 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **CPUUsage** | int | CPU使用情况 |No|
 
 
 
@@ -94,6 +94,7 @@ https://api.ucloud.cn/?Action=GetTaskDetail
   "Timeout": 10
 }
 ```
+
 
 
 

@@ -30,18 +30,18 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
-| **StorageVolume** | integer | 存储容量，单位: GB*天，范围: [0, 30 000 000]，步长：100GB*天 |No|
-| **DownloadTraffic** | integer | 下载流量，单位: GB，范围: [0, 60 000]，步长：1GB |No|
-| **RequestCount** | integer | 请求次数，单位：万次，范围：[0, 1 000 000]，步长：1万次 |No|
+| **StorageVolume** | int | 存储容量，单位: GB*天，范围: [0, 30 000 000]，步长：100GB*天 |No|
+| **DownloadTraffic** | int | 下载流量，单位: GB，范围: [0, 60 000]，步长：1GB |No|
+| **RequestCount** | int | 请求次数，单位：万次，范围：[0, 1 000 000]，步长：1万次 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Price** | number | 待支付价格，单位：分 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Price** | float | 待支付价格，单位：分 |No|
 
 
 
@@ -67,6 +67,7 @@ https://api.ucloud.cn/uhost/?Action=GetUFileQuotaPrice
   "RetCode": 0
 }
 ```
+
 
 
 

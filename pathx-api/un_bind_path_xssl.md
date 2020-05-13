@@ -32,15 +32,15 @@
 | **ProjectId** | string | 项目ID。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **UGAId** | string | UGA实例ID。 |**Yes**|
 | **SSLId** | string | SSL证书ID。 |**Yes**|
-| **Port.N** | integer | 解绑SSL证书的HTTPS端口。Port.0 Port.1格式 端口错误则解绑失败。 |**Yes**|
+| **Port.N** | int | 解绑SSL证书的HTTPS端口。Port.0 Port.1格式 端口错误则解绑失败。 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -65,6 +65,7 @@ https://api.ucloud.cn/?Action=UnBindPathXSSL
   "RetCode": 0
 }
 ```
+
 
 
 

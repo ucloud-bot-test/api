@@ -39,12 +39,12 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Partitions** | string | topic 分区信息 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Partitions** | object | topic 分区信息 |**Yes**|
 | **TopicProperty** | [*TopicProperty*](#TopicProperty) | topic 属性 |**Yes**|
 | **MessageState** | [*MessageState*](#MessageState) | topic 消息动态 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -53,25 +53,25 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **NumOfReplica** | integer | 副本数量 |No|
-| **NumOfPartition** | integer | 分区数量 |No|
-| **NumOfBroker** | integer | broker 数量 |No|
-| **NumOfOccupyBroker** | integer | 占用 broker 数量 |No|
-| **UnderReplicasPer** | number | 落后副本占比 |No|
-| **BrokerSpreadPer** | number | topic 的 broker 覆盖率 |No|
-| **BrokerSkewedPer** | number | topic 的 broker 倾斜率 |No|
-| **PreferredReplicasPer** | number | 优先副本占有率 |No|
-| **SumOfPartitionOffset** | integer | topic 的 offset 之和 |No|
-| **SumTopicUsage** | integer | topic 的磁盘使用之和 |No|
+| **NumOfReplica** | int | 副本数量 |No|
+| **NumOfPartition** | int | 分区数量 |No|
+| **NumOfBroker** | int | broker 数量 |No|
+| **NumOfOccupyBroker** | int | 占用 broker 数量 |No|
+| **UnderReplicasPer** | float | 落后副本占比 |No|
+| **BrokerSpreadPer** | float | topic 的 broker 覆盖率 |No|
+| **BrokerSkewedPer** | float | topic 的 broker 倾斜率 |No|
+| **PreferredReplicasPer** | float | 优先副本占有率 |No|
+| **SumOfPartitionOffset** | int | topic 的 offset 之和 |No|
+| **SumTopicUsage** | int | topic 的磁盘使用之和 |No|
 
 #### MessageState
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **LastUpdateTime** | integer | topic上次更新时间（时间戳） |No|
-| **BytesInPerSec** | number | topic 每分钟流入消息速率 |No|
-| **BytesOutPerSec** | number | topic 每分钟流出消息速率 |No|
-| **MessagesInPerSec** | number | topic 每分钟流入消息条数 |No|
+| **LastUpdateTime** | int | topic上次更新时间（时间戳） |No|
+| **BytesInPerSec** | float | topic 每分钟流入消息速率 |No|
+| **BytesOutPerSec** | float | topic 每分钟流出消息速率 |No|
+| **MessagesInPerSec** | float | topic 每分钟流入消息条数 |No|
 
 ## 示例
 
@@ -162,6 +162,7 @@ https://api.ucloud.cn/?Action=GetUKafkaTopicInfo
   }
 }
 ```
+
 
 
 

@@ -34,5 +34,8 @@
     - [删除云主机 - TerminateUHostInstance](api/uhost-api/terminate_uhost_instance)
     - [普通升级为方舟机型 - UpgradeToArkUHostInstance](api/uhost-api/upgrade_to_ark_uhost_instance)
 - **附录**
-  - [UHost 错误码列表](api/uhost-api/error_code)
-  - [字段规范](api/uhost-api/specification)
+  * [创建云主机(旧)-CreateUHostInstance](api/uhost-api/create_uhost_instance_old)
+  * [[参考]云主机机型](api/uhost-api/uhost_type)
+  * [[参考]磁盘类型](api/uhost-api/disk_type)
+  * [字段规范](api/uhost-api/specification)
+  * [UHost 错误码列表](api/uhost-api/error_code)

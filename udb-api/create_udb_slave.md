@@ -34,13 +34,13 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **SrcId** | string | master实例的DBId,该值可以通过DescribeUDBInstance获取 |**Yes**|
 | **Name** | string | 实例名称，至少6位 |**Yes**|
-| **Port** | integer | 端口号，mysql默认3306 |No|
+| **Port** | int | 端口号，mysql默认3306 |No|
 | **UseSSD** | boolean | 是否使用SSD，默认为true |No|
 | **SSDType** | string | SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选 |No|
 | **IsLock** | boolean | 是否锁主库，默认为true |No|
 | **InstanceMode** | string | UDB实例部署模式，可选值如下：<br />Normal: 普通单点实例<br />HA: 高可用部署实例 |No|
-| **MemoryLimit** | integer | 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M |No|
-| **DiskSpace** | integer | 磁盘空间(GB), 暂时支持20G - 3000G（API支持，前端暂时只开放内存定制） |No|
+| **MemoryLimit** | int | 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M |No|
+| **DiskSpace** | int | 磁盘空间(GB), 暂时支持20G - 3000G（API支持，前端暂时只开放内存定制） |No|
 | **InstanceType** | string | UDB实例类型：Normal和SATA_SSD |No|
 | **CouponId** | string | 使用的代金券id |No|
 
@@ -48,10 +48,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DBId** | string | 创建slave的DBId |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DBId** | string | 创建slave的DBId |No|
 
 
 
@@ -79,6 +79,7 @@ https://api.ucloud.cn/?Action=CreateUDBSlave
   "RetCode": 0
 }
 ```
+
 
 
 

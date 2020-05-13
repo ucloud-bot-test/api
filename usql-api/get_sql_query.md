@@ -37,21 +37,21 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Request** | string | API请求ID |No|
 | **QueryId** | string | SQL查询ID |No|
 | **State** | string | 查询任务当前状态。<br />RUNNING： 正在运行，<br />CANCELLED：用户取消任务，<br />SUCCEED：任务运行成功，<br />FAILED： 任务运行失败 |No|
-| **ElapsedTime** | integer | 查询已运行时间 |No|
-| **ScannedBytes** | integer | 查询扫描数据字节数 |No|
-| **QueryErrorCode** | integer | 查询任务错误码 |No|
+| **ElapsedTime** | int | 查询已运行时间 |No|
+| **ScannedBytes** | int | 查询扫描数据字节数 |No|
+| **QueryErrorCode** | int | 查询任务错误码 |No|
 | **QueryErrorMessage** | string | 查询任务错误信息 |No|
-| **StartTime** | integer | 查询任务启动时间 |No|
-| **EndTime** | integer | 查询任务结束时间 |No|
+| **StartTime** | int | 查询任务启动时间 |No|
+| **EndTime** | int | 查询任务结束时间 |No|
 | **Headers** | array[string] | 查询结果字段名列表 |No|
 | **QueryType** | string | SQL查询类型， 有SELECT，CREATE_DATABASE, DROP_DATABASE, CREATE_TABLE, DROP_TABLE, SHOW_CREATE_TABLE |No|
-| **OutputRecordCount** | integer | 查询结果的记录总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **OutputRecordCount** | int | 查询结果的记录总数 |No|
 
 
 
@@ -92,6 +92,7 @@ https://api.ucloud.cn/?Action=GetSQLQuery
   "State": "SUCCEED"
 }
 ```
+
 
 
 

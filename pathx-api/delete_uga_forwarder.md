@@ -31,19 +31,19 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **UGAId** | string | 加速配置实例ID |**Yes**|
-| **HTTPHTTP.N** | integer | HTTP接入HTTP回源，接入端口。禁用65123端口 |No|
-| **HTTPSHTTP.N** | integer | HTTPS接入HTTP回源， 接入端口。禁用65123端口 |No|
-| **HTTPSHTTPS.N** | integer | HTTPS接入HTTPS回源， 接入端口。禁用65123端口 |No|
-| **TCP.N** | integer | TCP接入端口 |No|
-| **UDP.N** | integer | UDP接入端口 |No|
+| **HTTPHTTP.N** | int | HTTP接入HTTP回源，接入端口。禁用65123端口 |No|
+| **HTTPSHTTP.N** | int | HTTPS接入HTTP回源， 接入端口。禁用65123端口 |No|
+| **HTTPSHTTPS.N** | int | HTTPS接入HTTPS回源， 接入端口。禁用65123端口 |No|
+| **TCP.N** | int | TCP接入端口 |No|
+| **UDP.N** | int | UDP接入端口 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -70,6 +70,7 @@ https://api.ucloud.cn/?Action=DeleteUGAForwarder
   "RetCode": 0
 }
 ```
+
 
 
 

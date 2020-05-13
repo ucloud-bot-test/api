@@ -32,18 +32,18 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **ShareBandwidthId** | string | 共享带宽ID |**Yes**|
-| **Bandwidth** | integer | 移出共享带宽后，EIP的外网带宽, 单位为Mbps. 各地域带宽范围如下：  流量计费[1-200],带宽计费[1-800] |**Yes**|
+| **Bandwidth** | int | 移出共享带宽后，EIP的外网带宽, 单位为Mbps. 各地域带宽范围如下：  流量计费[1-200],带宽计费[1-800] |**Yes**|
+| **EIPIds.N** | string | EIP的资源Id；默认移出该共享带宽下所有的EIP |No|
 | **PayMode** | string | 移出共享带宽后，EIP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费;  默认为 "Bandwidth". |No|
 | **IPVersion** | string | 共享带宽类型，IPv4或者IPv6，不传默认IPv4 |No|
-| **EIPIds.N** | string | EIP的资源Id；默认移出该共享带宽下所有的EIP |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -70,6 +70,7 @@ https://api.ucloud.cn/?Action=DisassociateEIPWithShareBandwidth
   "RetCode": 0
 }
 ```
+
 
 
 

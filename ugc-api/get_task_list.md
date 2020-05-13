@@ -30,26 +30,26 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
-| **StartTime** | integer | 时间检索起始时间 |**Yes**|
-| **EndTime** | integer | 时间检索结束时间 |**Yes**|
+| **StartTime** | int | 时间检索起始时间 |**Yes**|
+| **EndTime** | int | 时间检索结束时间 |**Yes**|
 | **TaskId** | string | 任务ID，不填返回所有Id的任务 |No|
 | **TaskName** | string | 任务名称，不填返回所有名称的任务 |No|
 | **ImageName** | string | 任务运行对应的镜像名 |No|
 | **TaskType** | string | 同步任务Sync，异步任务Async；默认为All |No|
 | **State** | string | All:所有任务，Running：运行中，Success：成功，Fail：失败；默认为ALL |No|
 | **OrderBy** | string | Default: 默认排序 |No|
-| **Limit** | integer | 返回数据长度，默认为20 |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **TotalCount** | integer | 满足条件的任务总数 |No|
-| **TaskSet** | array[[*UgcTaskSet*](#UgcTaskSet)] | JSON格式的任务列表 参数见 UgcTaskSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的任务总数 |No|
+| **TaskSet** | array[[*UgcTaskSet*](#UgcTaskSet)] | JSON格式的任务列表 参数见 UgcTaskSet |No|
 
 #### 数据模型
 
@@ -63,9 +63,9 @@
 | **TaskType** | string | 同步任务Sync，异步任务Async |No|
 | **Owner** | string | 任务创建者 |No|
 | **State** | string | Running：运行中，Success：成功，Fail：失败 |No|
-| **CreateTime** | integer | 创建时间，格式为Unix时间戳 |No|
-| **StartTime** | integer | 开始时间，格式为Unix时间戳 |No|
-| **EndTime** | integer | 结束时间，格式为Unix时间戳 |No|
+| **CreateTime** | int | 创建时间，格式为Unix时间戳 |No|
+| **StartTime** | int | 开始时间，格式为Unix时间戳 |No|
+| **EndTime** | int | 结束时间，格式为Unix时间戳 |No|
 
 ## 示例
 
@@ -97,6 +97,7 @@ https://api.ucloud.cn/?Action=GetTaskList
   "TotalCount": 1
 }
 ```
+
 
 
 

@@ -39,10 +39,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **Data** | array[[*Allmonitors*](#Allmonitors)] | 返回数据 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Data** | array[[*Allmonitors*](#Allmonitors)] | 返回数据 |**Yes**|
 
 #### 数据模型
 
@@ -51,14 +51,14 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ItemId** | integer | 监控id |**Yes**|
+| **ItemId** | int | 监控id |**Yes**|
 | **Allmonitors** | array[[*AllmonitorsData*](#AllmonitorsData)] | 监控数据 |**Yes**|
 
 #### AllmonitorsData
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **BandId** | integer | 带宽id |No|
+| **BandId** | int | 带宽id |No|
 | **BandName** | string | 带宽名称 |No|
 | **Stats** | array[[*Stats*](#Stats)] | 带宽监控数据 |No|
 
@@ -66,8 +66,8 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ValueTime** | integer | 时间戳 |No|
-| **Value** | integer | 流量值 |No|
+| **ValueTime** | int | 时间戳 |No|
+| **Value** | int | 流量值 |No|
 
 ## 示例
 
@@ -108,6 +108,7 @@ https://api.ucloud.cn/?Action=GetAllBWMonitor
   "RetCode": 0
 }
 ```
+
 
 
 

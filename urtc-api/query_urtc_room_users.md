@@ -31,21 +31,21 @@
 |:---|:---|:---|:---|
 | **AppId** | string | 	<br />查询的AppId (不能为空) |**Yes**|
 | **RoomId** | string | 查询的房间id(不能为空) |**Yes**|
-| **StartTime** | integer | 待查询开始时间 |**Yes**|
-| **EndTime** | integer | 待查询结束时间 |**Yes**|
-| **Offset** | integer | 列表起始位置偏移量，默认为0<br /> |No|
-| **Limit** | integer | 返回数据长度，默认为20，最大100<br /> |No|
+| **StartTime** | int | 待查询开始时间 |**Yes**|
+| **EndTime** | int | 待查询结束时间 |**Yes**|
+| **Offset** | int | 列表起始位置偏移量，默认为0<br /> |No|
+| **Limit** | int | 返回数据长度，默认为20，最大100<br /> |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Msg** | string | RetCode为0时返回succed,不为0返回具体的错误消息提示内容 |**Yes**|
 | **Data** | array[[*RoomUsersInfo*](#RoomUsersInfo)] | 用户信息列表（数组元素查看RoomUsersInfo） |**Yes**|
-| **TotalCount** | integer | 房间总人数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 房间总人数 |No|
 
 #### 数据模型
 
@@ -56,13 +56,13 @@
 |:---|:---|:---|:---|
 | **Region** | string | 区域 |**Yes**|
 | **UserId** | string | 用户ID |**Yes**|
-| **LastEnterTime** | integer | 最后一次进入房间时间 |**Yes**|
-| **LastLeaveTime** | integer | 最后一次离开房间时间，未离开返回0 |**Yes**|
+| **LastEnterTime** | int | 最后一次进入房间时间 |**Yes**|
+| **LastLeaveTime** | int | 最后一次离开房间时间，未离开返回0 |**Yes**|
 | **Sdkv** | string | sdk版本 |**Yes**|
 | **Device** | string | 设备名称 |**Yes**|
 | **System** | string | 系统类型 |**Yes**|
 | **Network** | string | 网络类型 |**Yes**|
-| **FirstEnterTime** | integer | 最早一次进入房间时间 |**Yes**|
+| **FirstEnterTime** | int | 最早一次进入房间时间 |**Yes**|
 | **Available** | boolean | 设备可用性 |**Yes**|
 
 ## 示例
@@ -101,6 +101,7 @@ https://api.ucloud.cn/?Action=QueryURtcRoomUsers
   "TotalCount": 4
 }
 ```
+
 
 
 

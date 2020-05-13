@@ -36,10 +36,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Data** | [*ConfigData*](#ConfigData) | 详细配置信息 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Data** | [*ConfigData*](#ConfigData) | 详细配置信息 |No|
 
 #### 数据模型
 
@@ -51,7 +51,7 @@
 | **TaskId** | string | 任务 ID |No|
 | **Name** | string | 任务名称 |No|
 | **Type** | string | 任务类型, full全量, incremental增量，full+incremental全量+增量。 |No|
-| **MaxRetryCount** | integer | 最大失败重试次数 |No|
+| **MaxRetryCount** | int | 最大失败重试次数 |No|
 | **Source** | [*Source*](#Source) | Source  |No|
 | **Target** | [*Source*](#Source) | Target  |No|
 
@@ -61,7 +61,7 @@
 |:---|:---|:---|:---|
 | **DataType** | string | 源数据类型可以是 mysql, tidb, csv, oracle, udb-mysql。<br />目的数据类型可以是 mysql, tidb, udb-mysql, udw. |**Yes**|
 | **NWType** | string | 网络类型 |**Yes**|
-| **BandwidthLimit** | integer | 设置的最大的速率，单位MB/s，公网/专线(0, 56]，用户网(0, 1024]，不填/超过默认是峰值 |No|
+| **BandwidthLimit** | int | 设置的最大的速率，单位MB/s，公网/专线(0, 56]，用户网(0, 1024]，不填/超过默认是峰值 |No|
 | **CSVNode** | [*CSVNode*](#CSVNode) | 当 DataType 为csv的时候使用。 |No|
 | **MySQLNode** | [*MySQLNode*](#MySQLNode) | 当 DataType 为mysql的时候使用。 |No|
 | **TiDBNode** | [*TiDBNode*](#TiDBNode) | 当 DataType 为tidb的时候使用。 |No|
@@ -87,7 +87,7 @@
 |:---|:---|:---|:---|
 | **DataBase** | string | DB 名字， 长度不超过63个字符 |**Yes**|
 | **Host** | string | 数据库地址，长度不能超过 60个字符 |**Yes**|
-| **Port** | integer | 数据库端口，端口范围 1-65535 |**Yes**|
+| **Port** | int | 数据库端口，端口范围 1-65535 |**Yes**|
 | **User** | string | 数据库用户名，长度不能超过 32个字符 |**Yes**|
 | **Password** | string | 数据库密码，长度不起来32个字符 |**Yes**|
 | **Table** | string | 表名， 长度不超过64个字符 |No|
@@ -102,7 +102,7 @@
 |:---|:---|:---|:---|
 | **DataBase** | string | DB 名字， 长度不超过63个字符 |**Yes**|
 | **Host** | string | 数据库地址，长度不能超过 60个字符 |**Yes**|
-| **Port** | integer | 数据库端口，端口范围 1-65535 |**Yes**|
+| **Port** | int | 数据库端口，端口范围 1-65535 |**Yes**|
 | **User** | string | 数据库用户名，长度不能超过 32个字符 |**Yes**|
 | **Password** | string | 数据库密码，长度不起来32个字符 |**Yes**|
 | **Table** | string | 表名， 长度不超过64个字符 |No|
@@ -116,7 +116,7 @@
 |:---|:---|:---|:---|
 | **DataBase** | string | DB 名字， 长度不超过63个字符 |**Yes**|
 | **Host** | string | 数据库地址，长度不能超过 60个字符 |**Yes**|
-| **Port** | integer | 数据库端口，端口范围 1-65535 |**Yes**|
+| **Port** | int | 数据库端口，端口范围 1-65535 |**Yes**|
 | **User** | string | 数据库用户名，长度不能超过 32个字符 |**Yes**|
 | **Password** | string | 数据库密码，长度不起来32个字符 |**Yes**|
 | **VPCId** | string | VPC 资源ID, 只有当 Host 为 UCloud 用户内网地址的时候需要提供。 |**Yes**|
@@ -151,8 +151,8 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **BinlogName** | string | Binlog 文件名， 长度不超过128字符 |**Yes**|
-| **BinlogPos** | integer | Binlog Pos |**Yes**|
-| **ServerId** | integer | 分配给UDTS task的server ID, 必须在MySQL集群中唯一 |**Yes**|
+| **BinlogPos** | int | Binlog Pos |**Yes**|
+| **ServerId** | int | 分配给UDTS task的server ID, 必须在MySQL集群中唯一 |**Yes**|
 | **BinlogGTID** | string | GTID |No|
 
 #### PolicyData
@@ -241,6 +241,7 @@ https://api.ucloud.cn/?Action=GetUDTSTaskConfigure
   "RetCode": 0
 }
 ```
+
 
 
 

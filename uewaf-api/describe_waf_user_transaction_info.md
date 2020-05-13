@@ -35,10 +35,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TransactionInfo** | array[[*TransactionInfo*](#TransactionInfo)] | 用户购买服务的详细信息，参考TransactionInfo |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TransactionInfo** | array[[*TransactionInfo*](#TransactionInfo)] | 用户购买服务的详细信息，参考TransactionInfo |**Yes**|
 
 #### 数据模型
 
@@ -51,14 +51,14 @@
 | **Editon** | string | 版本类型 |No|
 | **ExpireTime** | string | 服务到期时间 |No|
 | **ChargeType** | string | 付费类型 |No|
-| **Price** | number | 购买价格，单位：元，精确到分 |No|
-| **TransactionId** | integer | 资源的唯一索引 |No|
+| **Price** | float | 购买价格，单位：元，精确到分 |No|
+| **TransactionId** | int | 资源的唯一索引 |No|
 | **TransactionNo** | string | 资源订单号 |No|
 | **HasWaf** | boolean | 是否购买了WAF |No|
 | **Expired** | string | 是否已过期，有此字段即为已过期 |No|
 | **WorkRegions** | string | 部署区域 |No|
 | **Serving** | string | 服务是否生效中 |No|
-| **LogStorage** | integer | 是否开启日志扩展包 |No|
+| **LogStorage** | int | 是否开启日志扩展包 |No|
 
 ## 示例
 
@@ -92,6 +92,7 @@ https://api.ucloud.cn/?Action=DescribeWafUserTransactionInfo
   }
 }
 ```
+
 
 
 

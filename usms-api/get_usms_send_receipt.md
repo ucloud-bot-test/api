@@ -38,10 +38,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **Data** | array[[*ReceiptPerSession*](#ReceiptPerSession)] | 回执信息集合 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Data** | array[[*ReceiptPerSession*](#ReceiptPerSession)] | 回执信息集合 |**Yes**|
 
 #### 数据模型
 
@@ -58,10 +58,10 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Phone** | string | 手机号码 |**Yes**|
-| **CostCount** | integer | 消耗短信条数 |**Yes**|
+| **CostCount** | int | 消耗短信条数 |**Yes**|
 | **ReceiptResult** | string | 回执结果 |**Yes**|
 | **ReceiptDesc** | string | 回执结果描述 |**Yes**|
-| **ReceiptTime** | integer | 回执返回时间 |**Yes**|
+| **ReceiptTime** | int | 回执返回时间 |**Yes**|
 
 ## 示例
 
@@ -97,6 +97,7 @@ https://api.ucloud.cn/?Action=GetUSMSSendReceipt
   "RetCode": 0
 }
 ```
+
 
 
 

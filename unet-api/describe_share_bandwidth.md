@@ -37,11 +37,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*UnetShareBandwidthSet*](#UnetShareBandwidthSet)] | 共享带宽信息组 参见 UnetShareBandwidthSet |No|
-| **TotalCount** | integer | 符合条件的共享带宽总数，大于等于返回DataSet长度 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*UnetShareBandwidthSet*](#UnetShareBandwidthSet)] | 共享带宽信息组 参见 UnetShareBandwidthSet |No|
+| **TotalCount** | int | 符合条件的共享带宽总数，大于等于返回DataSet长度 |No|
 
 #### 数据模型
 
@@ -51,21 +51,21 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **IPVersion** | string | 共享带宽类型 |**Yes**|
-| **ShareBandwidth** | integer | 共享带宽值(预付费)/共享带宽峰值(后付费), 单位Mbps |No|
+| **ShareBandwidth** | int | 共享带宽值(预付费)/共享带宽峰值(后付费), 单位Mbps |No|
 | **ShareBandwidthId** | string | 共享带宽的资源ID |No|
 | **ChargeType** | string | 付费方式, 预付费:Year 按年,Month 按月,Dynamic 按需;后付费:PostPay(按月) |No|
-| **CreateTime** | integer | 创建时间, 格式为Unix Timestamp |No|
-| **ExpireTime** | integer | 过期时间, 格式为Unix Timestamp |No|
+| **CreateTime** | int | 创建时间, 格式为Unix Timestamp |No|
+| **ExpireTime** | int | 过期时间, 格式为Unix Timestamp |No|
 | **EIPSet** | array[[*EIPSetData*](#EIPSetData)] | EIP信息,详情见 EIPSetData |No|
-| **BandwidthGuarantee** | integer | 共享带宽保底值(后付费) |No|
-| **PostPayStartTime** | integer | 共享带宽后付费开始计费时间(后付费) |No|
+| **BandwidthGuarantee** | int | 共享带宽保底值(后付费) |No|
+| **PostPayStartTime** | int | 共享带宽后付费开始计费时间(后付费) |No|
 | **Name** | string | 共享带宽名称 |No|
 
 #### EIPSetData
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Bandwidth** | integer | EIP带宽值 |No|
+| **Bandwidth** | int | EIP带宽值 |No|
 | **EIPAddr** | array[[*EIPAddrSet*](#EIPAddrSet)] | EIP的IP信息，详情见EIPAddrSet |No|
 | **EIPId** | string | EIP资源Id |No|
 
@@ -118,6 +118,7 @@ https://api.ucloud.cn/?Action=DescribeShareBandwidth
   "TotolCount": 2
 }
 ```
+
 
 
 

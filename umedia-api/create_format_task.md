@@ -30,23 +30,23 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
+| **Url.N** | string | 原始视频地址，只支持http协议，不支持https以及其他协议。单次提交url数量最多为10条。 |**Yes**|
 | **DestBucket** | string | 存放转码后视频文件的bucket，需使用bucket全名，如：video.cn-bj.ufileos.com |**Yes**|
 | **BaseDir** | string | 上传文件的路径。DestBucket、BaseDir、目标文件名三个参数共同决定了转码后文件的下载url地址。 |No|
 | **DestFormat** | string | 目标文件的封装格式，支持mp4、flv、mpegts、m3u8四种。不传该参数，则默认为m3u8 |No|
 | **CallbackUrl** | string | 任务结束后，回调客户的url地址。 |No|
-| **VideoBeginTime** | integer | 视频的开始时间,时间单位为秒 |No|
-| **VideoEndTime** | integer | 视频的结束时间,时间单位为秒 |No|
-| **Url.N** | string | 原始视频地址，只支持http协议，不支持https以及其他协议。单次提交url数量最多为10条。 |**Yes**|
+| **VideoBeginTime** | int | 视频的开始时间,时间单位为秒 |No|
+| **VideoEndTime** | int | 视频的结束时间,时间单位为秒 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalTaskCount** | integer | 生成的总的任务条数 |No|
-| **TaskIdList** | array[[*TaskIdList*](#TaskIdList)] | 生成的任务Id列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalTaskCount** | int | 生成的总的任务条数 |No|
+| **TaskIdList** | array[[*TaskIdList*](#TaskIdList)] | 生成的任务Id列表 |No|
 
 #### 数据模型
 
@@ -82,6 +82,7 @@ https://api.ucloud.cn/?Action=CreateFormatTask
   "TotalTaskCount": 1
 }
 ```
+
 
 
 

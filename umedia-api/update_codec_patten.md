@@ -31,10 +31,10 @@
 |:---|:---|:---|:---|
 | **PattenId** | string | 模板ID |**Yes**|
 | **PattenName** | string | 模版名称,长度不查过256个字节 |**Yes**|
-| **DestVideoBitrate** | integer | 视频码率，单位kbps,范围[200,4000]或者是0。如果为0，则表示由视频工厂输出自适应码率 |**Yes**|
+| **DestVideoBitrate** | int | 视频码率，单位kbps,范围[200,4000]或者是0。如果为0，则表示由视频工厂输出自适应码率 |**Yes**|
 | **DestVideoResolution** | string | 视频分辨率，格式为像素宽度x像素高度，例如1280x720。不传该字段则表示不改变分辨率 |No|
-| **DestAudioBitrate** | integer | 音频码率，单位kbps，范围[16,192]，默认使用48。 |No|
-| **DestAudioSample** | integer | 音频采样率，单位hz,可选值为22050、32000，44100，默认使用44100 |No|
+| **DestAudioBitrate** | int | 音频码率，单位kbps，范围[16,192]，默认使用48。 |No|
+| **DestAudioSample** | int | 音频采样率，单位hz,可选值为22050、32000，44100，默认使用44100 |No|
 | **DestAudioChannel** | string | 音频声道数量。可选值为1（单声道）、2（双声道），默认使用2（双声道）。 |No|
 | **DestFormat** | string | 目标视频格式，可选值为mp4、flv、mpegts。 |**Yes**|
 | **DestSuffix** | string | 目标视频的文件名后缀，长度不超过32个字符 |**Yes**|
@@ -45,9 +45,9 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -77,6 +77,7 @@ https://api.ucloud.cn/?Action=UpdateCodecPatten
   "RetCode": 0
 }
 ```
+
 
 
 

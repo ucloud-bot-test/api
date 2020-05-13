@@ -35,22 +35,22 @@
 | **Name** | string | 实例名称，至少6位 |**Yes**|
 | **AdminPassword** | string | 管理员密码 |**Yes**|
 | **DBTypeId** | string | DB类型id，mysql/mongodb/postgesql按版本细分 1：mysql-5.1，2：mysql-5.5，3：percona-5.5，4：mysql-5.6，5：percona-5.6，6：mysql-5.7，7：percona-5.7，8：mariadb-10.0，9：mongodb-2.4，10：mongodb-2.6，11：mongodb-3.0，12：mongodb-3.2,13：postgresql-9.4，14：postgresql-9.6，14：postgresql-10.4 |**Yes**|
-| **Port** | integer | 端口号，mysql默认3306，mongodb默认27017，postgresql默认5432 |**Yes**|
-| **DiskSpace** | integer | 磁盘空间(GB), 暂时支持20G - 3000G |**Yes**|
-| **ParamGroupId** | integer | DB实例使用的配置参数组id |**Yes**|
-| **MemoryLimit** | integer | 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M |**Yes**|
+| **Port** | int | 端口号，mysql默认3306，mongodb默认27017，postgresql默认5432 |**Yes**|
+| **DiskSpace** | int | 磁盘空间(GB), 暂时支持20G - 3000G |**Yes**|
+| **ParamGroupId** | int | DB实例使用的配置参数组id |**Yes**|
+| **MemoryLimit** | int | 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M |**Yes**|
 | **ChargeType** | string | Year， Month， Dynamic，Trial，默认: Month |No|
-| **Quantity** | integer | 购买时长，默认值1 |No|
+| **Quantity** | int | 购买时长，默认值1 |No|
 | **AdminUser** | string | 管理员帐户名，默认root |No|
-| **BackupCount** | integer | 备份策略，每周备份数量，默认7次 |No|
-| **BackupTime** | integer | 备份策略，备份开始时间，单位小时计，默认1点 |No|
-| **BackupDuration** | integer | 备份策略，备份时间间隔，单位小时计，默认24小时 |No|
-| **BackupId** | integer | 备份id，如果指定，则表明从备份恢复实例 |No|
+| **BackupCount** | int | 备份策略，每周备份数量，默认7次 |No|
+| **BackupTime** | int | 备份策略，备份开始时间，单位小时计，默认1点 |No|
+| **BackupDuration** | int | 备份策略，备份时间间隔，单位小时计，默认24小时 |No|
+| **BackupId** | int | 备份id，如果指定，则表明从备份恢复实例 |No|
 | **UseSSD** | boolean | 是否使用SSD，默认为true。目前主要可用区、海外机房、新机房只提供SSD资源，非SSD资源不再提供。 |No|
 | **SSDType** | string | SSD类型，可选值为"SATA"、"PCI-E"、“NVMe”，如果UseSSD为true ，则必选 |No|
 | **InstanceMode** | string | UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例 "HA": 高可用版UDB实例 默认是"Normal" |No|
 | **UDBCId** | string | 专区ID信息（如果这个参数存在这说明是在专区中创建DB） |No|
-| **CPU** | integer | cpu核数 |No|
+| **CPU** | int | cpu核数 |No|
 | **InstanceType** | string | UDB数据库机型: "Normal": "标准机型" , "SATA_SSD": "SSD机型" , "PCIE_SSD": "SSD高性能机型" , "Normal_Volume": "标准大容量机型", "SATA_SSD_Volume": "SSD大容量机型" , "PCIE_SSD_Volume": "SSD高性能大容量机型", "NVMe_SSD": "快杰机型" |No|
 | **BackupZone** | string | 跨可用区高可用备库所在可用区，参见 [可用区列表](api/summary/regionlist) |No|
 | **SubnetId** | string | 子网ID |No|
@@ -66,10 +66,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DBId** | string | BD实例id |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DBId** | string | BD实例id |No|
 
 
 
@@ -107,6 +107,7 @@ https://api.ucloud.cn/?Action=CreateUDBInstance
   "RetCode": 0
 }
 ```
+
 
 
 

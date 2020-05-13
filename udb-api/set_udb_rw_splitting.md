@@ -33,17 +33,17 @@
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |**Yes**|
 | **MasterDBId** | string | DB实例ID（master) |**Yes**|
 | **ReadModel** | string | 读写分离策略 |**Yes**|
-| **DelayThreshold** | integer | 时间阙值 |No|
 | **DBIds.N** | string | DBIds.0 代表UDB主节点， DBIds.1 到DBIds.n 代表1到N个从节点 |**Yes**|
 | **ReadPercents.N** | string | udb主从节点的只读比例。ReadPercents.0代表主节点的只读比例，ReadPercents.1代表从节点1的读写比例， 以此类推 |No|
+| **DelayThreshold** | int | 时间阙值 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -70,6 +70,7 @@ https://api.ucloud.cn/?Action=SetUDBRWSplitting
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -33,16 +33,16 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **TokenId** | string | 令牌ID，只返回指定ID信息，否则拉取所有令牌 |No|
 | **TokenName** | string | 令牌名称，只返回指定令牌名称信息，否则拉取所有令牌 |No|
-| **Display** | integer | 0表示显示部分token信息；不传递和其他情况表示显示全部token信息 |No|
+| **Display** | int | 0表示显示部分token信息；不传递和其他情况表示显示全部token信息 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*UFileTokenSet*](#UFileTokenSet)] | 令牌描述信息 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*UFileTokenSet*](#UFileTokenSet)] | 令牌描述信息 |**Yes**|
 
 #### 数据模型
 
@@ -58,9 +58,9 @@
 | **AllowedOps** | array[string] | 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ] |**Yes**|
 | **AllowedPrefixes** | array[string] | 令牌允许操作的key前缀 |**Yes**|
 | **AllowedBuckets** | array[string] | 令牌允许操作的bucket |**Yes**|
-| **ExpireTime** | integer | 令牌的超时时间点 |**Yes**|
-| **CreateTime** | integer | 创建时间 |**Yes**|
-| **ModifyTime** | integer | 修改时间 |**Yes**|
+| **ExpireTime** | int | 令牌的超时时间点 |**Yes**|
+| **CreateTime** | int | 创建时间 |**Yes**|
+| **ModifyTime** | int | 修改时间 |**Yes**|
 | **Region** | string | 所属地区 |**Yes**|
 
 ## 示例
@@ -124,6 +124,7 @@ https://api.ucloud.cn/?Action=DescribeUFileToken
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -30,14 +30,14 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID，不填表示默认项目 |No|
-| **Offset** | integer | 页面偏移 |**Yes**|
-| **Limit** | integer | 每页数量限制 |**Yes**|
+| **Offset** | int | 页面偏移 |**Yes**|
+| **Limit** | int | 每页数量限制 |**Yes**|
 | **TimeType** | string | 时间单位；可选项：Hour\|Day\|Week\|Month\|Custom；默认Hour |No|
 | **AttackType** | string | 攻击类型["scan", "loopholes", "xss", "cc", "sql", "exec", "webshell", "infoleak", "eaa", "protocol", "other"] |No|
 | **RiskRank** | string | 风险级别 |No|
 | **ActionType** | string | 匹配动作，拦截、放行、告警 |No|
-| **BeginTime** | integer | 自定义开始时间戳 |No|
-| **EndTime** | integer | 自定义结束时间戳 |No|
+| **BeginTime** | int | 自定义开始时间戳 |No|
+| **EndTime** | int | 自定义结束时间戳 |No|
 | **FullDomain** | string | 要查询的域名，为空时查询所有 |No|
 | **SortArray** | string | 排序方式 |No|
 
@@ -45,11 +45,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DetailList** | array[[*WafAttack*](#WafAttack)] | 攻击详情列表，参考WafAttack |No|
-| **TotalCount** | integer | 攻击详情总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DetailList** | array[[*WafAttack*](#WafAttack)] | 攻击详情列表，参考WafAttack |No|
+| **TotalCount** | int | 攻击详情总数 |No|
 
 #### 数据模型
 
@@ -69,10 +69,10 @@
 | **Method** | string | 请求方法 |No|
 | **FalsePositive** | boolean | 是否误报 |No|
 | **RiskRank** | string | 风险等级 |No|
-| **TimeStamp** | integer | 攻击时间戳 |No|
+| **TimeStamp** | int | 攻击时间戳 |No|
 | **Host** | string | 主机名 |No|
 | **Referer** | string | 引用地址 |No|
-| **Count** | integer | 攻击次数 |No|
+| **Count** | int | 攻击次数 |No|
 | **Uri** | string | URI |No|
 | **Client** | string | 客户端 |No|
 | **Mode** | string | 工作模式 |No|
@@ -86,8 +86,8 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Description** | string | 规则描述 |No|
-| **Match** | string | 匹配规则 |No|
-| **Id** | integer | 匹配规则ID |No|
+| **Match** | object | 匹配规则 |No|
+| **Id** | int | 匹配规则ID |No|
 
 #### RequestHeader
 
@@ -199,6 +199,7 @@ https://api.ucloud.cn/?Action=DescribeWafAttackDetailListInfo
   "TotalCount": 1
 }
 ```
+
 
 
 

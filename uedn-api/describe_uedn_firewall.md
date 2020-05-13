@@ -32,18 +32,18 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **FirewallId** | string | 防火墙ID，默认为返回所有防火墙 |No|
 | **ResourceId** | string | 绑定防火墙组的资源ID |No|
-| **Limit** | integer | 返回数据长度，默认为20 |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **FirewallSet** | array[[*FirewallInfo*](#FirewallInfo)] | 防火墙组详细信息，参见 FirewallInfo |No|
-| **TotalCount** | integer | 满足条件的节点总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **FirewallSet** | array[[*FirewallInfo*](#FirewallInfo)] | 防火墙组详细信息，参见 FirewallInfo |No|
+| **TotalCount** | int | 满足条件的节点总数 |No|
 
 #### 数据模型
 
@@ -54,9 +54,9 @@
 |:---|:---|:---|:---|
 | **FirewallId** | string | 防火墙Id |**Yes**|
 | **Name** | string | 防火墙名称 |**Yes**|
-| **CreateTime** | integer | 创建时间 |**Yes**|
+| **CreateTime** | int | 创建时间 |**Yes**|
 | **Rule** | array[[*RuleInfo*](#RuleInfo)] | 防火墙规则组，详情参见RuleInfo |**Yes**|
-| **ResourceCount** | integer | 防火墙绑定资源数量 |**Yes**|
+| **ResourceCount** | int | 防火墙绑定资源数量 |**Yes**|
 | **Type** | string | 防火墙组类型，枚举值为： "user defined", 用户自定义防火墙； "recommend web", 默认Web防火墙； "recommend non web", 默认非Web防火墙 |**Yes**|
 | **Remark** | string | 描述 |No|
 
@@ -111,6 +111,7 @@ https://api.ucloud.cn/?Action=DescribeUEdnFirewall
   "TotalCount": 2
 }
 ```
+
 
 
 

@@ -36,11 +36,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | DataSet中的元素个数 |**Yes**|
-| **DataSet** | array[[*UDPNLineSet*](#UDPNLineSet)] | 当前支持的专线线路详细信息，详见UDPNLineSet |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | DataSet中的元素个数 |**Yes**|
+| **DataSet** | array[[*UDPNLineSet*](#UDPNLineSet)] | 当前支持的专线线路详细信息，详见UDPNLineSet |**Yes**|
 
 #### 数据模型
 
@@ -51,7 +51,7 @@
 |:---|:---|:---|:---|
 | **LocalRegion** | string | 支持UDPN的地域之一，北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg, 华盛顿：us-ws, 洛杉矶：us-la， 东京：jpn-tky |**Yes**|
 | **RemoteRegion** | string | 支持UDPN的地域之一，北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg, 华盛顿：us-ws, 洛杉矶：us-la， 东京：jpn-tky |**Yes**|
-| **BandwidthUpperLimit** | integer | 线路带宽上限,单位 M |**Yes**|
+| **BandwidthUpperLimit** | int | 线路带宽上限,单位 M |**Yes**|
 
 ## 示例
 
@@ -89,6 +89,7 @@ https://api.ucloud.cn/?Action=GetUDPNLineList
   "TotalCount": 3
 }
 ```
+
 
 
 

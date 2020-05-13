@@ -36,11 +36,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ResourceSet** | array[[*ResourceInfo*](#ResourceInfo)] | 资源列表，详情参见ResourceInfo |**Yes**|
-| **TotalCount** | integer | 资源总数 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **ResourceSet** | array[[*ResourceInfo*](#ResourceInfo)] | 资源列表，详情参见ResourceInfo |**Yes**|
+| **TotalCount** | int | 资源总数 |**Yes**|
 
 #### 数据模型
 
@@ -52,7 +52,7 @@
 | **ResourceId** | string | 资源Id |**Yes**|
 | **PublicIpList** | array[string] | 节点公网Ip列表 |**Yes**|
 | **Name** | string | 节点名称 |**Yes**|
-| **State** | integer | 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常 |**Yes**|
+| **State** | int | 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常 |**Yes**|
 | **Remark** | string | 节点备注 |No|
 
 ## 示例
@@ -85,6 +85,7 @@ https://api.ucloud.cn/?Action=DescribeUEdnFirewallResource
   "TotalCount": 1
 }
 ```
+
 
 
 

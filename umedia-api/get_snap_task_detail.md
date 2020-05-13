@@ -36,19 +36,19 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **SrcUrl** | string | 原始视频url地址 |No|
 | **SnapType** | string | 截图模式，single表示确定时间点单张截图，periodic表示周期截图,dynamic表示为gif截图 |No|
 | **ImageName** | string | 截图输出的文件名（这里指基础图片的文件名，不包括后缀） |No|
 | **ImageFormat** | string | 图片格式类型 |No|
-| **ImageCount** | integer | 截图张数，只有任务状态处理完成时值才有意义。 |No|
+| **ImageCount** | int | 截图张数，只有任务状态处理完成时值才有意义。 |No|
 | **DestBucket** | string | 存储图片的ufile的bucket名称 |No|
-| **CreateTime** | integer | 任务创建时间，单位：Unix时间戳 |No|
-| **FinishTime** | integer | 任务结束时间，单位：Unix时间戳。只有任务状态为处理完成时值才有意义，默认为0。 |No|
+| **CreateTime** | int | 任务创建时间，单位：Unix时间戳 |No|
+| **FinishTime** | int | 任务结束时间，单位：Unix时间戳。只有任务状态为处理完成时值才有意义，默认为0。 |No|
 | **Status** | string | 任务状态：waiting、processing、finished、failed，分别表示排队中，处理中，处理完成，处理失败。 |No|
 | **ImageList** | string | 文件名列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -86,6 +86,7 @@ https://api.ucloud.cn/?Action=GetSnapTaskDetail&TaskId=1
   "TaskId": "1"
 }
 ```
+
 
 
 

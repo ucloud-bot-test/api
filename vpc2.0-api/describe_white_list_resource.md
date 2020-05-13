@@ -37,11 +37,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*NatGWWhitelistDataSet*](#NatGWWhitelistDataSet)] | 白名单资源的详细信息，详见DescribeResourceWhiteListDataSet |**Yes**|
-| **TotalCount** | integer | 上述DataSet总数量 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*NatGWWhitelistDataSet*](#NatGWWhitelistDataSet)] | 白名单资源的详细信息，详见DescribeResourceWhiteListDataSet |**Yes**|
+| **TotalCount** | int | 上述DataSet总数量 |**Yes**|
 
 #### 数据模型
 
@@ -51,7 +51,7 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **NATGWId** | string | NATGateWay Id |**Yes**|
-| **IfOpen** | integer | 白名单开关标记 |**Yes**|
+| **IfOpen** | int | 白名单开关标记 |**Yes**|
 | **ObjectIPInfo** | array[[*DescribeWhiteListResourceObjectIPInfo*](#DescribeWhiteListResourceObjectIPInfo)] | 白名单详情 |**Yes**|
 
 #### DescribeWhiteListResourceObjectIPInfo
@@ -98,6 +98,7 @@ https://api.ucloud.cn/?Action=DescribeWhiteListResource
   "TotalCount": 9
 }
 ```
+
 
 
 

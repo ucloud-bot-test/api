@@ -34,24 +34,24 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **DBTypeId** | string | DB类型id，mongodb按版本细分有1：mongodb-2.4，2：mongodb-2.6,3：mongodb-3.0，4：mongodb-3.2 |**Yes**|
 | **Name** | string | 实例名称，至少6位 |**Yes**|
-| **Port** | integer | 端口号，mongodb默认27017 |**Yes**|
-| **ParamGroupId** | integer | DB实例使用的配置参数组id |**Yes**|
-| **MemoryLimit** | integer | 内存限制(MB)，目前支持以下几档 600M/1500M/3000M /6000M/15000M/30000M |**Yes**|
-| **DiskSpace** | integer | 磁盘空间(GB), 暂时支持20G - 500G |**Yes**|
+| **Port** | int | 端口号，mongodb默认27017 |**Yes**|
+| **ParamGroupId** | int | DB实例使用的配置参数组id |**Yes**|
+| **MemoryLimit** | int | 内存限制(MB)，目前支持以下几档 600M/1500M/3000M /6000M/15000M/30000M |**Yes**|
+| **DiskSpace** | int | 磁盘空间(GB), 暂时支持20G - 500G |**Yes**|
+| **ConfigsvrId.N** | string | 配置服务器的dbid，允许一个或者三个。 |**Yes**|
 | **ChargeType** | string | Year， Month， Dynamic，Trial，默认: Month |No|
-| **Quantity** | integer | 购买时长，默认值1 |No|
+| **Quantity** | int | 购买时长，默认值1 |No|
 | **UseSSD** | boolean | 是否使用SSD，默认为ture |No|
 | **CouponId** | string | 使用的代金券id |No|
-| **ConfigsvrId.N** | string | 配置服务器的dbid，允许一个或者三个。 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DBId** | string | db实例id |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DBId** | string | db实例id |No|
 
 
 
@@ -85,6 +85,7 @@ https://api.ucloud.cn/?Action=CreateUDBRouteInstance
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -35,18 +35,18 @@
 | **VServerId** | string | VServer实例的ID |**Yes**|
 | **ResourceType** | string | 所添加的后端资源的类型，枚举值：UHost -> 云主机；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器，默认值为“UHost” |**Yes**|
 | **ResourceId** | string | 所添加的后端资源的资源ID |**Yes**|
-| **Port** | integer | 所添加的后端资源服务端口，取值范围[1-65535]，默认80 |No|
-| **Weight** | integer | 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1 |No|
-| **Enabled** | integer | 后端实例状态开关，枚举值： 1：启用； 0：禁用 默认为启用 |No|
+| **Port** | int | 所添加的后端资源服务端口，取值范围[1-65535]，默认80 |No|
+| **Weight** | int | 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1 |No|
+| **Enabled** | int | 后端实例状态开关，枚举值： 1：启用； 0：禁用 默认为启用 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **BackendId** | string | 所添加的后端资源在ULB中的对象ID，（为ULB系统中使用，与资源自身ID无关），可用于 UpdateBackendAttribute/UpdateBackendAttributeBatch/ReleaseBackend |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **BackendId** | string | 所添加的后端资源在ULB中的对象ID，（为ULB系统中使用，与资源自身ID无关），可用于 UpdateBackendAttribute/UpdateBackendAttributeBatch/ReleaseBackend |No|
 
 
 
@@ -77,6 +77,7 @@ https://api.ucloud.cn/?Action=AllocateBackend
   "RetCode": 0
 }
 ```
+
 
 
 

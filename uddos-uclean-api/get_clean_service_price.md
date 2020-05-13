@@ -31,17 +31,17 @@
 |:---|:---|:---|:---|
 | **ChargeType** | string | 计费类型（Month:按月，Year:按年） |**Yes**|
 | **CleanRegion** | string | 通过GetCleanServiceRegion 维护更新可用的地域列表以应对日益扩张的机房。截止至2019-01-24现网目前可用的列表见枚举： |**Yes**|
-| **Quantity** | integer | 防护时长（0代表购置月底，年底） |**Yes**|
-| **MaxCleanCapacity** | integer | 流量清洗上限防护流量（单位G），默认5 |No|
+| **Quantity** | int | 防护时长（0代表购置月底，年底） |**Yes**|
+| **MaxCleanCapacity** | int | 流量清洗上限防护流量（单位G），默认5 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Price** | integer | 清洗套餐价格 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Price** | int | 清洗套餐价格 |**Yes**|
 
 
 
@@ -67,6 +67,7 @@ https://api.ucloud.cn/?Action=GetCleanServicePrice
   "RetCode": 0
 }
 ```
+
 
 
 

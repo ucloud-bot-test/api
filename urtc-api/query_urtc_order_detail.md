@@ -37,19 +37,19 @@
 | **StartTime** | string | 起始时间 |**Yes**|
 | **EndTime** | string | 结束时间 |**Yes**|
 | **Type** | string | 产品类型（RTC/RECORD）,默认RTC |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
-| **Limit** | integer | 返回数据长度，默认为20，最大100 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20，最大100 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Msg** | string | RetCode为0时返回succed,不为0返回具体的错误消息提示内容 |**Yes**|
 | **Data** | array[[*CallDetail*](#CallDetail)] | 通话详单 |**Yes**|
-| **TotalCount** | integer | 总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 总数 |No|
 
 #### 数据模型
 
@@ -64,15 +64,15 @@
 | **Type** | string | 房间类型 |No|
 | **Role** | string | 用户角色 |No|
 | **Stats** | array[[*CallStat*](#CallStat)] | 消费时长统计 |No|
-| **JoinTime** | integer | 加入时间 |No|
-| **LeaveTime** | integer | 离开时间 |No|
+| **JoinTime** | int | 加入时间 |No|
+| **LeaveTime** | int | 离开时间 |No|
 
 #### CallStat
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Profile** | string | 类型 |No|
-| **Count** | integer | 数值 |No|
+| **Count** | int | 数值 |No|
 
 ## 示例
 
@@ -119,6 +119,7 @@ https://api.ucloud.cn/?Action=QueryURtcOrderDetail
   "TotalCount": 6
 }
 ```
+
 
 
 

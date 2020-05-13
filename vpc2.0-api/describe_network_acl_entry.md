@@ -37,10 +37,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **EntryList** | array[[*AclEntryInfo*](#AclEntryInfo)] | 所有的规则信息 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **EntryList** | array[[*AclEntryInfo*](#AclEntryInfo)] | 所有的规则信息 |**Yes**|
 
 #### 数据模型
 
@@ -56,11 +56,11 @@
 | **CidrBlock** | string | IP段的CIDR信息 |**Yes**|
 | **PortRange** | string | Port的段信息 |**Yes**|
 | **EntryAction** | string | 匹配规则的动作 |**Yes**|
-| **TargetType** | integer | 应用目标类型。 0代表“子网内全部资源” ，1代表“子网内指定资源” 。 |**Yes**|
-| **CreateTime** | integer | 创建的Unix时间戳 |**Yes**|
-| **UpdateTime** | integer | 更改的Unix时间戳 |**Yes**|
+| **TargetType** | int | 应用目标类型。 0代表“子网内全部资源” ，1代表“子网内指定资源” 。 |**Yes**|
+| **CreateTime** | int | 创建的Unix时间戳 |**Yes**|
+| **UpdateTime** | int | 更改的Unix时间戳 |**Yes**|
 | **TargetResourceList** | array[[*TargetResourceInfo*](#TargetResourceInfo)] | 应用目标资源信息。TargetType为0时不返回该值。具体结构见下方TargetResourceInfo |No|
-| **TargetResourceCount** | integer | 应用目标资源数量。TargetType为0时不返回该值。 |No|
+| **TargetResourceCount** | int | 应用目标资源数量。TargetType为0时不返回该值。 |No|
 
 #### TargetResourceInfo
 
@@ -69,10 +69,10 @@
 | **SubnetworkId** | string | 子网ID |**Yes**|
 | **ResourceName** | string | 资源名称 |**Yes**|
 | **ResourceId** | string | 资源ID |**Yes**|
-| **ResourceType** | integer | 资源类型 |**Yes**|
+| **ResourceType** | int | 资源类型 |**Yes**|
 | **SubResourceName** | string | 资源绑定的虚拟网卡的名称 |**Yes**|
 | **SubResourceId** | string | 资源绑定的虚拟网卡的ID |**Yes**|
-| **SubResourceType** | integer | 资源绑定虚拟网卡的类型 |**Yes**|
+| **SubResourceType** | int | 资源绑定虚拟网卡的类型 |**Yes**|
 | **PrivateIP** | string | 资源内网IP |**Yes**|
 
 ## 示例
@@ -156,6 +156,7 @@ https://api.ucloud.cn/?Action=DescribeNetworkAclEntry
   "RetCode": 0
 }
 ```
+
 
 
 

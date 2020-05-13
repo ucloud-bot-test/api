@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **UGAId** | string | 加速配置实例ID，如果传了实例ID 则返回匹配实例ID的记录；如果没传则返回 ProjectId 下全部实例且符合分页要求 |No|
-| **Limit** | integer | 返回的最大条数，默认为100，最大值400 |No|
-| **Offset** | integer | 偏移量，默认为0 |No|
+| **Limit** | int | 返回的最大条数，默认为100，最大值400 |No|
+| **Offset** | int | 偏移量，默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **UGAList** | array[[*UGAAInfo*](#UGAAInfo)] | 全球加速实例信息列表 |No|
-| **TotalCount** | integer | 符合条件的总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **UGAList** | array[[*UGAAInfo*](#UGAAInfo)] | 全球加速实例信息列表 |No|
+| **TotalCount** | int | 符合条件的总数 |No|
 
 #### 数据模型
 
@@ -69,7 +69,7 @@
 |:---|:---|:---|:---|
 | **UPathName** | string | UPath名字 |No|
 | **UPathId** | string | UPath 实例ID |No|
-| **Bandwidth** | integer | 带宽 Mbps, 1\~800Mbps |No|
+| **Bandwidth** | int | 带宽 Mbps, 1\~800Mbps |No|
 | **LineId** | string | 线路ID |No|
 | **LineFromName** | string | 线路起点中文名字，加速区域 |No|
 | **LineToName** | string | 线路对端中文名字，源站区域 |No|
@@ -80,24 +80,24 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Port** | integer | 接入端口 |**Yes**|
+| **Port** | int | 接入端口 |**Yes**|
 | **Protocol** | string | 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 |**Yes**|
 
 #### UGAL4Forwarder
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Port** | integer | 接入端口 |**Yes**|
+| **Port** | int | 接入端口 |**Yes**|
 | **Protocol** | string | 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 |**Yes**|
-| **RSPort** | integer | RSPort，源站监听端口 |**Yes**|
+| **RSPort** | int | RSPort，源站监听端口 |**Yes**|
 
 #### UGAL7Forwarder
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Port** | integer | 接入端口 |**Yes**|
+| **Port** | int | 接入端口 |**Yes**|
 | **Protocol** | string | 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 |**Yes**|
-| **RSPort** | integer | RSPort，源站监听端口 |**Yes**|
+| **RSPort** | int | RSPort，源站监听端口 |**Yes**|
 | **SSLId** | string | 证书ID |No|
 | **SSLName** | string | 证书名称 |No|
 
@@ -195,6 +195,7 @@ https://api.ucloud.cn/?Action=DescribeUGAInstance
   ]
 }
 ```
+
 
 
 

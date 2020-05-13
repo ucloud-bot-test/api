@@ -33,16 +33,16 @@
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |No|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **MasterDBId** | string | 主库的Id |**Yes**|
-| **BackupSwitch** | integer | 从库的备份开关，范围[0,1],0表示从库备份功能关闭,1 表示从库备份开关打开。 |**Yes**|
+| **BackupSwitch** | int | 从库的备份开关，范围[0,1],0表示从库备份功能关闭,1 表示从库备份开关打开。 |**Yes**|
 | **SlaveDBId** | string | 从库的Id,如果从库备份开关设定为打开，则必须赋值。 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -68,6 +68,7 @@ https://api.ucloud.cn/?Action=UpdateUDBInstanceSlaveBackupSwitch
   "RetCode": 0
 }
 ```
+
 
 
 

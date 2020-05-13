@@ -35,11 +35,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **DefaultPattenList** | array[[*CodecPattenListNode*](#CodecPattenListNode)] | 系统预制的转码模版列表,详细结构见下表 |No|
 | **CustomizedPattenList** | array[[*CodecPattenListNode*](#CodecPattenListNode)] | 客户定制的转码模版列表，详细结构见下表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -50,12 +50,12 @@
 |:---|:---|:---|:---|
 | **PattenId** | string | 模版的ID |**Yes**|
 | **PattenName** | string | 模版名称,长度不查过256个字节 |**Yes**|
-| **DestVideoBitrate** | integer | 视频码率，单位kbps。 |**Yes**|
+| **DestVideoBitrate** | int | 视频码率，单位kbps。 |**Yes**|
 | **DestVideoResolution** | string | 视频分辨率，格式为像素宽度x像素高度，例如1280x720。该字段为空表示保持原始视频大小。 |**Yes**|
 | **DestVideoCodec** | string | 视频的编码类型 |**Yes**|
-| **DestAudioBitrate** | integer | 音频码率，单位kbps。 |**Yes**|
-| **DestAudioSample** | integer | 音频采样率，单位hz。 |**Yes**|
-| **DestAudioChannel** | integer | 音频声道数量。 |**Yes**|
+| **DestAudioBitrate** | int | 音频码率，单位kbps。 |**Yes**|
+| **DestAudioSample** | int | 音频采样率，单位hz。 |**Yes**|
+| **DestAudioChannel** | int | 音频声道数量。 |**Yes**|
 | **DestFormat** | string | 目标视频格式，可选值为mp4、flv、mpegts。 |**Yes**|
 | **DestSuffix** | string | 目标视频的文件名后缀。 |**Yes**|
 | **CallbackUrl** | string | 转码任务结束后，回调客户的url地址。 |**Yes**|
@@ -91,6 +91,7 @@ https://api.ucloud.cn/?Action=GetCodecPattenList
   "RetCode": 0
 }
 ```
+
 
 
 

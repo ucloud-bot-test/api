@@ -32,15 +32,15 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **NATGWId** | string | NAT网关Id |**Yes**|
-| **IfOpen** | integer | 白名单开关标记。0：关闭；1：开启。默认为0 |**Yes**|
+| **IfOpen** | int | 白名单开关标记。0：关闭；1：开启。默认为0 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -65,6 +65,7 @@ https://api.ucloud.cn/?Action=EnableWhiteList
   "RetCode": 0
 }
 ```
+
 
 
 

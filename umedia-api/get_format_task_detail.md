@@ -36,17 +36,17 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **SrcUrl** | string | 原始视频url地址 |No|
 | **DestVideoName** | string | 输出视频文件名 |No|
 | **DestVideoFormat** | string | 输出视频封装格式 |No|
-| **Duration** | integer | 视频时长 |No|
+| **Duration** | int | 视频时长 |No|
 | **DestBucket** | string | 存储图片的ufile的bucket名称 |No|
-| **CreateTime** | integer | 任务创建时间，单位：Unix时间戳 |No|
-| **FinishTime** | integer | 任务结束时间，单位：Unix时间戳。只有任务状态为处理完成时值才有意义，默认为0。 |No|
+| **CreateTime** | int | 任务创建时间，单位：Unix时间戳 |No|
+| **FinishTime** | int | 任务结束时间，单位：Unix时间戳。只有任务状态为处理完成时值才有意义，默认为0。 |No|
 | **Status** | string | 任务状态：waiting、processing、finished、failed，分别表示排队中，处理中，处理完成，处理失败。 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -75,6 +75,7 @@ https://api.ucloud.cn/?Action=GetFormatTaskDetail&TaskId=1
   "TaskId": "1"
 }
 ```
+
 
 
 

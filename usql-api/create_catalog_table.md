@@ -34,9 +34,9 @@
 | **DatabaseName** | string | 数据库的名称 |**Yes**|
 | **TableName** | string | 数据表的名称 |**Yes**|
 | **Location** | string | 数据存储位置，如：ufile://usql/tpc/tpch-s1/nxxxx |**Yes**|
-| **Formation** | string | 数据格式：比如CSV，ORC， TSV等 |**Yes**|
 | **Column.N.Name** | string | 第N个字段的名称，例如：第一个字段的名称：Column.0.Name |**Yes**|
 | **Column.N.Type** | string | 第N个字段的类型，例如：第一个字段的类型：Column.0.Type |**Yes**|
+| **Formation** | string | 数据格式：比如CSV，ORC， TSV等 |**Yes**|
 | **Property.N.Key** | string | 第N个表属性的值，例如：第一个表属性的名称：Property.0.Key |No|
 | **Property.N.Value** | string | 第N个表属性的值，例如：第一个表属性的值：Property.0.Value |No|
 
@@ -44,12 +44,12 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Request** | string | API请求的ID |No|
 | **DatabaseName** | string | 新数据表所属数据库名称 |No|
 | **TableName** | string | 新数据表的名称 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -93,6 +93,7 @@ https://api.ucloud.cn/?Action=CreateCatalogTable
   "TableName": "nation"
 }
 ```
+
 
 
 

@@ -37,11 +37,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **TotalCount** | string | Tag的个数 |No|
 | **TagSet** | array[[*PHostTagSet*](#PHostTagSet)] | 具体参见 PHostTagSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -51,7 +51,7 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Tag** | string | 业务组名称 |No|
-| **TotalCount** | integer | 该业务组中包含的主机个数 |No|
+| **TotalCount** | int | 该业务组中包含的主机个数 |No|
 
 ## 示例
 
@@ -79,6 +79,7 @@ https://api.ucloud.cn/?Action=DescribePHostTags
   "TotalCount": 10
 }
 ```
+
 
 
 

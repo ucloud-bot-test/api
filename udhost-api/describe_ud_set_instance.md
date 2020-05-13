@@ -31,21 +31,21 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Tag** | string | 要查询的业务组名称 |No|
-| **Offset** | integer | 主机数据偏移量, 默认为0 |No|
-| **Limit** | integer | 返回主机数据长度, 默认为20 |No|
 | **HostIds.N** | string | 资源池的短ID, 如果为空, 则返回当前Region所有符合条件的UHost实例，否则返回指定资源池上的所有UHost实例 |No|
 | **UHostIds.N** | string | 专区主机的短ID, 如果为空, 则返回指定资源池的UHost实例，否则返回指定主机的实例信息 |No|
+| **Tag** | string | 要查询的业务组名称 |No|
+| **Offset** | int | 主机数据偏移量, 默认为0 |No|
+| **Limit** | int | 返回主机数据长度, 默认为20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 满足条件的总数 |No|
-| **UHostSet** | array[[*UDSetInstanceSet*](#UDSetInstanceSet)] | 满足条件的私有专区主机列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的总数 |No|
+| **UHostSet** | array[[*UDSetInstanceSet*](#UDSetInstanceSet)] | 满足条件的私有专区主机列表 |No|
 
 #### 数据模型
 
@@ -67,9 +67,9 @@
 | **Remark** | string | 备注 |No|
 | **Name** | string | 实例名称 |No|
 | **State** | string | 实例状态, 初始化:Initializing, 启动中:Starting, 运行中:Running, 关机中:Stopping,关机:Stopped, 安装失败:Install Fail, 重启中:Rebooting   重置密码中   迁移中 |No|
-| **ExpireTime** | integer | 到期时间 |No|
-| **CPU** | integer | 虚拟CPU核数, 单位:个 |No|
-| **Memory** | integer | 内存大小, 单位:MB |No|
+| **ExpireTime** | int | 到期时间 |No|
+| **CPU** | int | 虚拟CPU核数, 单位:个 |No|
+| **Memory** | int | 内存大小, 单位:MB |No|
 | **DiskSet** | array[[*UHostDiskSet*](#UHostDiskSet)] | 磁盘信息 |No|
 | **NetCapability** | string | 正常：Normal；网络增强：Enhance |No|
 | **IPSet** | array[[*UHostIPSet*](#UHostIPSet)] | IP信息 |No|
@@ -84,9 +84,9 @@
 |:---|:---|:---|:---|
 | **Type** | string | 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk |No|
 | **DiskId** | string | 磁盘ID |No|
-| **Name** | integer | UDisk名字（仅当磁盘是UDisk时返回） |No|
-| **Drive** | integer | 磁盘盘符 |No|
-| **Size** | integer | 磁盘大小，单位: GB |No|
+| **Name** | int | UDisk名字（仅当磁盘是UDisk时返回） |No|
+| **Drive** | int | 磁盘盘符 |No|
+| **Size** | int | 磁盘大小，单位: GB |No|
 
 #### UHostIPSet
 
@@ -95,7 +95,7 @@
 | **Type** | string | 国际: Internation，BGP: Bgp，内网: Private |No|
 | **IPId** | string | IP资源ID (内网IP无对应的资源ID) |No|
 | **IP** | string | IP地址 |No|
-| **Bandwidth** | integer | IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) |No|
+| **Bandwidth** | int | IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) |No|
 | **Default** | string | 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。 |No|
 
 ## 示例
@@ -170,6 +170,7 @@ https://api.ucloud.cn?Action=DescribeUDSetInstance
   ]
 }
 ```
+
 
 
 

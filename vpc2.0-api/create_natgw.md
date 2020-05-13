@@ -32,22 +32,22 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **NATGWName** | string | NAT网关名称 |**Yes**|
-| **FirewallId** | string | NAT网关绑定的防火墙Id |**Yes**|
-| **VPCId** | string | NAT网关所属的VPC Id。默认为Default VPC Id |No|
-| **IfOpen** | integer | 白名单开关标记。0表示关闭，1表示开启。默认为0 |No|
-| **Tag** | string | 业务组。默认为空 |No|
-| **Remark** | string | 备注。默认为空 |No|
 | **SubnetworkIds.N** | string | NAT网关绑定的子网Id |**Yes**|
 | **EIPIds.N** | string | NAT网关绑定的EIPId |**Yes**|
+| **FirewallId** | string | NAT网关绑定的防火墙Id |**Yes**|
+| **VPCId** | string | NAT网关所属的VPC Id。默认为Default VPC Id |No|
+| **IfOpen** | int | 白名单开关标记。0表示关闭，1表示开启。默认为0 |No|
+| **Tag** | string | 业务组。默认为空 |No|
+| **Remark** | string | 备注。默认为空 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **NATGWId** | string | 申请到的NATGateWay Id |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **NATGWId** | string | 申请到的NATGateWay Id |No|
 
 
 
@@ -79,6 +79,7 @@ https://api.ucloud.cn/?Action=CreateNATGW
   "RetCode": 0
 }
 ```
+
 
 
 

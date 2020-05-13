@@ -29,21 +29,21 @@
 
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **AppId** | integer | 待查询的应用id |**Yes**|
+| **AppId** | int | 待查询的应用id |**Yes**|
 | **RoomId** | string | 	<br />待查询的房间名 |**Yes**|
 | **QueryUser** | string | 待查询的用户名 |**Yes**|
-| **StartTime** | integer | 查询开始时间（秒级） |**Yes**|
-| **EndTime** | integer | 查询结束时间（秒级） |**Yes**|
+| **StartTime** | int | 查询开始时间（秒级） |**Yes**|
+| **EndTime** | int | 查询结束时间（秒级） |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Msg** | string | RetCode为0时返回succed,不为0返回具体的错误消息提示内容 |**Yes**|
 | **Data** | array[string] | 数组元素参见（UserCallInfo） |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -77,6 +77,7 @@ https://api.ucloud.cn/?Action=QueryURtcCallDetail
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -36,12 +36,12 @@
 | **Name** | string | 容器名 |**Yes**|
 | **Hostname** | string | 容器的主机名，主机名只能支持小写字母数字和减号，最大长度64 |No|
 | **Password** | string | 密码只能用于ucloud/*-ssh镜像 |No|
-| **Usage** | integer | 只能是1或3，1-默认，3-pod |No|
-| **CPU** | number | CPU个数，默认0.1 |No|
-| **Memory** | integer | 内存大小：默认128M |No|
+| **Usage** | int | 只能是1或3，1-默认，3-pod |No|
+| **CPU** | float | CPU个数，默认0.1 |No|
+| **Memory** | int | 内存大小：默认128M |No|
 | **Enviroment** | string | 环境变量：[key:val] |No|
 | **SvcName** | string | 服务名，Usage=3时必传 |No|
-| **SvcPort** | integer | 后端服务端口，Usage=3时必传 |No|
+| **SvcPort** | int | 后端服务端口，Usage=3时必传 |No|
 | **Volume** | string | 容器内需要持久化的目录 |No|
 | **Privileged** | boolean | 是否给容器超级权限 |No|
 
@@ -49,10 +49,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ContainerSet** | array[string] | Container信息 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **ContainerSet** | array[string] | Container信息 |No|
 
 
 
@@ -83,6 +83,7 @@ https://api.ucloud.cn/?Action=ReInstallContainer
   "RetCode": 0
 }
 ```
+
 
 
 

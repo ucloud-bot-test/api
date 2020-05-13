@@ -32,22 +32,22 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID，不填则为默认项目 |No|
 | **QueryId** | string | SQL查询ID |**Yes**|
-| **Limit** | integer | 获取的数据记录数上限 |**Yes**|
+| **Limit** | int | 获取的数据记录数上限 |**Yes**|
 | **Marker** | string | 数据记录偏移，从开始位置获取的时候不需要填写。 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Request** | string | API请求ID |No|
 | **QueryId** | string | SQL查询ID |No|
 | **Marker** | string | 下一批数据记录的偏移位置 |No|
 | **Header** | array[string] | 结果数据的字段列表，类型是字符串的集合 |No|
 | **Rows** | array[string] | 结果数据集合， 数组中每一项代表1条记录。 |No|
 | **QueryType** | string | 查询类型，有SELECT， CREATE_TABLE等多种SQL类型 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -147,6 +147,7 @@ https://api.ucloud.cn/?Action=GetSQLQueryData
   ]
 }
 ```
+
 
 
 

@@ -35,11 +35,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **DefaultPattenList** | array[[*WaterMarkPattenListNode*](#WaterMarkPattenListNode)] | 水印模版列表,详细结构见下表 |No|
 | **CustomizedPattenList** | array[[*WaterMarkPattenListNode*](#WaterMarkPattenListNode)] | 水印模版列表,详细结构见下表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -55,10 +55,10 @@
 | **TextContent** | string | 文字水印的内容，只有文字水印有该字段。 |**Yes**|
 | **FontType** | string | 字体类型，只有文字水印有该字段。 |**Yes**|
 | **FontColor** | string | 字体颜色，只有文字水印有该字段。 |**Yes**|
-| **FontSize** | integer | 字体大小，单位：磅，只有文字水印有该字段。 |**Yes**|
+| **FontSize** | int | 字体大小，单位：磅，只有文字水印有该字段。 |**Yes**|
 | **Position** | string | 水印的参考位置，topleft、topright、center、bottomleft、bottomright分别表示左上、右上、居中、左下、右下 |**Yes**|
-| **PaddingX** | integer | 水印离最近的水平边线占整个视频宽度的百分比，取值[0-49] |**Yes**|
-| **PaddingY** | integer | 水印离最近的垂直边线占整个视频高度的百分比,取值[0-49] |**Yes**|
+| **PaddingX** | int | 水印离最近的水平边线占整个视频宽度的百分比，取值[0-49] |**Yes**|
+| **PaddingY** | int | 水印离最近的垂直边线占整个视频高度的百分比,取值[0-49] |**Yes**|
 | **CallbackUrl** | string | 转码任务结束后，回调客户的url地址。 |**Yes**|
 
 ## 示例
@@ -109,6 +109,7 @@ https://api.ucloud.cn/?Action=GetWaterMarkPattenList
   "RetCode": 0
 }
 ```
+
 
 
 

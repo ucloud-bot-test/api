@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **NodeId** | string | 节点id |**Yes**|
-| **BeginTime** | integer | 查询起始时间 |No|
-| **EndTime** | integer | 查询结束时间 |No|
-| **Type.N** | integer | 0CPU使用率, 1内存使用率, 2 网卡出流量, 3网卡入流量, 4网卡出包量, 5网卡入包量, 6磁盘读流量, 7磁盘写流量, 8磁盘读次数, 9磁盘写次数 |**Yes**|
+| **Type.N** | int | 0CPU使用率, 1内存使用率, 2 网卡出流量, 3网卡入流量, 4网卡出包量, 5网卡入包量, 6磁盘读流量, 7磁盘写流量, 8磁盘读次数, 9磁盘写次数 |**Yes**|
+| **BeginTime** | int | 查询起始时间 |No|
+| **EndTime** | int | 查询结束时间 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **DataSets** | [*DataSet*](#DataSet) | 带宽数据实例集合 |No|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -66,8 +66,8 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TimeStamp** | integer | 时间戳 |**Yes**|
-| **Value** | integer | 值 |**Yes**|
+| **TimeStamp** | int | 时间戳 |**Yes**|
+| **Value** | int | 值 |**Yes**|
 
 ## 示例
 
@@ -137,6 +137,7 @@ https://api.ucloud.cn/?Action=GetUvodnNodeData
   "RetCode": 0
 }
 ```
+
 
 
 

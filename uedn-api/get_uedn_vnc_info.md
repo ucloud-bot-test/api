@@ -36,14 +36,14 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **NodeId** | string | 节点ID |**Yes**|
 | **VncIP** | string | Vnc登录IP |**Yes**|
-| **VncPort** | integer | Vnc登录端口 |**Yes**|
+| **VncPort** | int | Vnc登录端口 |**Yes**|
 | **VncPassword** | string | Vnc 登录密码 |**Yes**|
 | **VncToken** | string | Vnc token，一次访问有效 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -71,6 +71,7 @@ https://api.ucloud.cn/?Action=GetUEdnVncInfo
   "VncToken": "kacNlSjP"
 }
 ```
+
 
 
 

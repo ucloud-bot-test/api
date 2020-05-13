@@ -35,11 +35,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Msg** | string | 返回消息内容（成功succed,错误码不为0时，为具体提示内容） |**Yes**|
 | **Data** | [*CreatAppModel*](#CreatAppModel) | 创建成功后返回的app基本信息（参数见CreatAppModel） |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -77,6 +77,7 @@ https://api.ucloud.cn/?Action=CreateUrtcApp
   "RetCode": 0
 }
 ```
+
 
 
 

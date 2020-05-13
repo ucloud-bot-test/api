@@ -32,18 +32,18 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID， 不填则为默认项目 |No|
 | **DataSource** | string | 数据源类型，如ufile |**Yes**|
-| **State** | integer | 0: 关闭， 1: 开启 |**Yes**|
+| **State** | int | 0: 关闭， 1: 开启 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Request** | string | API请求ID |No|
 | **DataSourceType** | string | 数据源名称， 如ufile |No|
 | **Enable** | boolean | true： 该授权已经启用<br />false: 该授权已经关闭 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -72,6 +72,7 @@ https://api.ucloud.cn/?Action=EnableUSQLToken
   "RetCode": 0
 }
 ```
+
 
 
 

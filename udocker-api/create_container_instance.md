@@ -36,13 +36,13 @@
 | **Name** | string | 容器名字 |**Yes**|
 | **ImageUrl** | string | 镜像名，格式：url/image:tag如uhub.service.ucloud.cn/centos6-ssh:latest |**Yes**|
 | **NodeId** | string | 节点ID，默认随机选择集群中一个节点 |No|
-| **CPU** | number | CPU个数，默认0.1，精度0.1 |No|
-| **Memory** | number | 内存M：默认128M，精度1 |No|
+| **CPU** | float | CPU个数，默认0.1，精度0.1 |No|
+| **Memory** | float | 内存M：默认128M，精度1 |No|
 | **Enviroment** | string | 环境变量：[key:val] |No|
 | **AddHost** | string | 对应—add-host 参数，每个用逗号隔开，字符串格式：n1:ip1,n2:ip2,n3:ip3 |No|
 | **Cmd** | string | 容器启动命令 |No|
 | **Volume** | string | 容器内需要挂载的目录 |No|
-| **Count** | integer | 实例个数，默认1，最大100 |No|
+| **Count** | int | 实例个数，默认1，最大100 |No|
 | **Password** | string | ucloud镜像（ImageType=0）且以-ssh结尾时，必须输入密码（默认密码为节点ID） |No|
 | **Hostname** | string | 容器内的hostname（主机名） |No|
 
@@ -50,10 +50,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ContainerSet** | array[string] | 容器ID |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **ContainerSet** | array[string] | 容器ID |No|
 
 
 
@@ -87,6 +87,7 @@ https://api.ucloud.cn/?Action=CreateContainerInstance
   "RetCode": 0
 }
 ```
+
 
 
 

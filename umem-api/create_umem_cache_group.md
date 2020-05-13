@@ -33,11 +33,11 @@
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |No|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **Name** | string | 请求创建组的名称 范围[6-60] |**Yes**|
-| **Size** | integer | 每个节点的内存大小,单位GB,默认1GB 目前仅支持1/2/4/8/16/32这几档 |No|
+| **Size** | int | 每个节点的内存大小,单位GB,默认1GB 目前仅支持1/2/4/8/16/32这几档 |No|
 | **ConfigId** | string | 配置ID,目前仅支持默认配置id 默认配置id:"9a891891-c245-4b66-bce8-67e59430d67c" |No|
 | **Version** | string | Memcache版本信息,默认为1.4.31 |No|
 | **ChargeType** | string | 计费模式，Year , Month, Dynamic 默认: Month |No|
-| **Quantity** | integer | 购买时长，默认为1 |No|
+| **Quantity** | int | 购买时长，默认为1 |No|
 | **Tag** | string | 业务组 默认：Default |No|
 | **Protocol** | string |  |No|
 | **CouponId** | string | 代金券ID |No|
@@ -46,10 +46,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **GroupId** | string | 创建的组ID |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **GroupId** | string | 创建的组ID |No|
 
 
 
@@ -76,6 +76,7 @@ https://api.ucloud.cn/?Action=CreateUMemcacheGroup
   "RetCode": 0
 }
 ```
+
 
 
 

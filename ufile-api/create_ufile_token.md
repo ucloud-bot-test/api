@@ -32,19 +32,19 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |No|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **TokenName** | string | 令牌名称 |**Yes**|
-| **ExpireTime** | integer | Unix 时间戳，精确到秒，为令牌过期时间点。默认过期时间为一天（即当前Unix时间戳+86400）；注意：过期时间不能超过 4102416000 |No|
 | **AllowedOps.N** | string | 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP  ]。默认TOKEN_ALLOW_NONE |No|
 | **AllowedPrefixes.N** | string | 令牌允许操作的key前缀，默认*表示全部 |No|
 | **AllowedBuckets.N** | string | 令牌允许操作的bucket，默认*表示全部 |No|
+| **ExpireTime** | int | Unix 时间戳，精确到秒，为令牌过期时间点。默认过期时间为一天（即当前Unix时间戳+86400）；注意：过期时间不能超过 4102416000 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TokenId** | string | 创建令牌的token_id |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TokenId** | string | 创建令牌的token_id |No|
 
 
 
@@ -77,6 +77,7 @@ https://api.ucloud.cn/?Action=CreateUFileToken
   "TokenId": "xUoZJgIz"
 }
 ```
+
 
 
 

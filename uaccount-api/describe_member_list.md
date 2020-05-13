@@ -37,11 +37,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **MemberSet** | array[[*MemberInfo*](#MemberInfo)] | JSON格式的成员列表实例 |**Yes**|
-| **TotalCount** | integer | 成员总数 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **MemberSet** | array[[*MemberInfo*](#MemberInfo)] | JSON格式的成员列表实例 |**Yes**|
+| **TotalCount** | int | 成员总数 |**Yes**|
 
 #### 数据模型
 
@@ -58,15 +58,15 @@
 | **PublicKey** | string | 公钥 |**Yes**|
 | **LastRegionId** | string | 最后访问的机房 |**Yes**|
 | **DefultProjectId** | string | 默认项目 |**Yes**|
-| **LastLogin** | integer | 最后一次登录时间 |**Yes**|
-| **Created** | integer | 创建时间 |**Yes**|
+| **LastLogin** | int | 最后一次登录时间 |**Yes**|
+| **Created** | int | 创建时间 |**Yes**|
 | **State** | string | 状态 |**Yes**|
-| **IsAdmin** | integer | 是否主账号（0：子账号，1：主账号） |**Yes**|
-| **IsFinance** | integer | 是否有财务权限（0：无财务权限，1：有财务权限） |**Yes**|
+| **IsAdmin** | int | 是否主账号（0：子账号，1：主账号） |**Yes**|
+| **IsFinance** | int | 是否有财务权限（0：无财务权限，1：有财务权限） |**Yes**|
 | **ProjectSet** | array[[*ProjectInfo*](#ProjectInfo)] | 项目列表 |**Yes**|
-| **ActivateFlag** | integer | 激活状态（0：未激活，1：已激活） |**Yes**|
-| **PasswordPolicyDate** | integer | 密码安全策略开启时间，格式：unix timestamp |**Yes**|
-| **TOTPStatus** | integer | TOTP状态（0：未开启，1：已开启） |**Yes**|
+| **ActivateFlag** | int | 激活状态（0：未激活，1：已激活） |**Yes**|
+| **PasswordPolicyDate** | int | 密码安全策略开启时间，格式：unix timestamp |**Yes**|
+| **TOTPStatus** | int | TOTP状态（0：未开启，1：已开启） |**Yes**|
 
 #### ProjectInfo
 
@@ -148,6 +148,7 @@ https://api.ucloud.cn/?Action=DescribeMemberList
   "TotalCount": 2
 }
 ```
+
 
 
 

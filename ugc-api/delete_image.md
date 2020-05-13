@@ -31,16 +31,16 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ImageName** | string | 私有镜像名，仅可以使用数字，字母，下划线，减号。 |**Yes**|
-| **BucketName** | string | Bucket名称，仅可使用数字，字母，下划线。 |**Yes**|
 | **Tag.N** | string | tag名称，例如Tag.0代表希望删除Tag1，Tag.1代表希望删除Tag2。一次最多删除100个，从Tag.0到Tag.99 |**Yes**|
+| **BucketName** | string | Bucket名称，仅可使用数字，字母，下划线。 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -69,6 +69,7 @@ https://api.ucloud.cn/?Action=DeleteImage
   "RetCode": 0
 }
 ```
+
 
 
 

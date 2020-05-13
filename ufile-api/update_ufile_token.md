@@ -33,18 +33,18 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **TokenId** | string | 令牌ID |**Yes**|
 | **TokenName** | string | 令牌名称 |No|
-| **ExpireTime** | integer | 令牌的超时时间点（时间戳）;注意：过期时间不能超过 4102416000 |No|
 | **AllowedOps.N** | string | 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ] |No|
 | **AllowedPrefixes.N** | string | 令牌允许操作的key前缀 |No|
 | **AllowedBuckets.N** | string | 令牌允许操作的bucket |No|
+| **ExpireTime** | int | 令牌的超时时间点（时间戳）;注意：过期时间不能超过 4102416000 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -77,6 +77,7 @@ https://api.ucloud.cn/?Action=UpdateUFileToken
   "RetCode": 0
 }
 ```
+
 
 
 

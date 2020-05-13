@@ -36,11 +36,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Msg** | string | 返回码不为0时具体的错误消息，为0时为succed |**Yes**|
 | **Data** | [*EnableAppModel*](#EnableAppModel) | 改变状态成功时返回具体的appid和当前状态（参见EnableAppModel） |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -75,6 +75,7 @@ https://api.ucloud.cn/?Action=EnableURtcApp
   "RetCode": 0
 }
 ```
+
 
 
 

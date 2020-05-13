@@ -31,17 +31,17 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |No|
-| **Size** | integer | 购买uredis大小,单位:GB,范围是[1-32] |**Yes**|
+| **Size** | int | 购买uredis大小,单位:GB,范围是[1-32] |**Yes**|
 | **GroupId** | string | 要升级的空间的GroupId,请参考DescribeURedisGroup接口 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Price** | number | 扩容差价，单位: 元，保留小数点后两位有效数字 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Price** | float | 扩容差价，单位: 元，保留小数点后两位有效数字 |No|
 
 
 
@@ -67,6 +67,7 @@ https://api.ucloud.cn/?Action=DescribeURedisUpgradePrice
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -37,10 +37,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **Data** | [*OutSignature*](#OutSignature) | 签名信息 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Data** | [*OutSignature*](#OutSignature) | 签名信息 |**Yes**|
 
 #### 数据模型
 
@@ -51,7 +51,7 @@
 |:---|:---|:---|:---|
 | **SigId** | string | 签名ID |**Yes**|
 | **SigContent** | string | 签名内容 |**Yes**|
-| **Status** | integer | 签名状态。0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用  |**Yes**|
+| **Status** | int | 签名状态。0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用  |**Yes**|
 | **ErrDesc** | string | 签名审核失败原因 |**Yes**|
 
 ## 示例
@@ -79,6 +79,7 @@ https://api.ucloud.cn/?Action=QueryUSMSSignature
   "RetCode": 0
 }
 ```
+
 
 
 

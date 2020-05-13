@@ -30,7 +30,7 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID，不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
-| **Purpose** | integer | 短信模板用途类型：1-验证码类短信模板；2-系统通知类短信模板；3-会员推广类短信模板； |**Yes**|
+| **Purpose** | int | 短信模板用途类型：1-验证码类短信模板；2-系统通知类短信模板；3-会员推广类短信模板； |**Yes**|
 | **TemplateName** | string | 短信模板名称，不超过32个字符，每个中文、符号、英文、数字等都计为1个字。 |**Yes**|
 | **Template** | string | 短信模板内容，说明如下：字数不超过500，每个中文、符号、英文、数组等都计为一个字；模板中的变量填写格式：{N}，其中N为大于1的整数，有多个参数时，建议N从1开始顺次，例如：{1}、{2}等；短信模板禁止仅包括变量的情况； |**Yes**|
 | **Remark** | string | 短信模板申请原因说明，字数不超过128，每个中文、符号、英文、数字等都计为1个字。 |No|
@@ -39,10 +39,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **TemplateId** | string | 短信模板ID（短信模板申请时的工单ID） |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TemplateId** | string | 短信模板ID（短信模板申请时的工单ID） |**Yes**|
 
 
 
@@ -70,6 +70,7 @@ https://api.ucloud.cn/?Action=CreateUSMSTemplate
   "TemplateId": "UTA190816758B3F"
 }
 ```
+
 
 
 

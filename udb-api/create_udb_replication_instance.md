@@ -34,7 +34,7 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **SrcId** | string | primary节点的DBId,该值可以通过DescribeUDBInstance获取 |**Yes**|
 | **Name** | string | 实例名称，至少6位 |**Yes**|
-| **Port** | integer | 端口号，默认27017，取值范围3306至65535。 |No|
+| **Port** | int | 端口号，默认27017，取值范围3306至65535。 |No|
 | **IsArbiter** | boolean | 是否是仲裁节点，默认false，仲裁节点按最小机型创建 |No|
 | **UseSSD** | boolean | 是否使用SSD，默认 为 true |No|
 | **CouponId** | string | 使用的代金券id |No|
@@ -43,10 +43,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DBId** | string | 创建从节点的DBId |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DBId** | string | 创建从节点的DBId |No|
 
 
 
@@ -71,6 +71,7 @@ https://api.ucloud.cn/?Action=CreateUDBReplicationInstance
   "RetCode": 0
 }
 ```
+
 
 
 

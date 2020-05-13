@@ -30,18 +30,18 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **AppId** | string | 查询的AppId (不能为空) |**Yes**|
-| **StartTime** | integer | 开始时间(毫秒时间戳） |**Yes**|
-| **EndTime** | integer | 结束时间(毫秒时间戳） |**Yes**|
+| **StartTime** | int | 开始时间(毫秒时间戳） |**Yes**|
+| **EndTime** | int | 结束时间(毫秒时间戳） |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Msg** | string | RetCode为0时返回succed,不为0返回具体的错误消息提示内容 |**Yes**|
 | **Data** | [*AppTConsumption*](#AppTConsumption) | 类型参见AppTConsumption，对应的appid每日消费时长详情，包含音频消费时长数组，标清，高清蓝光消费时长数组，数组中具体值的内容参见DailyConsumptionData |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -60,8 +60,8 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TimeStamp** | integer | 时间戳(秒级) |No|
-| **Value** | number | 具体的消费数值 |No|
+| **TimeStamp** | int | 时间戳(秒级) |No|
+| **Value** | float | 具体的消费数值 |No|
 
 ## 示例
 
@@ -127,6 +127,7 @@ https://api.ucloud.cn/?Action=GetURtcDaliyConsumption
   "RetCode": 0
 }
 ```
+
 
 
 

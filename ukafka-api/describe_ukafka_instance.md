@@ -39,10 +39,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ClusterSet** | array[[*ClusterInfo*](#ClusterInfo)] | 集群信息列表 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **ClusterSet** | array[[*ClusterInfo*](#ClusterInfo)] | 集群信息列表 |**Yes**|
 
 #### 数据模型
 
@@ -58,7 +58,7 @@
 | **ChargeType** | string | 付费类型 |No|
 | **ClusterInstanceId** | string | 集群id |No|
 | **ClusterInstanceName** | string | 集群名称 |No|
-| **CreateTime** | integer | 集群创建时间 |No|
+| **CreateTime** | int | 集群创建时间 |No|
 | **DataSyncInfo** | string | flume 数据同步信息 |No|
 | **ExpireTime** | string | 集群过期时间 |No|
 | **Framework** | string | 集群框架 |No|
@@ -82,7 +82,7 @@
 | **BrokerInfo** | string | broker 关联topic 信息 |No|
 | **CreateTime** | string | broker 创建信息 |No|
 | **DomainName** | string | broker 域名 |No|
-| **ExpireTime** | integer | broker 过期时间 |No|
+| **ExpireTime** | int | broker 过期时间 |No|
 | **IPSet** | array[[*IP*](#IP)] | broker IP 信息 |No|
 | **InstanceGroupType** | string | broker 机型信息 |No|
 | **KafkaPort** | string | kafka 服务端口 |No|
@@ -108,10 +108,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **BootDiskSize** | integer | 节点系统盘大小（单位G) |No|
-| **CPU** | integer | 节点 CPU 核心数 |No|
-| **DataDiskSize** | integer | 节点数据盘大小（单位G) |No|
-| **Memory** | integer | 节点内存(单位MB) |No|
+| **BootDiskSize** | int | 节点系统盘大小（单位G) |No|
+| **CPU** | int | 节点 CPU 核心数 |No|
+| **DataDiskSize** | int | 节点数据盘大小（单位G) |No|
+| **Memory** | int | 节点内存(单位MB) |No|
 | **OS** | string | 节点内部系统名称 |No|
 
 ## 示例
@@ -358,6 +358,7 @@ https://api.ucloud.cn/?Action=DescribeUKafkaInstance
   "RetCode": 0
 }
 ```
+
 
 
 

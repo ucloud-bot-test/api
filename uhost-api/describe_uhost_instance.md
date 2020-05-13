@@ -32,23 +32,23 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
+| **UHostIds.N** | string | 【数组】UHost主机的资源ID，例如UHostIds.0代表希望获取信息 的主机1，UHostIds.1代表主机2。 如果不传入，则返回当前Region 所有符合条件的UHost实例。 |No|
 | **Tag** | string | 要查询的业务组名称 |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
-| **Limit** | integer | 返回数据长度，默认为20，最大100 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20，最大100 |No|
 | **IsolationGroup** | string | 硬件隔离组id。通过硬件隔离组筛选主机。 |No|
 | **VPCId** | string | vpc id。通过VPC筛选主机。北京一地域无效。 |No|
 | **SubnetId** | string | 子网id。通过子网筛选主机。北京一地域无效。 |No|
-| **UHostIds.N** | string | 【数组】UHost主机的资源ID，例如UHostIds.0代表希望获取信息 的主机1，UHostIds.1代表主机2。 如果不传入，则返回当前Region 所有符合条件的UHost实例。 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | UHostInstance总数 |**Yes**|
-| **UHostSet** | array[[*UHostInstanceSet*](#UHostInstanceSet)] | 云主机实例列表，每项参数可见下面 UHostInstanceSet |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | UHostInstance总数 |**Yes**|
+| **UHostSet** | array[[*UHostInstanceSet*](#UHostInstanceSet)] | 云主机实例列表，每项参数可见下面 UHostInstanceSet |**Yes**|
 
 #### 数据模型
 
@@ -70,11 +70,11 @@
 | **Remark** | string | 备注 |No|
 | **Name** | string | UHost实例名称 |No|
 | **State** | string | 实例状态，枚举值：<br /><br /> >初始化: Initializing; <br /><br /> >启动中: Starting; <br /><br />> 运行中: Running; <br /><br />> 关机中: Stopping; <br /><br /> >关机: Stopped <br /><br /> >安装失败: Install Fail; <br /><br /> >重启中: Rebooting |No|
-| **CreateTime** | integer | 创建时间，格式为Unix时间戳 |No|
+| **CreateTime** | int | 创建时间，格式为Unix时间戳 |No|
 | **ChargeType** | string | 计费模式，枚举值为： Year，按年付费； Month，按月付费； Dynamic，按需付费（需开启权限）；  |No|
-| **ExpireTime** | integer | 到期时间，格式为Unix时间戳 |No|
-| **CPU** | integer | 虚拟CPU核数，单位: 个 |No|
-| **Memory** | integer | 内存大小，单位: MB |No|
+| **ExpireTime** | int | 到期时间，格式为Unix时间戳 |No|
+| **CPU** | int | 虚拟CPU核数，单位: 个 |No|
+| **Memory** | int | 内存大小，单位: MB |No|
 | **AutoRenew** | string | 是否自动续费，自动续费：“Yes”，不自动续费：“No” |No|
 | **DiskSet** | array[[*UHostDiskSet*](#UHostDiskSet)] | 磁盘信息见 UHostDiskSet |No|
 | **IPSet** | array[[*UHostIPSet*](#UHostIPSet)] | 详细信息见 UHostIPSet |No|
@@ -87,9 +87,9 @@
 | **OsType** | string | 操作系统类别。返回"Linux"或者"Windows" |No|
 | **HostType** | string | 【建议不再使用】主机系列：N2，表示系列2；N1，表示系列1 |No|
 | **LifeCycle** | string | 主机的生命周期类型。目前仅支持Normal：普通； |No|
-| **GPU** | integer | GPU个数 |No|
+| **GPU** | int | GPU个数 |No|
 | **BootDiskState** | string | 系统盘状态 Normal表示初始化完成；Initializing表示在初始化。仍在初始化的系统盘无法制作镜像。 |No|
-| **TotalDiskSpace** | integer | 总的数据盘存储空间。 |No|
+| **TotalDiskSpace** | int | 总的数据盘存储空间。 |No|
 | **IsolationGroup** | string | 隔离组id，不在隔离组则返回"" |No|
 | **CloudInitFeature** | boolean | true，支持cloutinit方式初始化；false,不支持 |No|
 
@@ -104,7 +104,7 @@
 | **DiskId** | string | 磁盘ID |No|
 | **Name** | string | UDisk名字（仅当磁盘是UDisk时返回） |No|
 | **Drive** | string | 磁盘盘符 |No|
-| **Size** | integer | 磁盘大小，单位: GB |No|
+| **Size** | int | 磁盘大小，单位: GB |No|
 | **BackupType** | string | 备份方案。若开通了数据方舟，则为DataArk |No|
 
 #### UHostIPSet
@@ -113,12 +113,12 @@
 |:---|:---|:---|:---|
 | **Default** | string | 【暂未支持】是否为默认网卡。true: 是默认网卡；其他值：不是。 |**Yes**|
 | **Mac** | string | 当前网卡的Mac。 |**Yes**|
-| **Weight** | integer | 当前EIP的权重。权重最大的为当前的出口IP。 |**Yes**|
+| **Weight** | int | 当前EIP的权重。权重最大的为当前的出口IP。 |**Yes**|
 | **IPMode** | string | IPv4/IPv6； |**Yes**|
 | **Type** | string | 国际: Internation，BGP: Bgp，内网: Private |No|
 | **IPId** | string | 外网IP资源ID 。(内网IP无对应的资源ID) |No|
 | **IP** | string | IP地址 |No|
-| **Bandwidth** | integer | IP对应的带宽, 单位: Mb  (内网IP不显示带宽信息) |No|
+| **Bandwidth** | int | IP对应的带宽, 单位: Mb  (内网IP不显示带宽信息) |No|
 | **VPCId** | string | IP地址对应的VPC ID。（北京一不支持，字段返回为空） |No|
 | **SubnetId** | string | IP地址对应的子网 ID。（北京一不支持，字段返回为空） |No|
 
@@ -207,6 +207,7 @@ https://api.ucloud.cn/?Action=DescribeUHostInstance
   ]
 }
 ```
+
 
 
 

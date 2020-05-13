@@ -41,22 +41,22 @@
 | **IKEDhGroup** | string | IKE协商过程中使用的DH组 |No|
 | **IKESALifetime** | string | IKE中SA的生存时间 |No|
 | **IPSecProtocol** | string | 使用的安全协议，ESP或AH |No|
+| **IPSecLocalSubnetIds.N** | string | 指定VPN连接的本地子网的id，用逗号分隔 |No|
+| **IPSecRemoteSubnets.N** | string | 指定VPN连接的客户网段，用逗号分隔 |No|
 | **IPSecEncryptionAlgorithm** | string | IPSec隧道中使用的加密算法 |No|
 | **IPSecAuthenticationAlgorithm** | string | IPSec隧道中使用的认证算法 |No|
 | **IPSecSALifetime** | string | IPSec中SA的生存时间 |No|
 | **IPSecSALifetimeBytes** | string | IPSec中SA的生存时间（以字节计） |No|
 | **IPSecPFSDhGroup** | string | IPSec中的PFS是否开启 |No|
 | **IKEVersion** | string | 枚举值："IKE V1","IKE V2" |No|
-| **IPSecLocalSubnetIds.N** | string | 指定VPN连接的本地子网的id，用逗号分隔 |No|
-| **IPSecRemoteSubnets.N** | string | 指定VPN连接的客户网段，用逗号分隔 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -102,6 +102,7 @@ https://api.ucloud.cn/?Action=UpdateVPNTunnelAttribute
   "RetCode": 0
 }
 ```
+
 
 
 

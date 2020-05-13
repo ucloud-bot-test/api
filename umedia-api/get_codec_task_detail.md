@@ -36,22 +36,22 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **TaskId** | string | 任务ID |No|
 | **SrcUrl** | string | 原始视频url地址 |No|
 | **DestVideoName** | string | 输出文件名 |No|
 | **DestBucket** | string | 输出文件的存储空间 |No|
 | **DestFormat** | string | 输出视频封装格式 |No|
-| **Duration** | integer | 视频时长，单位：秒。只有当任务状态为处理完成时，该参数有意义，其他状态该参数为0。 |No|
+| **Duration** | int | 视频时长，单位：秒。只有当任务状态为处理完成时，该参数有意义，其他状态该参数为0。 |No|
 | **CodecPattenDetail** | [*CodecPattenDetail*](#CodecPattenDetail) | CodecPattenDetail类型 |No|
 | **WatermarkDetail** | [*WatermarkDetail*](#WatermarkDetail) | WatermarkDetail类型 |No|
 | **CodecLevel** | string | 转码清晰度：superdefinition、highdefinition、mediumdefinition、lowdefinition，分别对应计费的4种规格。只有当任务状态为处理完成时，该参数有意义，其他状态该参数为空字符串。 |No|
-| **CreateTime** | integer | 任务创建时间，单位：Unix时间戳 |No|
-| **FinishTime** | integer | 任务完成时间，单位：Unix时间戳。当任务状态为排队中或者处理中时，该参数为0。 |No|
+| **CreateTime** | int | 任务创建时间，单位：Unix时间戳 |No|
+| **FinishTime** | int | 任务完成时间，单位：Unix时间戳。当任务状态为排队中或者处理中时，该参数为0。 |No|
 | **Status** | string | 任务状态：waiting、processing、finished、failed，分别表示排队中，处理中，处理完成，处理失败。 |No|
 | **CallbackUrl** | string | 任务完成后回调客户的url地址。 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -63,7 +63,7 @@
 | **CodecPattenId** | string | 转码模版ID |**Yes**|
 | **CodecPattenName** | string | 转码模版名称 |**Yes**|
 | **DestFormat** | string | 输出视频格式 |**Yes**|
-| **DestVideoBitrate** | integer | 输出文件视频码率 |**Yes**|
+| **DestVideoBitrate** | int | 输出文件视频码率 |**Yes**|
 | **DestVideoResolution** | string | 输出文件分辨率 |**Yes**|
 | **DestSuffix** | string | 输出文件后缀 |**Yes**|
 | **DestVideoCodec** | string | 视频编码类型 |**Yes**|
@@ -78,8 +78,8 @@
 | **ImageUrl** | string | 图片水印的url地址，只有图片水印有该字段。 |**Yes**|
 | **TextContent** | string | 文字水印内容 |**Yes**|
 | **Position** | string | 水印的参考位置，topleft、topright、center、bottomleft、bottomright分别表示左上、右上、居中、左下、右下 |**Yes**|
-| **PaddingX** | integer | 水印离最近的水平边线占整个视频宽度的百分比，取值[0-49] |No|
-| **PaddingY** | integer | 水印离最近的垂直边线占整个视频高度的百分比,取值[0-49] |No|
+| **PaddingX** | int | 水印离最近的水平边线占整个视频宽度的百分比，取值[0-49] |No|
+| **PaddingY** | int | 水印离最近的垂直边线占整个视频高度的百分比,取值[0-49] |No|
 
 ## 示例
 
@@ -117,6 +117,7 @@ https://api.ucloud.cn/?Action=GetCodecTaskDetail&TaskId=1265
   "WatermarkDetail": {}
 }
 ```
+
 
 
 

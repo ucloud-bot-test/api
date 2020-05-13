@@ -35,10 +35,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TrafficSet** | array[[*TrafficSet*](#TrafficSet)] | 用户不同区域的流量信息, 具体结构参见TrafficSet部分 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TrafficSet** | array[[*TrafficSet*](#TrafficSet)] | 用户不同区域的流量信息, 具体结构参见TrafficSet部分 |No|
 
 #### 数据模型
 
@@ -48,9 +48,9 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Areacode** | string | 购买流量的区域, cn: 国内; abroad: 国外 |No|
-| **TrafficTotal** | number | Areacode区域内总购买流量, 单位GB |No|
-| **TrafficLeft** | number | Areacode区域内总剩余流量, 单位GB |No|
-| **TrafficUsed** | number | Areacode区域内总使用流量, 单位GB |No|
+| **TrafficTotal** | float | Areacode区域内总购买流量, 单位GB |No|
+| **TrafficLeft** | float | Areacode区域内总剩余流量, 单位GB |No|
+| **TrafficUsed** | float | Areacode区域内总使用流量, 单位GB |No|
 
 ## 示例
 
@@ -83,6 +83,7 @@ http://api.ucloud.cn/?Action=GetUcdnTraffic
   ]
 }
 ```
+
 
 
 

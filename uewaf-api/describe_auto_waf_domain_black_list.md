@@ -36,11 +36,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Rows** | array[[*AutoWafDomainBlackList*](#AutoWafDomainBlackList)] | 自动拦截策略列表，参考AutoWafDomainBlackList |No|
-| **TotalCount** | integer | 自动拦截策略数量 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Rows** | array[[*AutoWafDomainBlackList*](#AutoWafDomainBlackList)] | 自动拦截策略列表，参考AutoWafDomainBlackList |No|
+| **TotalCount** | int | 自动拦截策略数量 |No|
 
 #### 数据模型
 
@@ -49,14 +49,14 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Id** | integer | 规则ID |**Yes**|
+| **Id** | int | 规则ID |**Yes**|
 | **FullName** | string | 规则所属域名 |**Yes**|
 | **AttackType** | string | 攻击类型 |**Yes**|
 | **ActionType** | string | 防御模式 |**Yes**|
-| **AttackCount** | integer | 攻击数量 |**Yes**|
-| **IntervalTime** | integer | 攻击统计区间，单位:秒 |**Yes**|
-| **ExpiredTime** | integer | 攻击过期区间，单位:秒 |**Yes**|
-| **Enable** | integer | 启用状态;1表示启用,0表示禁用 |**Yes**|
+| **AttackCount** | int | 攻击数量 |**Yes**|
+| **IntervalTime** | int | 攻击统计区间，单位:秒 |**Yes**|
+| **ExpiredTime** | int | 攻击过期区间，单位:秒 |**Yes**|
+| **Enable** | int | 启用状态;1表示启用,0表示禁用 |**Yes**|
 | **CreateTime** | string | 创建时间 |**Yes**|
 
 ## 示例
@@ -102,6 +102,7 @@ https://api.ucloud.cn/?Action=DescribeAutoWafDomainBlackList
   "TotalCount": 2
 }
 ```
+
 
 
 

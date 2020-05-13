@@ -33,9 +33,9 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **Peer1** | string | 专线可用区1，支持地域：北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg,  洛杉矶：us-la， 华盛顿：us-ws， 东京：jpn-tky |**Yes**|
 | **Peer2** | string | 专线可用区2，支持地域：北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg,  洛杉矶：us-la， 华盛顿：us-ws， 东京：jpn-tky |**Yes**|
-| **Bandwidth** | integer | 带宽 |**Yes**|
+| **Bandwidth** | int | 带宽 |**Yes**|
 | **ChargeType** | string | 计费类型，枚举值为： Year，按年付费； Month，按月付费； Dynamic，按需付费 |No|
-| **Quantity** | integer | 计费时长，默认 1 |No|
+| **Quantity** | int | 计费时长，默认 1 |No|
 | **PayMode** | string | 计费模式. 枚举值："Traffic", 流量计费模式; 否则 带宽计费模式； |No|
 | **CouponId** | string | 代金劵 |No|
 
@@ -43,10 +43,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **UDPNId** | string | 资源名称 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **UDPNId** | string | 资源名称 |**Yes**|
 
 
 
@@ -74,6 +74,7 @@ https://api.ucloud.cn/?Action=AllocateUDPN
   "UDPNId": "udpn-XXXXXX"
 }
 ```
+
 
 
 

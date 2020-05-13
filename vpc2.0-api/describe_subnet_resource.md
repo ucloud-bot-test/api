@@ -33,18 +33,18 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **SubnetId** | string | 子网id |**Yes**|
 | **ResourceType** | string | 资源类型，默认为全部资源类型。枚举值为：UHOST，云主机；PHOST，物理云主机；ULB，负载均衡；UHADOOP_HOST，hadoop节点；UFORTRESS_HOST，堡垒机；UNATGW，NAT网关；UKAFKA，Kafka消息队列；UMEM，内存存储；DOCKER，容器集群；UDB，数据库；UDW，数据仓库；VIP，内网VIP. |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
-| **Limit** | integer | 单页返回数据长度，默认为20 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 单页返回数据长度，默认为20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 总数 |No|
-| **DataSet** | array[[*SubnetResource*](#SubnetResource)] | 返回数据集，请见SubnetResource |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 总数 |No|
+| **DataSet** | array[[*SubnetResource*](#SubnetResource)] | 返回数据集，请见SubnetResource |No|
 
 #### 数据模型
 
@@ -89,6 +89,7 @@ https://api.ucloud.cn/?Action=DescribeSubnetResource
   "TotalCount": 1
 }
 ```
+
 
 
 

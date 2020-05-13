@@ -33,8 +33,8 @@
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |No|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **DBId** | string | 实例的Id |**Yes**|
-| **MemoryLimit** | integer | 内存限制(MB) |**Yes**|
-| **DiskSpace** | integer | 磁盘空间(GB), 暂时支持20G - 500G |**Yes**|
+| **MemoryLimit** | int | 内存限制(MB) |**Yes**|
+| **DiskSpace** | int | 磁盘空间(GB), 暂时支持20G - 500G |**Yes**|
 | **UseSSD** | boolean | 是否使用SSD，默认为false |No|
 | **SSDType** | string | SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选 |No|
 
@@ -42,10 +42,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Price** | integer | 价格，单位为分 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Price** | int | 价格，单位为分 |No|
 
 
 
@@ -71,6 +71,7 @@ https://api.ucloud.cn/?Action=DescribeUDBInstanceUpgradePrice
   "RetCode": 0
 }
 ```
+
 
 
 

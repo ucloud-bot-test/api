@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **IdcId** | string | 机房id |**Yes**|
-| **CpuCore** | integer | cpu核心数 |**Yes**|
-| **MemSize** | integer | 内存大小，单位GB |**Yes**|
-| **DiskSize** | integer | 数据盘大小，单位GB |**Yes**|
+| **CpuCore** | int | cpu核心数 |**Yes**|
+| **MemSize** | int | 内存大小，单位GB |**Yes**|
+| **DiskSize** | int | 数据盘大小，单位GB |**Yes**|
 | **ImageId** | string | 镜像ID |**Yes**|
-| **NetLimit** | integer | 节点带宽限制，单位Mbs |**Yes**|
+| **NetLimit** | int | 节点带宽限制，单位Mbs |**Yes**|
 | **NodeName** | string | 节点名称 |No|
-| **SysDiskSize** | integer | 系统盘大小，单位GB， 默认20GB |No|
+| **SysDiskSize** | int | 系统盘大小，单位GB， 默认20GB |No|
 | **AccountName** | string | 账户名，默认root |No|
 | **PassWord** | string | 密码 |No|
-| **NodeCount** | integer | 创建节点数量，默认1 |No|
-| **ChargeType** | integer | 付费方式，1按时，2按月，3按年，默认2 |No|
-| **ChargeQuantity** | integer | 月数或者年数，0计费到月底， 默认0 |No|
+| **NodeCount** | int | 创建节点数量，默认1 |No|
+| **ChargeType** | int | 付费方式，1按时，2按月，3按年，默认2 |No|
+| **ChargeQuantity** | int | 月数或者年数，0计费到月底， 默认0 |No|
 | **SubnetId** | string | 子网ID |No|
 | **ProductType** | string | 产品类型：normal（标准型），hf（高频型） |No|
 | **FirewallId** | string | 外网防护墙规则租，默认 |No|
@@ -51,10 +51,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **NodeList** | array[string] | 节点id |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **NodeList** | array[string] | 节点id |**Yes**|
 
 
 
@@ -95,6 +95,7 @@ https://api.ucloud.cn/?Action=CreateUvodnNode
   "RetCode": 0
 }
 ```
+
 
 
 

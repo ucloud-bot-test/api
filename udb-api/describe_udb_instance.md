@@ -33,8 +33,8 @@
 | **Zone** | string | 可用区，不填时默认全部可用区。参见 [可用区列表](api/summary/regionlist) |No|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **ClassType** | string | DB种类，如果是列表操作，则需要指定,不区分大小写，其取值如下：mysql: SQL；mongo: NOSQL；postgresql: postgresql |No|
-| **Offset** | integer | 分页显示起始偏移位置，列表操作时必填 |No|
-| **Limit** | integer | 分页显示数量，列表操作时必填 |No|
+| **Offset** | int | 分页显示起始偏移位置，列表操作时必填 |No|
+| **Limit** | int | 分页显示数量，列表操作时必填 |No|
 | **DBId** | string | DB实例id，如果指定则获取单个db实例的描述，否则为列表操作。 指定DBId时无需填写ClassType、Offset、Limit |No|
 | **IsInUDBC** | boolean | 是否查看专区里面DB |No|
 | **UDBCId** | string | IsInUDBC为True,UDBCId为空，说明查看整个可用区的专区的db，如果UDBId不为空则只查看此专区下面的db |No|
@@ -44,11 +44,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*UDBInstanceSet*](#UDBInstanceSet)] | DB实例信息列表 UDBInstanceSet |No|
-| **TotalCount** | integer | 用户db组的数量，对于 mysql: 主从结对数量，没有slave，则只有master mongodb: 副本集数量 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*UDBInstanceSet*](#UDBInstanceSet)] | DB实例信息列表 UDBInstanceSet |No|
+| **TotalCount** | int | 用户db组的数量，对于 mysql: 主从结对数量，没有slave，则只有master mongodb: 副本集数量 |No|
 
 #### 数据模型
 
@@ -62,35 +62,35 @@
 | **DBId** | string | DB实例id |No|
 | **Name** | string | 实例名称，至少6位 |No|
 | **DBTypeId** | string | DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下： 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6， 7：percona-5.6 |No|
-| **ParamGroupId** | integer | DB实例使用的配置参数组id |No|
+| **ParamGroupId** | int | DB实例使用的配置参数组id |No|
 | **AdminUser** | string | 管理员帐户名，默认root |No|
 | **VirtualIP** | string | DB实例虚ip |No|
 | **VirtualIPMac** | string | DB实例虚ip的mac地址 |No|
 | **VPCId** | string | VPC的ID |No|
 | **SubnetId** | string | 子网ID |No|
 | **InstanceType** | string | UDB数据库机型 |No|
-| **InstanceTypeId** | integer | UDB数据库机型ID |No|
+| **InstanceTypeId** | int | UDB数据库机型ID |No|
 | **Tag** | string | 获取资源其他信息 |No|
-| **Port** | integer | 端口号，mysql默认3306，mongodb默认27017 |No|
+| **Port** | int | 端口号，mysql默认3306，mongodb默认27017 |No|
 | **SrcDBId** | string | 对mysql的slave而言是master的DBId，对master则为空， 对mongodb则是副本集id |No|
-| **BackupCount** | integer | 备份策略，不可修改，备份文件保留的数量，默认7次 |No|
-| **BackupBeginTime** | integer | 备份策略，不可修改，开始时间，单位小时计，默认3点 |No|
-| **BackupDuration** | integer | 备份策略，一天内备份时间间隔，单位小时，默认24小时 |No|
+| **BackupCount** | int | 备份策略，不可修改，备份文件保留的数量，默认7次 |No|
+| **BackupBeginTime** | int | 备份策略，不可修改，开始时间，单位小时计，默认3点 |No|
+| **BackupDuration** | int | 备份策略，一天内备份时间间隔，单位小时，默认24小时 |No|
 | **BackupBlacklist** | string | 备份策略，备份黑名单，mongodb则不适用 |No|
 | **State** | string | DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败 |No|
-| **CreateTime** | integer | DB实例创建时间，采用UTC计时时间戳 |No|
-| **ModifyTime** | integer | DB实例修改时间，采用UTC计时时间戳 |No|
-| **ExpiredTime** | integer | DB实例过期时间，采用UTC计时时间戳 |No|
+| **CreateTime** | int | DB实例创建时间，采用UTC计时时间戳 |No|
+| **ModifyTime** | int | DB实例修改时间，采用UTC计时时间戳 |No|
+| **ExpiredTime** | int | DB实例过期时间，采用UTC计时时间戳 |No|
 | **ChargeType** | string | Year， Month， Dynamic，Trial，默认: Dynamic |No|
-| **MemoryLimit** | integer | 内存限制(MB)，默认根据配置机型 |No|
-| **DiskSpace** | integer | 磁盘空间(GB), 默认根据配置机型 |No|
+| **MemoryLimit** | int | 内存限制(MB)，默认根据配置机型 |No|
+| **DiskSpace** | int | 磁盘空间(GB), 默认根据配置机型 |No|
 | **UseSSD** | boolean | 是否使用SSD |No|
 | **SSDType** | string | SSD类型，SATA/PCI-E/NVMe |No|
 | **Role** | string | DB实例角色，mysql区分master/slave，mongodb多种角色 |No|
-| **DiskUsedSize** | number | DB实例磁盘已使用空间，单位GB |No|
-| **DataFileSize** | number | DB实例数据文件大小，单位GB |No|
-| **SystemFileSize** | number | DB实例系统文件大小，单位GB |No|
-| **LogFileSize** | number | DB实例日志文件大小，单位GB |No|
+| **DiskUsedSize** | float | DB实例磁盘已使用空间，单位GB |No|
+| **DataFileSize** | float | DB实例数据文件大小，单位GB |No|
+| **SystemFileSize** | float | DB实例系统文件大小，单位GB |No|
+| **LogFileSize** | float | DB实例日志文件大小，单位GB |No|
 | **BackupDate** | string | 备份日期标记位。共7位,每一位为一周中一天的备份情况 0表示关闭当天备份,1表示打开当天备份。最右边的一位 为星期天的备份开关，其余从右到左依次为星期一到星期 六的备份配置开关，每周必须至少设置两天备份。 例如：1100000 表示打开星期六和星期五的自动备份功能 |No|
 | **InstanceMode** | string | UDB实例模式类型, 可选值如下: “Normal”： 普通版UDB实例 “HA”: 高可用版UDB实例 |No|
 | **DataSet** | array[[*UDBSlaveInstanceSet*](#UDBSlaveInstanceSet)] | 如果在需要返回从库的场景下，返回该DB实例的所有从库DB实例信息列表。列表中每一个元素的内容同UDBSlaveInstanceSet 。如果这个DB实例没有从库的情况下，此时返回一个空的列表 |No|
@@ -105,37 +105,37 @@
 | **DBId** | string | DB实例id |No|
 | **Name** | string | 实例名称，至少6位 |No|
 | **DBTypeId** | string | DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下： 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6， 7：percona-5.6 |No|
-| **ParamGroupId** | integer | DB实例使用的配置参数组id |No|
+| **ParamGroupId** | int | DB实例使用的配置参数组id |No|
 | **AdminUser** | string | 管理员帐户名，默认root |No|
 | **VirtualIP** | string | DB实例虚ip |No|
 | **VirtualIPMac** | string | DB实例虚ip的mac地址 |No|
-| **Port** | integer | 端口号，mysql默认3306，mongodb默认27017 |No|
+| **Port** | int | 端口号，mysql默认3306，mongodb默认27017 |No|
 | **SrcDBId** | string | 对mysql的slave而言是master的DBId，对master则为空， 对mongodb则是副本集id |No|
-| **BackupCount** | integer | 备份策略，不可修改，备份文件保留的数量，默认7次 |No|
-| **BackupBeginTime** | integer | 备份策略，不可修改，开始时间，单位小时计，默认3点 |No|
-| **BackupDuration** | integer | 备份策略，一天内备份时间间隔，单位小时，默认24小时 |No|
+| **BackupCount** | int | 备份策略，不可修改，备份文件保留的数量，默认7次 |No|
+| **BackupBeginTime** | int | 备份策略，不可修改，开始时间，单位小时计，默认3点 |No|
+| **BackupDuration** | int | 备份策略，一天内备份时间间隔，单位小时，默认24小时 |No|
 | **BackupBlacklist** | string | 备份策略，备份黑名单，mongodb则不适用 |No|
 | **State** | string | DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败 |No|
-| **CreateTime** | integer | DB实例创建时间，采用UTC计时时间戳 |No|
-| **ModifyTime** | integer | DB实例修改时间，采用UTC计时时间戳 |No|
-| **ExpiredTime** | integer | DB实例过期时间，采用UTC计时时间戳 |No|
+| **CreateTime** | int | DB实例创建时间，采用UTC计时时间戳 |No|
+| **ModifyTime** | int | DB实例修改时间，采用UTC计时时间戳 |No|
+| **ExpiredTime** | int | DB实例过期时间，采用UTC计时时间戳 |No|
 | **ChargeType** | string | Year， Month， Dynamic，Trial，默认: Dynamic |No|
-| **MemoryLimit** | integer | 内存限制(MB)，默认根据配置机型 |No|
-| **DiskSpace** | integer | 磁盘空间(GB), 默认根据配置机型 |No|
+| **MemoryLimit** | int | 内存限制(MB)，默认根据配置机型 |No|
+| **DiskSpace** | int | 磁盘空间(GB), 默认根据配置机型 |No|
 | **UseSSD** | boolean | 是否使用SSD |No|
 | **SSDType** | string | SSD类型，SATA/PCI-E |No|
 | **Role** | string | DB实例角色，mysql区分master/slave，mongodb多种角色 |No|
-| **DiskUsedSize** | number | DB实例磁盘已使用空间，单位GB |No|
-| **DataFileSize** | number | DB实例数据文件大小，单位GB |No|
-| **SystemFileSize** | number | DB实例系统文件大小，单位GB |No|
-| **LogFileSize** | number | DB实例日志文件大小，单位GB |No|
+| **DiskUsedSize** | float | DB实例磁盘已使用空间，单位GB |No|
+| **DataFileSize** | float | DB实例数据文件大小，单位GB |No|
+| **SystemFileSize** | float | DB实例系统文件大小，单位GB |No|
+| **LogFileSize** | float | DB实例日志文件大小，单位GB |No|
 | **BackupDate** | string | 备份日期标记位。共7位,每一位为一周中一天的备份情况 0表示关闭当天备份,1表示打开当天备份。最右边的一位 为星期天的备份开关，其余从右到左依次为星期一到星期 六的备份配置开关，每周必须至少设置两天备份。 例如：1100000 表示打开星期六和星期五的自动备份功能 |No|
 | **InstanceMode** | string | UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例;"HA": 高可用版UDB实例 |No|
 | **ClusterRole** | string | 当DB类型为mongodb时，返回该实例所在集群中的角色，包括：mongos、configsrv_sccc、configsrv_csrs、shardsrv_datanode、shardsrv_arbiter，其中congfigsrv分为sccc和csrs两种模式，shardsrv分为datanode和arbiter两种模式 |No|
 | **SubnetId** | string | 子网ID |No|
 | **VPCId** | string | VPC的ID |No|
 | **InstanceType** | string | UDB数据库机型 |No|
-| **InstanceTypeId** | integer | UDB数据库机型ID |No|
+| **InstanceTypeId** | int | UDB数据库机型ID |No|
 | **Tag** | string | 获取资源其他信息 |No|
 | **IPv6Address** | string | 获取该实例的IPv6地址 |No|
 
@@ -287,6 +287,7 @@ https://api.ucloud.cn/?Action=DescribeUDBInstance
   "TotalCount": 2
 }
 ```
+
 
 
 

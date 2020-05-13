@@ -36,10 +36,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Rules** | array[[*SystemRuleInfo*](#SystemRuleInfo)] | 规则内容列表，参考SystemRuleInfo |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Rules** | array[[*SystemRuleInfo*](#SystemRuleInfo)] | 规则内容列表，参考SystemRuleInfo |No|
 
 #### 数据模型
 
@@ -48,11 +48,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **SysRuleset** | integer | 规则起始编号 |No|
+| **SysRuleset** | int | 规则起始编号 |No|
 | **Action** | string | 动作 |No|
 | **RiskRank** | string | 风险等级 |No|
 | **RulesetType** | string | 规则集类型 |No|
-| **Priority** | integer | 优先级 |No|
+| **Priority** | int | 优先级 |No|
 | **AttackType** | string | 攻击类型 |No|
 | **Description** | string | 规则描述 |No|
 
@@ -85,6 +85,7 @@ https://api.ucloud.cn/?Action=DescribeWafSystemRules
   ]
 }
 ```
+
 
 
 

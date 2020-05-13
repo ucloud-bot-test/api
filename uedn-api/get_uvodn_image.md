@@ -31,18 +31,18 @@ uodn2.0
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **ImageType** | string | 镜像类型：1标准镜像，2行业镜像，3自定义镜像 |No|
-| **Offset** | integer | 数据偏移量，默认0，非负整数 |No|
-| **Limit** | integer | 返回数据长度， 默认20，非负整数 |No|
+| **Offset** | int | 数据偏移量，默认0，非负整数 |No|
+| **Limit** | int | 返回数据长度， 默认20，非负整数 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ImageList** | array[[*ImageInfo*](#ImageInfo)] | 获取的镜像信息，具体参考下面ImageInfo |No|
-| **TotalCount** | integer | 镜像总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **ImageList** | array[[*ImageInfo*](#ImageInfo)] | 获取的镜像信息，具体参考下面ImageInfo |No|
+| **TotalCount** | int | 镜像总数 |No|
 
 #### 数据模型
 
@@ -66,7 +66,7 @@ uodn2.0
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **IdcId** | string | 机房ID |No|
-| **State** | integer | 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中 |No|
+| **State** | int | 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中 |No|
 
 ## 示例
 
@@ -95,6 +95,7 @@ https://api.ucloud.cn/?Action=GetUvodnImage
   "TotalCount": 1
 }
 ```
+
 
 
 

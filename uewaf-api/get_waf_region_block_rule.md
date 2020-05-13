@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **FullDomain** | string | 查询域名  |**Yes**|
-| **Offset** | integer | 分页查询偏移设置 |**Yes**|
-| **Limit** | integer | 单页数量限制 |**Yes**|
+| **Offset** | int | 分页查询偏移设置 |**Yes**|
+| **Limit** | int | 单页数量限制 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Count** | integer | 规则数量 |No|
-| **RuleList** | [*RegionBlackInfo*](#RegionBlackInfo) | 规则列表，参考RegionBlackInfo |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Count** | int | 规则数量 |No|
+| **RuleList** | [*RegionBlackInfo*](#RegionBlackInfo) | 规则列表，参考RegionBlackInfo |No|
 
 #### 数据模型
 
@@ -51,14 +51,14 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ID** | integer | 规则ID |No|
+| **ID** | int | 规则ID |No|
 | **Name** | string | 规则名称 |No|
 | **FullDomain** | string | 所属域名 |No|
 | **Action** | string | 执行动作 |No|
 | **Regions** | string | 生效区域 |No|
 | **Description** | string | 规则描述 |No|
-| **TopOrganizationId** | integer | 用户ID |No|
-| **OrganizationId** | integer | 项目ID |No|
+| **TopOrganizationId** | int | 用户ID |No|
+| **OrganizationId** | int | 项目ID |No|
 
 ## 示例
 
@@ -93,6 +93,7 @@ https://api.ucloud.cn/?Action=GetWafRegionBlockRule
   ]
 }
 ```
+
 
 
 

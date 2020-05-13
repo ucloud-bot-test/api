@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **RepoName** | string | 镜像仓库名称 |**Yes**|
-| **Offset** | integer | 偏移量，默认0 |No|
-| **Limit** | integer | 显示数量，默认为20 |No|
+| **Offset** | int | 偏移量，默认0 |No|
+| **Limit** | int | 显示数量，默认为20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer |  |**Yes**|
-| **ImageSet** | array[[*ImageSet*](#ImageSet)] | 镜像列表 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int |  |**Yes**|
+| **ImageSet** | array[[*ImageSet*](#ImageSet)] | 镜像列表 |**Yes**|
 
 #### 数据模型
 
@@ -52,7 +52,7 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ImageName** | string | 镜像名称 |**Yes**|
-| **PullCount** | integer | 镜像被下载次数 |**Yes**|
+| **PullCount** | int | 镜像被下载次数 |**Yes**|
 | **CreateTime** | string | 创建时间 |**Yes**|
 | **UpdateTime** | string | 修改时间 |**Yes**|
 | **LatestTag** | string | 最新push的Tag |**Yes**|
@@ -145,6 +145,7 @@ https://api.ucloud.cn/?Action=GetRepoImage
   "TotalCount": 5
 }
 ```
+
 
 
 

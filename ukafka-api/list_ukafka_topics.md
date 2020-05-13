@@ -38,11 +38,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TopicList** | array[[*TopicInfo*](#TopicInfo)] | topic 信息列表 |**Yes**|
-| **Length** | integer | 列表长度 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TopicList** | array[[*TopicInfo*](#TopicInfo)] | topic 信息列表 |**Yes**|
+| **Length** | int | 列表长度 |No|
 
 #### 数据模型
 
@@ -52,10 +52,10 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Topic** | string | topic 名称 |No|
-| **NumOfPartition** | integer | 分区数量 |No|
-| **NumOfOccupyBroker** | integer | 占用 broker 数量 |No|
-| **NumOfReplica** | integer | 副本数量 |No|
-| **UnderReplicasPer** | number | 落后副本占比 |No|
+| **NumOfPartition** | int | 分区数量 |No|
+| **NumOfOccupyBroker** | int | 占用 broker 数量 |No|
+| **NumOfReplica** | int | 副本数量 |No|
+| **UnderReplicasPer** | float | 落后副本占比 |No|
 | **Status** | string | topic 状态 |No|
 
 ## 示例
@@ -108,6 +108,7 @@ https://api.ucloud.cn/?Action=ListUKafkaTopics
   ]
 }
 ```
+
 
 
 

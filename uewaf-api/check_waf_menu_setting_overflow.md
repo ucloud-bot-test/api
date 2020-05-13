@@ -36,10 +36,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **UsageInfo** | [*UsageInfo*](#UsageInfo) | 用量描述，参考UsageInfo |No|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -49,20 +49,20 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **IPUsage** | [*UsageInfoDetail*](#UsageInfoDetail) | 独享ip用量，参考UsageInfoDetail |No|
-| **DomainUsage** | string | 已添加域名数量，参考UsageInfoDetail |No|
-| **BoardWidthUsageInner** | string | 内部带宽占用，参考UsageInfoDetail |No|
-| **BoardWidthUsageOuter** | string | 外部带宽占用，参考UsageInfoDetail |No|
-| **DomainLimit** | string | 域名数量限额，参考UsageInfoDetail |No|
-| **ExclusiveIPLimit** | string | 独享ip限额，参考UsageInfoDetail |No|
-| **BandwidthInner** | string | 内部带宽限额，参考UsageInfoDetail |No|
-| **BandwidthOuter** | string | 外部带宽限额，参考UsageInfoDetail |No|
+| **DomainUsage** | object | 已添加域名数量，参考UsageInfoDetail |No|
+| **BoardWidthUsageInner** | object | 内部带宽占用，参考UsageInfoDetail |No|
+| **BoardWidthUsageOuter** | object | 外部带宽占用，参考UsageInfoDetail |No|
+| **DomainLimit** | object | 域名数量限额，参考UsageInfoDetail |No|
+| **ExclusiveIPLimit** | object | 独享ip限额，参考UsageInfoDetail |No|
+| **BandwidthInner** | object | 内部带宽限额，参考UsageInfoDetail |No|
+| **BandwidthOuter** | object | 外部带宽限额，参考UsageInfoDetail |No|
 
 #### UsageInfoDetail
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Quota** | integer | 配额数量 |No|
-| **Used** | integer | 已使用数量 |No|
+| **Quota** | int | 配额数量 |No|
+| **Used** | int | 已使用数量 |No|
 
 ## 示例
 
@@ -107,6 +107,7 @@ https://api.ucloud.cn/?Action=CheckWafMenuSettingOverflow
   }
 }
 ```
+
 
 
 

@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID，不填为默认项目 |No|
 | **FullDomain** | string | 域名，不填时查询该用户账号下所有域名的当日攻击数 |No|
-| **BeginTime** | integer | 查询开始时间，不填默认为最近1天 |No|
-| **EndTime** | integer | 查询结束时间 |No|
+| **BeginTime** | int | 查询开始时间，不填默认为最近1天 |No|
+| **EndTime** | int | 查询结束时间 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **AttackCount** | integer | 攻击次数 |**Yes**|
-| **RequestCount** | integer | 请求总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **AttackCount** | int | 攻击次数 |**Yes**|
+| **RequestCount** | int | 请求总数 |No|
 
 
 
@@ -69,6 +69,7 @@ https://api.ucloud.cn/?Action=DescribeWafDomainAttackCount
   "RetCode": 0
 }
 ```
+
 
 
 

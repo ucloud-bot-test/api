@@ -36,17 +36,17 @@
 | **OutputDir** | string | 算法输出的文件目录	 |No|
 | **OutputFileName** | string | 算法输出的文件名称，支持输出到多个文件，如OutputFileName=output1&OutputFileName=output2 |No|
 | **TaskType** | string | 同步任务Sync，异步任务Async，默认Async	 |No|
-| **TimeOut** | integer | 超时时间同步任务默认值为10秒，异步任务为默认为0，0表示不限制	 |No|
+| **TimeOut** | int | 超时时间同步任务默认值为10秒，异步任务为默认为0，0表示不限制	 |No|
 | **TaskName** | string | 任务名称	 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **TaskId** | string | 任务ID(只有异步任务会返回该字段)<br /> |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TaskId** | string | 任务ID(只有异步任务会返回该字段)<br /> |**Yes**|
 
 
 
@@ -73,6 +73,7 @@ http(s)://api.ugc.service.ucloud.cn/?Action=SubmitTask
   "TaskId": "Wkxflnwp"
 }
 ```
+
 
 
 

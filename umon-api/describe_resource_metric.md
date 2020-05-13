@@ -35,10 +35,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*DescribeResourceMetricResponse*](#DescribeResourceMetricResponse)] | 指标信息集合 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*DescribeResourceMetricResponse*](#DescribeResourceMetricResponse)] | 指标信息集合 |**Yes**|
 
 #### 数据模型
 
@@ -48,13 +48,13 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Unit** | string | 单位：<br />bit Byte Kb KB Mb MB Gb GB Tb TB Pb PB Eb EB iops bps Bps Kbps KBps Mbps MBps Gbps GBps Tbps TBps 个 个/s 次 次/s 千次/s 万次/s % s ms us bool ‱ 个/min 个/核 个/10s bytes/10s MB/s dbm min |**Yes**|
-| **ConversionFactor** | integer | 保留字段 |**Yes**|
-| **Type** | integer | 指标类型（暂时没有意义） |**Yes**|
+| **ConversionFactor** | int | 保留字段 |**Yes**|
+| **Type** | int | 指标类型（暂时没有意义） |**Yes**|
 | **MetricGroup** | string | 监控指标组 |**Yes**|
 | **SupportAlarm** | string | 是否支持告警：Yes\|No |**Yes**|
 | **AlarmRange** | string | 告警阈值设置的有效范围 |**Yes**|
-| **Frequency** | integer | 告警频率 |**Yes**|
-| **MetricId** | integer | 监控项id |**Yes**|
+| **Frequency** | int | 告警频率 |**Yes**|
+| **MetricId** | int | 监控项id |**Yes**|
 | **CompareOption** | array[string] | 比较方法：GE大于等于\|LE小于等于 |**Yes**|
 | **MetricName** | string | 指标名字 |No|
 
@@ -94,6 +94,7 @@ https://api.ucloud.cn/?Action=DescribeResourceMetric
   "RetCode": 0
 }
 ```
+
 
 
 

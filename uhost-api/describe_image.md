@@ -35,19 +35,19 @@
 | **ImageType** | string | 镜像类型。标准镜像：Base，镜像市场：Business， 自定义镜像：Custom，默认返回所有类型 |No|
 | **OsType** | string | 操作系统类型：Linux， Windows 默认返回所有类型 |No|
 | **ImageId** | string | 镜像Id |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
-| **Limit** | integer | 返回数据长度，默认为20 |No|
-| **PriceSet** | integer | 是否返回价格：1返回，0不返回；默认不返回 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20 |No|
+| **PriceSet** | int | 是否返回价格：1返回，0不返回；默认不返回 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 满足条件的镜像总数 |No|
-| **ImageSet** | array[[*UHostImageSet*](#UHostImageSet)] | 镜像列表详见 UHostImageSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的镜像总数 |No|
+| **ImageSet** | array[[*UHostImageSet*](#UHostImageSet)] | 镜像列表详见 UHostImageSet |No|
 
 #### 数据模型
 
@@ -69,8 +69,8 @@
 | **Links** | string | 介绍链接（仅行业镜像将返回这个值） |No|
 | **State** | string | 镜像状态， 可用：Available，制作中：Making， 不可用：Unavailable |No|
 | **ImageDescription** | string | 镜像描述 |No|
-| **CreateTime** | integer | 创建时间，格式为Unix时间戳 |No|
-| **ImageSize** | integer | 镜像大小 |No|
+| **CreateTime** | int | 创建时间，格式为Unix时间戳 |No|
+| **ImageSize** | int | 镜像大小 |No|
 | **MinimalCPU** | string | 默认值为空'''。当CentOS 7.3/7.4/7.5等镜像会标记为“Broadwell” |No|
 
 ## 示例
@@ -116,6 +116,7 @@ https://api.ucloud.cn/?Action=DescribeImage
   "TotalCount": 1
 }
 ```
+
 
 
 

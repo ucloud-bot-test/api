@@ -30,22 +30,22 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **BeginTime** | integer | 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值 |No|
-| **EndTime** | integer | 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。 |No|
-| **Status** | string | 需要获取的内容预热的状态，枚举值：success：成功；wait：等待处理；process：正在处理；failure：失败； unknow：未知，默认选择所有状态 |No|
-| **Offset** | integer | 数据偏移量，默认为0，自然数 |No|
-| **Limit** | integer | 返回数据长度,默认全部，自然数 |No|
 | **TaskId.N** | string | 提交任务时返回的任务ID |No|
+| **BeginTime** | int | 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值 |No|
+| **EndTime** | int | 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。 |No|
+| **Status** | string | 需要获取的内容预热的状态，枚举值：success：成功；wait：等待处理；process：正在处理；failure：失败； unknow：未知，默认选择所有状态 |No|
+| **Offset** | int | 数据偏移量，默认为0，自然数 |No|
+| **Limit** | int | 返回数据长度,默认全部，自然数 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 预热任务的总数 |No|
-| **TaskList** | array[[*TaskInfo*](#TaskInfo)] | 预热任务信息，参考TaskInfo |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 预热任务的总数 |No|
+| **TaskList** | array[[*TaskInfo*](#TaskInfo)] | 预热任务信息，参考TaskInfo |No|
 
 #### 数据模型
 
@@ -57,7 +57,7 @@
 | **TaskId** | string | 提交任务时返回的任务ID |No|
 | **UrlLists** | array[[*UrlProgressInfo*](#UrlProgressInfo)] | 任务url的信息列表，参考UrlProgressInfo |No|
 | **Type** | string | file/dir  刷新任务会返回Type，预取任务没有 |No|
-| **CreateTime** | integer | 刷新任务创建的时间。格式为Unix Timestamp |No|
+| **CreateTime** | int | 刷新任务创建的时间。格式为Unix Timestamp |No|
 | **Status** | string | 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知 |No|
 
 #### UrlProgressInfo
@@ -65,10 +65,10 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **Url** | string | 刷新的单条url |No|
-| **CreateTime** | integer | 刷新任务创建的时间。格式为Unix Timestamp |No|
-| **FinishTime** | integer | 任务完成时间。格式为Unix Timestamp |No|
+| **CreateTime** | int | 刷新任务创建的时间。格式为Unix Timestamp |No|
+| **FinishTime** | int | 任务完成时间。格式为Unix Timestamp |No|
 | **Status** | string | 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知 |No|
-| **Progress** | integer | 刷新进度，单位% |No|
+| **Progress** | int | 刷新进度，单位% |No|
 
 ## 示例
 
@@ -363,6 +363,7 @@ https://api.ucloud.cn/?Action=DescribeNewUcdnPrefetchCacheTask
   "TotalCount": 4
 }
 ```
+
 
 
 

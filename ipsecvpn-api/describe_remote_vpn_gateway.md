@@ -31,20 +31,20 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
-| **Tag** | string | 业务组名称，若指定则返回业务组下所有客户VPN网关信息 |No|
-| **Offset** | integer | 数据偏移量, 默认为0 |No|
-| **Limit** | integer | 数据分页值, 默认为20 |No|
 | **RemoteVPNGatewayIds.N** | string | 客户VPN网关的资源ID，例如RemoteVPNGatewayIds.0代表希望获取客户VPN网关1的信息，RemoteVPNGatewayIds.1代表客户VPN网关2，如果为空，则返回当前Region中所有客户VPN网关实例的信息 |No|
+| **Tag** | string | 业务组名称，若指定则返回业务组下所有客户VPN网关信息 |No|
+| **Offset** | int | 数据偏移量, 默认为0 |No|
+| **Limit** | int | 数据分页值, 默认为20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 符合条件的客户VPN网关总数 |No|
-| **DataSet** | array[[*RemoteVPNGatewayDataSet*](#RemoteVPNGatewayDataSet)] | 客户VPN网关列表, 每项参数详见 RemoteVPNGatewayDataSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 符合条件的客户VPN网关总数 |No|
+| **DataSet** | array[[*RemoteVPNGatewayDataSet*](#RemoteVPNGatewayDataSet)] | 客户VPN网关列表, 每项参数详见 RemoteVPNGatewayDataSet |No|
 
 #### 数据模型
 
@@ -58,9 +58,9 @@
 | **RemoteVPNGatewayAddr** | string | 客户网关IP地址 |No|
 | **Tag** | string | 用户组 |No|
 | **Remark** | string | 备注 |No|
-| **CreateTime** | integer | 创建时间 |No|
+| **CreateTime** | int | 创建时间 |No|
 | **ActiveTunnels** | string | 活跃的隧道id |No|
-| **TunnelCount** | integer | 活跃的隧道数量 |No|
+| **TunnelCount** | int | 活跃的隧道数量 |No|
 
 ## 示例
 
@@ -99,6 +99,7 @@ https://api.ucloud.cn/?Action=DescribeRemoteVPNGateway
   "TotalCount": 1
 }
 ```
+
 
 
 

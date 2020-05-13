@@ -32,18 +32,18 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Limit** | integer | 返回数据长度, 默认为20 |No|
-| **Offset** | integer | 数据偏移量, 默认为0 |No|
+| **Limit** | int | 返回数据长度, 默认为20 |No|
+| **Offset** | int | 数据偏移量, 默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 磁盘数量 |**Yes**|
-| **DataSet** | array[[*RecycleUDiskSet*](#RecycleUDiskSet)] | 回收站磁盘列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 磁盘数量 |**Yes**|
+| **DataSet** | array[[*RecycleUDiskSet*](#RecycleUDiskSet)] | 回收站磁盘列表 |No|
 
 #### 数据模型
 
@@ -53,11 +53,11 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **UDiskId** | string | 磁盘id |**Yes**|
-| **CreateTime** | integer | 创建时间 |**Yes**|
-| **ExpiredTime** | integer | 过期时间 |**Yes**|
-| **CountdownTime** | integer | 销毁倒计时 |**Yes**|
+| **CreateTime** | int | 创建时间 |**Yes**|
+| **ExpiredTime** | int | 过期时间 |**Yes**|
+| **CountdownTime** | int | 销毁倒计时 |**Yes**|
 | **Name** | string | 磁盘名称 |**Yes**|
-| **Size** | integer | 磁盘容量 |**Yes**|
+| **Size** | int | 磁盘容量 |**Yes**|
 | **Tag** | string | 业务组 |No|
 | **Zone** | string | 可用区 |**Yes**|
 
@@ -95,6 +95,7 @@ https://api.ucloud.cn/?Action=DescribeRecycleUDisk
   "TotalCount": 1
 }
 ```
+
 
 
 

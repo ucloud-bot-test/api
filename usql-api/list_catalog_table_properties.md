@@ -38,13 +38,13 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Request** | string | API请求ID |No|
 | **DatabaseName** | string | 数据库名称 |No|
 | **TableName** | string | 数据表名称 |No|
 | **TableProperties** | array[[*TableProperty*](#TableProperty)] | 数据表属性列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -53,8 +53,8 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Value** | string |  |No|
-| **Name** | string |  |No|
+| **Value** | string | 属性值 |No|
+| **Name** | string | 属性名 |No|
 
 ## 示例
 
@@ -107,6 +107,7 @@ https://api.ucloud.cn/?Action=ListCatalogTableProperties
   ]
 }
 ```
+
 
 
 

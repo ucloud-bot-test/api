@@ -32,19 +32,19 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
-| **Size** | integer | 购买umem大小,单位:GB,范围[1\~1024] |**Yes**|
+| **Size** | int | 购买umem大小,单位:GB,范围[1\~1024] |**Yes**|
 | **Type** | string | 空间类型:single(无热备),double(热备)(默认: double) |**Yes**|
 | **ChargeType** | string | Year， Month， Dynamic 如果不指定，则一次性获取三种计费 |No|
-| **Quantity** | integer | 购买UMem的时长，默认值为1 |No|
+| **Quantity** | int | 购买UMem的时长，默认值为1 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*UMemPriceSet*](#UMemPriceSet)] | 价格 参数见 UMemPriceSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*UMemPriceSet*](#UMemPriceSet)] | 价格 参数见 UMemPriceSet |No|
 
 #### 数据模型
 
@@ -54,9 +54,9 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ChargeType** | string | Year， Month， Dynamic，Trial |No|
-| **Price** | integer | 现价 |No|
-| **ListPrice** | integer | 产品列表价 |No|
-| **OriginalPrice** | integer | 原价 |No|
+| **Price** | int | 现价 |No|
+| **ListPrice** | int | 产品列表价 |No|
+| **OriginalPrice** | int | 原价 |No|
 
 ## 示例
 
@@ -99,6 +99,7 @@ https://api.ucloud.cn/?Action=DescribeUMemPrice
   "RetCode": 0
 }
 ```
+
 
 
 

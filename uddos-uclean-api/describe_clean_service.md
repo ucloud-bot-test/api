@@ -31,18 +31,18 @@
 |:---|:---|:---|:---|
 | **ResourceId** | string | 资源id，为空代表查询用户下所有清洗资源；不为空时代表查询指定资源ID的清洗服务；默认为空 |No|
 | **CleanRegion** | string | 清洗机房，不传时代表all。查询所有 |No|
-| **Offset** | integer | 数据偏移量, 默认为0。供分页显示使用 |No|
-| **Limit** | integer | 返回清洗的最多条目数, 默认为10。供分页显示使用 |No|
+| **Offset** | int | 数据偏移量, 默认为0。供分页显示使用 |No|
+| **Limit** | int | 返回清洗的最多条目数, 默认为10。供分页显示使用 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **TotalCount** | integer | 符合条件的条目总数 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 符合条件的条目总数 |**Yes**|
 | **CleanServiceList** | array[[*CleanServiceList*](#CleanServiceList)] | 清洗服务列表 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 #### 数据模型
 
@@ -55,19 +55,19 @@
 | **CreateTime** | string | 创建时间 （时间戳） |**Yes**|
 | **ExpiredTime** | string | 过期时间（时间戳） |**Yes**|
 | **CleanRegion** | string | 地域 |**Yes**|
-| **MaxCleanCapacity** | integer | 流量清洗上限防护流量（单位G），5、10、15、20、25 |**Yes**|
+| **MaxCleanCapacity** | int | 流量清洗上限防护流量（单位G），5、10、15、20、25 |**Yes**|
 | **DefenceStatus** | string | 状态，清洗服务的当前状态<br />当前状态 (清洗中：Cleaning  过期：Expired) |**Yes**|
 | **StatusRemarks** | string | 状态的补充说明（正常：Normal 超限：Exceed） |**Yes**|
 | **ChargeType** | string | 计费方式（Month:按月，Year:按年） |**Yes**|
-| **AutoRenewal** | integer | 自动续费<br />1：开启<br />0：关闭 |**Yes**|
-| **DefenseIP** | integer | 最近一次受攻击的IP |**Yes**|
+| **AutoRenewal** | int | 自动续费<br />1：开启<br />0：关闭 |**Yes**|
+| **DefenseIP** | int | 最近一次受攻击的IP |**Yes**|
 | **DefenseTime** | string | 最近攻击时间，时间戳 |**Yes**|
-| **DefensePeak** | number | 最近攻击流量峰值 |**Yes**|
-| **BlockIpNum** | integer | 正在被封堵的IP数量 |**Yes**|
-| **CleanIpNum** | integer | 正在被清洗的IP数量 |**Yes**|
-| **BuyMaxCleanCapacityLimit** | integer | 允许购买的最大清洗阈值 |**Yes**|
-| **PublicTest** | integer | 公测标识 |**Yes**|
-| **CustomCleanPolicy** | integer | 支持自定义清洗阈值配置 |**Yes**|
+| **DefensePeak** | float | 最近攻击流量峰值 |**Yes**|
+| **BlockIpNum** | int | 正在被封堵的IP数量 |**Yes**|
+| **CleanIpNum** | int | 正在被清洗的IP数量 |**Yes**|
+| **BuyMaxCleanCapacityLimit** | int | 允许购买的最大清洗阈值 |**Yes**|
+| **PublicTest** | int | 公测标识 |**Yes**|
+| **CustomCleanPolicy** | int | 支持自定义清洗阈值配置 |**Yes**|
 | **Tips** | string | 提示信息，跟页面前端展示匹配 |**Yes**|
 
 ## 示例
@@ -124,6 +124,7 @@ https://api.ucloud.cn/?Action=DescribeCleanService
   "TotalCount": 2
 }
 ```
+
 
 
 

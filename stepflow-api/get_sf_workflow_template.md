@@ -32,18 +32,18 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **WorkflowId** | string | 被导出工作流的Id |**Yes**|
-| **WorkflowVersion** | integer | 被导出工作流的版本号。取值范围：WorkflowVersion >= 1；默认会获取发布版本对应的workflow；超过最大版本会返回错误 |No|
+| **WorkflowVersion** | int | 被导出工作流的版本号。取值范围：WorkflowVersion >= 1；默认会获取发布版本对应的workflow；超过最大版本会返回错误 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **WorkflowId** | string | 导出工作流的Id |**Yes**|
-| **Version** | integer | 导出工作流的版本号 |**Yes**|
-| **Workflow** | [*WorkflowTemplate*](#WorkflowTemplate) | 工作流定义，详细信息见工作流对象定义 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **WorkflowId** | string | 导出工作流的Id |**Yes**|
+| **Version** | int | 导出工作流的版本号 |**Yes**|
+| **Workflow** | [*WorkflowTemplate*](#WorkflowTemplate) | 工作流定义，详细信息见工作流对象定义 |**Yes**|
 
 #### 数据模型
 
@@ -73,7 +73,7 @@
 | **RetryTimes** | string | 	<br />Activity的重试次数 |No|
 | **Timeout** | string | Activity的超时时间 |No|
 | **Next** | string | 下一个Activity的名字 |No|
-| **Input** | string | Activity的输入 |No|
+| **Input** | object | Activity的输入 |No|
 | **Output** | array[string] | Activity的输出，详见Param |No|
 
 ## 示例
@@ -161,6 +161,7 @@ https://api.ucloud.cn/?Action=GetSFWorkflowTemplate
   "WorkflowId": "craig-qq4nqG.import_case_low"
 }
 ```
+
 
 
 

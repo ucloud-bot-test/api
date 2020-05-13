@@ -34,15 +34,15 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **UDiskId** | string | 云硬盘资源ID |**Yes**|
 | **ChargeType** | string | Year , Month, Dynamic 默认: Dynamic |No|
-| **Quantity** | integer | 购买时长 默认: 1 |No|
+| **Quantity** | int | 购买时长 默认: 1 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -67,6 +67,7 @@ https://api.ucloud.cn/?Action=RecoverUDisk
   "RetCode": 0
 }
 ```
+
 
 
 

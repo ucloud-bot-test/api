@@ -33,18 +33,18 @@
 | **BucketName** | string | Docker镜像仓库名称，不填返回所有的镜像仓库 |No|
 | **BucketType** | string | All：用户所有可见的仓库， User：用户个人创建的仓库 ， Share：第三方公开镜像， 默认值：All |No|
 | **OrderBy** | string | Default: 默认排序 |No|
-| **Limit** | integer | 返回数据长度，默认为20 |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 满足条件的镜像总数 |No|
-| **ImageSet** | array[[*ImageBucketListSet*](#ImageBucketListSet)] | 镜像列表，详见 ImageBucketListSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的镜像总数 |No|
+| **ImageSet** | array[[*ImageBucketListSet*](#ImageBucketListSet)] | 镜像列表，详见 ImageBucketListSet |No|
 
 #### 数据模型
 
@@ -55,8 +55,8 @@
 |:---|:---|:---|:---|
 | **BucketName** | string | Docker镜像仓库名称 |No|
 | **BucketType** | string | Private：私有，Public：公有 |No|
-| **ImageCount** | integer | 仓库中含有的镜像个数 |No|
-| **CreateTime** | integer | 创建时间，格式为Unix时间戳 |No|
+| **ImageCount** | int | 仓库中含有的镜像个数 |No|
+| **CreateTime** | int | 创建时间，格式为Unix时间戳 |No|
 
 ## 示例
 
@@ -84,6 +84,7 @@ https://api.ucloud.cn/?Action=GetImageBucketList
   "TotalCount": 1
 }
 ```
+
 
 
 

@@ -35,10 +35,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **LineSet** | array[[*UGAALine*](#UGAALine)] | UGAA线路列表,参考UGAALine字段定义 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **LineSet** | array[[*UGAALine*](#UGAALine)] | UGAA线路列表,参考UGAALine字段定义 |No|
 
 #### 数据模型
 
@@ -51,7 +51,7 @@
 | **LineTo** | string | 线路目的 |**Yes**|
 | **LineFromName** | string | 线路源中文名称 |**Yes**|
 | **LineToName** | string | 线路目的中文名称 |**Yes**|
-| **MaxBandwidth** | integer | 线路可售最大带宽 |**Yes**|
+| **MaxBandwidth** | int | 线路可售最大带宽 |**Yes**|
 | **LineId** | string | 线路计费Id |No|
 | **LineDetail** | array[[*LineDetail*](#LineDetail)] | 子线路信息 |No|
 
@@ -1437,6 +1437,7 @@ https://api.ucloud.cn/?Action=DescribePathXLineConfig
   "RetCode": 0
 }
 ```
+
 
 
 

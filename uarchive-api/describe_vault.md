@@ -31,17 +31,17 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不选择为默认项目，子帐号必选 |No|
 | **VaultName** | string | 待获取Vault的名称，若不提供，则获取所有Vault |**Yes**|
-| **Offset** | integer | 获取所有Vault列表的偏移数目，默认为0 |No|
-| **Limit** | integer | 获取所有Vault列表的限制数目，默认为20 |No|
+| **Offset** | int | 获取所有Vault列表的偏移数目，默认为0 |No|
+| **Limit** | int | 获取所有Vault列表的限制数目，默认为20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*VaultSet*](#VaultSet)] | Vault的描述信息 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*VaultSet*](#VaultSet)] | Vault的描述信息 |No|
 
 #### 数据模型
 
@@ -53,8 +53,8 @@
 | **VaultName** | string | Vault名称 |**Yes**|
 | **VaultId** | string | Vault的ID |**Yes**|
 | **Domain** | string | Vault的域名集合 |**Yes**|
-| **CreateTime** | integer | Vault的创建时间 |**Yes**|
-| **ModifyTime** | integer | Vault的修改时间 |**Yes**|
+| **CreateTime** | int | Vault的创建时间 |**Yes**|
+| **ModifyTime** | int | Vault的修改时间 |**Yes**|
 | **Region** | string | Vault所属地域 |**Yes**|
 
 ## 示例
@@ -86,6 +86,7 @@ https://api.ucloud.cn?Action=DescribeVault
   ]
 }
 ```
+
 
 
 

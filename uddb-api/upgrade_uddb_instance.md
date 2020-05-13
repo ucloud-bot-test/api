@@ -34,16 +34,16 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **UDDBId** | string | UDDB实例ID |**Yes**|
 | **RouterVersion** | string | UDDB路由节点的版本。分为三种： Trival(免费版)： 2中间件节点； QPS：1.5W FellFree(标准版)： 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w； EnjoyAlone(物理机版)：专享物理机，节点数让客户可选 |**Yes**|
-| **RouterNodeNum** | integer | 其他版本：该参数可不填；专享版：物理机台数 |**Yes**|
+| **RouterNodeNum** | int | 其他版本：该参数可不填；专享版：物理机台数 |**Yes**|
 | **CouponId** | string | 使用的代金券id |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -72,6 +72,7 @@ https://api.ucloud.cn/?Action=UpgradeUDDBInstance
   "RetCode": 0
 }
 ```
+
 
 
 

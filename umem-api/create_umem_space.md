@@ -32,22 +32,22 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Size** | integer | 内存大小, 单位:GB, 范围[1\~1024] |**Yes**|
+| **Size** | int | 内存大小, 单位:GB, 范围[1\~1024] |**Yes**|
 | **Name** | string | 空间名称,长度(6<=size<=63) |**Yes**|
 | **Protocol** | string | 协议:memcache, redis (默认redis).注意:redis无single类型 |No|
 | **Type** | string | 空间类型:single(无热备),double(热备)(默认: double) |No|
 | **ChargeType** | string | Year , Month, Dynamic, Trial 默认: Month |No|
-| **Quantity** | integer | 购买时长 默认: 1 |No|
+| **Quantity** | int | 购买时长 默认: 1 |No|
 | **CouponId** | string | 使用的代金券id |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **SpaceId** | string | 创建内存空间ID列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **SpaceId** | string | 创建内存空间ID列表 |No|
 
 
 
@@ -73,6 +73,7 @@ https://api.ucloud.cn/?Action=CreateUMemSpace
   "SpaceId": "umem-opqmjd"
 }
 ```
+
 
 
 

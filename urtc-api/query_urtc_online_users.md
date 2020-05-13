@@ -30,22 +30,22 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **AppId** | string | AppId |**Yes**|
-| **StartTime** | integer | 开始时间(秒时间戳） |**Yes**|
-| **EndTime** | integer | 结束时间(秒时间戳） |**Yes**|
+| **StartTime** | int | 开始时间(秒时间戳） |**Yes**|
+| **EndTime** | int | 结束时间(秒时间戳） |**Yes**|
 | **RoomId** | string | 房间ID |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
-| **Limit** | integer | 返回数据长度，默认为20，最大100<br /> |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，默认为20，最大100<br /> |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Msg** | string | RetCode为0时返回succed,不为0返回具体的错误消息提示内容 |**Yes**|
 | **Data** | array[[*RoomUsers*](#RoomUsers)] | 类型参见RoomUsers,具体包含房间ID和具体人数 |**Yes**|
-| **TotalCount** | integer | 房间列表总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 房间列表总数 |No|
 
 #### 数据模型
 
@@ -55,12 +55,12 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **RoomId** | string | 房间id |**Yes**|
-| **Num** | integer | 在线人数 |**Yes**|
-| **CurrentAmount** | integer | 当前用户数量 |**Yes**|
-| **PeekAmount** | integer | 峰值用户数量 |**Yes**|
-| **AccumulationAmount** | integer | 累计用户数量 |**Yes**|
-| **StartTime** | integer | 房间开始时间 |**Yes**|
-| **EndTime** | integer | 房间结束时间 |**Yes**|
+| **Num** | int | 在线人数 |**Yes**|
+| **CurrentAmount** | int | 当前用户数量 |**Yes**|
+| **PeekAmount** | int | 峰值用户数量 |**Yes**|
+| **AccumulationAmount** | int | 累计用户数量 |**Yes**|
+| **StartTime** | int | 房间开始时间 |**Yes**|
+| **EndTime** | int | 房间结束时间 |**Yes**|
 | **RoomStatus** | boolean | 房间状态,进行中:true,已结束:false |**Yes**|
 
 ## 示例
@@ -93,6 +93,7 @@ https://api.ucloud.cn/?Action=QueryURtcOnlineUsers
   "TotalCount": 7
 }
 ```
+
 
 
 

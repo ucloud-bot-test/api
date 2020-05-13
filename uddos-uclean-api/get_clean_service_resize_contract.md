@@ -35,15 +35,15 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **ResourceId** | string | 资源ID |**Yes**|
 | **BeginTime** | string | 预约开始调整时间 （时间戳） |**Yes**|
 | **CleanRegion** | string | 地域 |**Yes**|
-| **MaxCleanCapacity** | integer | 流量清洗上限防护流量（单位G）5、10、15、20、25 |**Yes**|
+| **MaxCleanCapacity** | int | 流量清洗上限防护流量（单位G）5、10、15、20、25 |**Yes**|
 | **ChargeType** | string | 计费方式（Month:按月，Year:按年） |**Yes**|
-| **Quantity** | integer | 防护时长（0代表购置月底，年底），仅降级时有效 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Quantity** | int | 防护时长（0代表购置月底，年底），仅降级时有效 |**Yes**|
 
 
 
@@ -71,6 +71,7 @@ https://api.ucloud.cn/?Action=GetCleanServiceResizeContract
   "RetCode": 0
 }
 ```
+
 
 
 

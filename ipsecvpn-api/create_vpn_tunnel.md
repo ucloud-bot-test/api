@@ -36,6 +36,8 @@
 | **RemoteVPNGatewayId** | string | 客户VPN网关的资源ID |**Yes**|
 | **IKEPreSharedKey** | string | 预共享密钥 |**Yes**|
 | **VPCId** | string | vpcId |**Yes**|
+| **IPSecLocalSubnetIds.N** | string | 指定VPN连接的本地子网的资源ID，最多可填写10个。 |**Yes**|
+| **IPSecRemoteSubnets.N** | string | 指定VPN连接的客户网段，最多可填写20个。 |**Yes**|
 | **IKEVersion** | string | ike版本，枚举值： "IKE V1"，"IKE V2"，默认v1 |**Yes**|
 | **Tag** | string | 业务组，默认为“Default” |No|
 | **Remark** | string | 备注，默认为空 |No|
@@ -52,17 +54,15 @@
 | **IPSecSALifetime** | string | IPSec中SA的生存时间，可填写范围为1200 - 604800。默认为3600 |No|
 | **IPSecSALifetimeBytes** | string | IPSec中SA的生存时间（以字节计）。可选为8000 – 20000000。默认使用SA生存时间， |No|
 | **IPSecPFSDhGroup** | string | IPSec的PFS是否开启，枚举值，，不开启，"disable"；数字表示DH组, "1", "2", "5", "14", "15", "16"。默认为“disable”。 |No|
-| **IPSecLocalSubnetIds.N** | string | 指定VPN连接的本地子网的资源ID，最多可填写10个。 |**Yes**|
-| **IPSecRemoteSubnets.N** | string | 指定VPN连接的客户网段，最多可填写20个。 |**Yes**|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **VPNTunnelId** | string | VPN隧道的资源ID |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **VPNTunnelId** | string | VPN隧道的资源ID |No|
 
 
 
@@ -110,6 +110,7 @@ https://api.ucloud.cn/?Action=CreateVPNTunnel
   "VPNTunnelId": "vpntunnel-XXXXXX"
 }
 ```
+
 
 
 

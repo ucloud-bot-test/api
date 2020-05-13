@@ -31,17 +31,17 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |**Yes**|
-| **CouponId** | string | 代金券ID 请参考DescribeCoupon接口 |No|
 | **UHostIds.N** | string | UHost主机的资源ID，例如UHostIds.0代表希望升级的主机1，UHostIds.1代表主机2。 |**Yes**|
+| **CouponId** | string | 代金券ID 请参考DescribeCoupon接口 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **UHostSet** | array[string] | UHost主机的资源ID数组 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **UHostSet** | array[string] | UHost主机的资源ID数组 |No|
 
 
 
@@ -68,6 +68,7 @@ https://api.ucloud.cn/?Action=UpgradeToArkUHostInstance
   ]
 }
 ```
+
 
 
 

@@ -30,21 +30,21 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Offset** | integer | 输出列表起始位置，默认从0开始 |No|
-| **Limit** | integer | 输出列表数量，默认返回200个 |No|
+| **Offset** | int | 输出列表起始位置，默认从0开始 |No|
+| **Limit** | int | 输出列表数量，默认返回200个 |No|
 | **OrderBy** | string | 列表排序方式, 可选项: "-created_time", "created_time","plan_delete_time","-plan_delete_time";默认按-plan_delete_time 计划删除时间升序返回 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **Objects** | array[[*CMK*](#CMK)] | 主密钥信息组成的列表 |**Yes**|
 | **Status** | string | 操作结果 |No|
 | **RequestUuid** | string | 请求唯一标识符 |No|
-| **TotalCount** | integer | 符合条件的总数, 不同于Limit |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
-| **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 符合条件的总数, 不同于Limit |No|
 
 #### 数据模型
 
@@ -57,10 +57,10 @@
 | **Type** | string | 密钥类型，仅支持UCloudManagedKeys、CustomerManagedKeys。默认值CustomerManagedKeys |**Yes**|
 | **Description** | string | 对密钥的描述说明 |**Yes**|
 | **Enabled** | boolean | 是否启用 |**Yes**|
-| **CreatedTime** | integer | 创建时间 时间戳 |**Yes**|
-| **LastModifiedTime** | integer | 最后修改时间 时间戳 |**Yes**|
+| **CreatedTime** | int | 创建时间 时间戳 |**Yes**|
+| **LastModifiedTime** | int | 最后修改时间 时间戳 |**Yes**|
 | **Alias** | string | 别名，与CMK一一对应 |No|
-| **PlanDeleteTime** | integer | 计划删除时间 时间戳 |No|
+| **PlanDeleteTime** | int | 计划删除时间 时间戳 |No|
 
 ## 示例
 
@@ -94,6 +94,7 @@ https://api.ucloud.cn/?Action=ListScheduleDeletionKeys
   "TotalCount": 8
 }
 ```
+
 
 
 

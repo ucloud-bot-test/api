@@ -32,9 +32,9 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **Zone** | string | 可用区。参见 [可用区列表](api/summary/regionlist) |No|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **GroupId** | integer | 参数组id，如果指定则获取描述，否则是列表操作，需要 指定Offset/Limit |No|
-| **Offset** | integer | 分页显示的起始偏移，列表操作则指定 |No|
-| **Limit** | integer | 分页显示的条目数，列表操作则指定 |No|
+| **GroupId** | int | 参数组id，如果指定则获取描述，否则是列表操作，需要 指定Offset/Limit |No|
+| **Offset** | int | 分页显示的起始偏移，列表操作则指定 |No|
+| **Limit** | int | 分页显示的条目数，列表操作则指定 |No|
 | **IsInUDBC** | boolean | 是否选取专区中配置 |No|
 | **RegionFlag** | boolean | 是否是跨可用区的配置文件 |No|
 | **ClassType** | string | 如果未指定GroupId，则可选是否选取特定DB类型的配置(sql, nosql, postgresql, sqlserver) |No|
@@ -43,11 +43,11 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*UDBParamGroupSet*](#UDBParamGroupSet)] | 参数组列表 参照UDBParamGroupSet |No|
-| **TotalCount** | integer | 参数组总数，列表操作时才会有该参数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*UDBParamGroupSet*](#UDBParamGroupSet)] | 参数组列表 参照UDBParamGroupSet |No|
+| **TotalCount** | int | 参数组总数，列表操作时才会有该参数 |No|
 
 #### 数据模型
 
@@ -56,7 +56,7 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **GroupId** | integer | 参数组id |No|
+| **GroupId** | int | 参数组id |No|
 | **GroupName** | string | 参数组名称 |No|
 | **DBTypeId** | string | DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6 7：percona-5.6 |No|
 | **Description** | string | 参数组描述 |No|
@@ -69,11 +69,11 @@
 |:---|:---|:---|:---|
 | **Key** | string | 参数名称 |No|
 | **Value** | string | 参数值 |No|
-| **ValueType** | integer | 参数值应用类型，取值范围为{0,10,20,30},各值 代表意义为 0-unknown、10-int、20-string、 30-bool |No|
+| **ValueType** | int | 参数值应用类型，取值范围为{0,10,20,30},各值 代表意义为 0-unknown、10-int、20-string、 30-bool |No|
 | **AllowedVal** | string | 允许的值(根据参数类型，用分隔符表示) |No|
-| **ApplyType** | integer | 参数值应用类型,取值范围为{0,10,20}，各值代表 意义为0-unknown、10-static、20-dynamic |No|
+| **ApplyType** | int | 参数值应用类型,取值范围为{0,10,20}，各值代表 意义为0-unknown、10-static、20-dynamic |No|
 | **Modifiable** | boolean | 是否可更改，默认为false |No|
-| **FormatType** | integer | 允许值的格式类型，取值范围为{0,10,20}，意义分 别为PVFT_UNKOWN=0,PVFT_RANGE=10, PVFT_ENUM=20 |No|
+| **FormatType** | int | 允许值的格式类型，取值范围为{0,10,20}，意义分 别为PVFT_UNKOWN=0,PVFT_RANGE=10, PVFT_ENUM=20 |No|
 
 ## 示例
 
@@ -124,6 +124,7 @@ https://api.ucloud.cn/?Action=DescribeUDBParamGroup
   "TotalCount": 1
 }
 ```
+
 
 
 

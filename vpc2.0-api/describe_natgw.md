@@ -31,19 +31,19 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |**Yes**|
 | **ProjectId** | string | 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Offset** | integer | 数据偏移量。默认为0 |No|
-| **Limit** | integer | 数据分页值。默认为20 |No|
 | **NATGWIds.N** | string | NAT网关Id。默认为该项目下所有NAT网关 |No|
+| **Offset** | int | 数据偏移量。默认为0 |No|
+| **Limit** | int | 数据分页值。默认为20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 满足条件的实例的总数 |**Yes**|
-| **DataSet** | array[[*NatGatewayDataSet*](#NatGatewayDataSet)] | 查到的NATGW信息列表 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的实例的总数 |**Yes**|
+| **DataSet** | array[[*NatGatewayDataSet*](#NatGatewayDataSet)] | 查到的NATGW信息列表 |**Yes**|
 
 #### 数据模型
 
@@ -54,7 +54,7 @@
 |:---|:---|:---|:---|
 | **NATGWId** | string | natgw id |**Yes**|
 | **NATGWName** | string | natgw名称 |**Yes**|
-| **CreateTime** | integer | natgw创建时间 |**Yes**|
+| **CreateTime** | int | natgw创建时间 |**Yes**|
 | **Tag** | string | 业务组 |**Yes**|
 | **Remark** | string | 备注 |**Yes**|
 | **FirewallId** | string | 绑定的防火墙Id |**Yes**|
@@ -77,9 +77,9 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **EIPId** | string | 外网IP的 EIPId |**Yes**|
-| **Weight** | integer | 权重为100的为出口 |**Yes**|
+| **Weight** | int | 权重为100的为出口 |**Yes**|
 | **BandwidthType** | string | EIP带宽类型 |**Yes**|
-| **Bandwidth** | integer | 带宽 |**Yes**|
+| **Bandwidth** | int | 带宽 |**Yes**|
 | **IPResInfo** | array[[*NatGWIPResInfo*](#NatGWIPResInfo)] | 外网IP信息 |**Yes**|
 
 #### NatGWIPResInfo
@@ -289,6 +289,7 @@ https://api.ucloud.cn/?Action=DescribeNATGW
   "TotalCount": 5
 }
 ```
+
 
 
 

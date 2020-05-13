@@ -35,19 +35,19 @@
 | **Name** | string | PrimaryDB实例名称，至少6位 |**Yes**|
 | **AdminPassword** | string | 管理员密码 |**Yes**|
 | **DBTypeId** | string | DB类型id对应的字符串形式（例如：mongodb-2.6）<br />注意：当前仅支持mongodb |**Yes**|
-| **DiskSpace** | integer | 磁盘空间(GB), 暂时支持20G - 3000G |**Yes**|
-| **ParamGroupId** | integer | DB实例使用的配置参数组id |**Yes**|
-| **MemoryLimit** | integer | 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M |**Yes**|
-| **Port** | integer | 端口号 |**Yes**|
+| **DiskSpace** | int | 磁盘空间(GB), 暂时支持20G - 3000G |**Yes**|
+| **ParamGroupId** | int | DB实例使用的配置参数组id |**Yes**|
+| **MemoryLimit** | int | 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M |**Yes**|
+| **Port** | int | 端口号 |**Yes**|
 | **ChargeType** | string | Year， Month， Dynamic，Trial，默认: Month |No|
-| **Quantity** | integer | 购买时长(N个月)，默认值1个月。如果为0，代表购买到月底。 |No|
+| **Quantity** | int | 购买时长(N个月)，默认值1个月。如果为0，代表购买到月底。 |No|
 | **AdminUser** | string | 管理员帐户名，默认root |No|
-| **BackupCount** | integer | 备份策略，每周备份数量，默认7次 |No|
-| **BackupTime** | integer | 备份策略，备份开始时间，单位小时计，默认1点 |No|
-| **BackupDuration** | integer | 备份策略，备份时间间隔，单位小时计，默认24小时 |No|
+| **BackupCount** | int | 备份策略，每周备份数量，默认7次 |No|
+| **BackupTime** | int | 备份策略，备份开始时间，单位小时计，默认1点 |No|
+| **BackupDuration** | int | 备份策略，备份时间间隔，单位小时计，默认24小时 |No|
 | **UseSSD** | boolean | 是否使用SSD，默认为true |No|
 | **SSDType** | string | SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选 |No|
-| **CPU** | integer | cpu核数 |No|
+| **CPU** | int | cpu核数 |No|
 | **InstanceType** | string | UDB数据库机型 |No|
 | **SubnetId** | string | 子网ID |No|
 | **VPCId** | string | VPC的ID |No|
@@ -58,10 +58,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
 | **DBIds** | array[string] | 返回所有副本集成员的Id |No|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
 
 
 
@@ -109,6 +109,7 @@ https://api.ucloud.cn/?Action=CreateMongoDBReplicaSet
   "RetCode": 0
 }
 ```
+
 
 
 

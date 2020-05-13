@@ -33,16 +33,16 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **Grade** | string | VPN网关规格。枚举值，包括：标准型：Standard，增强型：Enhanced。 |**Yes**|
 | **ChargeType** | string | 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按需付费(需开启权限); 默认为获取三种价格 |No|
-| **Quantity** | integer | 购买时长, 默认: 1 |No|
+| **Quantity** | int | 购买时长, 默认: 1 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **PriceSet** | array[[*VPNGatewayPriceSet*](#VPNGatewayPriceSet)] | 获取的VPN网关价格信息列表，每项参数详见 VPNGatewayPriceSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **PriceSet** | array[[*VPNGatewayPriceSet*](#VPNGatewayPriceSet)] | 获取的VPN网关价格信息列表，每项参数详见 VPNGatewayPriceSet |No|
 
 #### 数据模型
 
@@ -52,8 +52,8 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ChargeType** | string | VPN网关付费方式 |No|
-| **Price** | number | VPN网关价格, 单位"元" |No|
-| **PurchaseValue** | integer | 资源有效期, 以Unix Timestamp表示 |No|
+| **Price** | float | VPN网关价格, 单位"元" |No|
+| **PurchaseValue** | int | 资源有效期, 以Unix Timestamp表示 |No|
 
 ## 示例
 
@@ -93,6 +93,7 @@ https://api.ucloud.cn/?Action=GetVPNGatewayPrice
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -31,22 +31,22 @@
 |:---|:---|:---|:---|
 | **Region** | string | 地域 |**Yes**|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写 |No|
-| **Offset** | integer | 数据偏移量, 默认为0 |No|
-| **Limit** | integer | 数据分页值, 默认为20 |No|
 | **EIPIds.N** | string | 弹性IP的资源ID如果为空, 则返回当前 Region中符合条件的的所有EIP |No|
+| **Offset** | int | 数据偏移量, 默认为0 |No|
+| **Limit** | int | 数据分页值, 默认为20 |No|
 | **IPs.N** | string | IP地址，支持通过ip查询，如果ip与EIP都传，会取并集查询 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 满足条件的弹性IP总数 |No|
-| **UnbindCount** | integer | 未绑定的弹性IP总数 |No|
-| **TotalBandwidth** | integer | 满足条件的弹性IP带宽总和, 单位Mbps |No|
-| **EIPSet** | array[[*UnetEIPSet*](#UnetEIPSet)] | 弹性IP列表, 每项参数详见 UnetEIPSet |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 满足条件的弹性IP总数 |No|
+| **UnbindCount** | int | 未绑定的弹性IP总数 |No|
+| **TotalBandwidth** | int | 满足条件的弹性IP带宽总和, 单位Mbps |No|
+| **EIPSet** | array[[*UnetEIPSet*](#UnetEIPSet)] | 弹性IP列表, 每项参数详见 UnetEIPSet |No|
 
 #### 数据模型
 
@@ -56,13 +56,13 @@
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **EIPId** | string | 弹性IP的资源ID |No|
-| **Weight** | integer | 外网出口权重, 默认为50, 范围[0-100] |No|
-| **BandwidthType** | integer | 带宽模式, 枚举值为: 0: 非共享带宽模式, 1: 共享带宽模式 |No|
-| **Bandwidth** | integer | 弹性IP的带宽, 单位为Mbps, 当BandwidthType=1时, 该处显示为共享带宽值. 当BandwidthType=0时, 该处显示这个弹性IP的带宽. |No|
+| **Weight** | int | 外网出口权重, 默认为50, 范围[0-100] |No|
+| **BandwidthType** | int | 带宽模式, 枚举值为: 0: 非共享带宽模式, 1: 共享带宽模式 |No|
+| **Bandwidth** | int | 弹性IP的带宽, 单位为Mbps, 当BandwidthType=1时, 该处显示为共享带宽值. 当BandwidthType=0时, 该处显示这个弹性IP的带宽. |No|
 | **Status** | string | 弹性IP的资源绑定状态, 枚举值为: used: 已绑定, free: 未绑定, freeze: 已冻结 |No|
 | **ChargeType** | string | 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按小时付费; Trial, 试用. 按小时付费和试用这两种付费模式需要开通权限. |No|
-| **CreateTime** | integer | 弹性IP的创建时间, 格式为Unix Timestamp |No|
-| **ExpireTime** | integer | 弹性IP的到期时间, 格式为Unix Timestamp |No|
+| **CreateTime** | int | 弹性IP的创建时间, 格式为Unix Timestamp |No|
+| **ExpireTime** | int | 弹性IP的到期时间, 格式为Unix Timestamp |No|
 | **Resource** | [*UnetEIPResourceSet*](#UnetEIPResourceSet) | 弹性IP的详细信息列表, 具体结构见下方 UnetEIPResourceSet |No|
 | **EIPAddr** | array[[*UnetEIPAddrSet*](#UnetEIPAddrSet)] | 弹性IP的详细信息列表, 具体结构见下方 UnetEIPAddrSet |No|
 | **Name** | string | 弹性IP的名称,缺省值为 "EIP" |No|
@@ -95,7 +95,7 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **ShareBandwidth** | integer | 共享带宽带宽值 |No|
+| **ShareBandwidth** | int | 共享带宽带宽值 |No|
 | **ShareBandwidthName** | string | 共享带宽的资源名称 |No|
 | **ShareBandwidthId** | string | 共享带宽ID |No|
 
@@ -156,6 +156,7 @@ https://api.ucloud.cn/?Action=DescribeEIP
   "UnbindCount": 5
 }
 ```
+
 
 
 

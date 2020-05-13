@@ -32,18 +32,18 @@
 | **Region** | string | 地域。 参见 [地域和可用区列表](api/summary/regionlist) |No|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **UDPNId** | string | 申请到的 UDPN 资源 ID。若为空，则查询该用户在机房所有的专线信息。非默认项目资源，需填写ProjectId |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为 0 |No|
-| **Limit** | integer | 返回数据长度，默认为 20 |No|
+| **Offset** | int | 列表起始位置偏移量，默认为 0 |No|
+| **Limit** | int | 返回数据长度，默认为 20 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 查询到的总数量 |**Yes**|
-| **DataSet** | array[[*UDPNData*](#UDPNData)] | UDPN详情 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 查询到的总数量 |**Yes**|
+| **DataSet** | array[[*UDPNData*](#UDPNData)] | UDPN详情 |No|
 
 #### 数据模型
 
@@ -57,8 +57,8 @@
 | **Peer2** | string | 可用区域 2 |**Yes**|
 | **ChargeType** | string | 计费类型 |**Yes**|
 | **Bandwidth** | string | 带宽 |**Yes**|
-| **CreateTime** | integer | unix 时间戳 创建时间 |**Yes**|
-| **ExpireTime** | integer | unix 时间戳 到期时间 |**Yes**|
+| **CreateTime** | int | unix 时间戳 创建时间 |**Yes**|
+| **ExpireTime** | int | unix 时间戳 到期时间 |**Yes**|
 
 ## 示例
 
@@ -90,6 +90,7 @@ https://api.ucloud.cn/?Action=DescribeUDPN
   "TotalCount": 5
 }
 ```
+
 
 
 

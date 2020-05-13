@@ -34,9 +34,9 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **Name** | string | 实例名称，至少6位 |**Yes**|
 | **SrcDBId** | string | 源实例的Id |**Yes**|
-| **RecoveryTime** | integer | 恢复到某个时间点的时间戳(UTC时间格式，默认单位秒) |**Yes**|
+| **RecoveryTime** | int | 恢复到某个时间点的时间戳(UTC时间格式，默认单位秒) |**Yes**|
 | **ChargeType** | string | Year， Month， Dynamic，Trial，默认: Dynamic |No|
-| **Quantity** | integer | 购买时长，默认值1 |No|
+| **Quantity** | int | 购买时长，默认值1 |No|
 | **UseSSD** | boolean | 指定是否是否使用SSD，默认使用主库的配置 |No|
 | **UDBCId** | string | 专区的Id |No|
 | **SubnetId** | string | 子网ID<br /> |No|
@@ -48,10 +48,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DBId** | string | db实例id |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DBId** | string | db实例id |No|
 
 
 
@@ -82,6 +82,7 @@ https://api.ucloud.cn/?Action=CreateUDBInstanceByRecovery
   "RetCode": 0
 }
 ```
+
 
 
 

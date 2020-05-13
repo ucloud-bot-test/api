@@ -36,10 +36,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **UPathSet** | array[[*UPathInfo*](#UPathInfo)] | 线路信息数组 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **UPathSet** | array[[*UPathInfo*](#UPathInfo)] | 线路信息数组 |**Yes**|
 
 #### 数据模型
 
@@ -52,11 +52,11 @@
 | **ChargeType** | string | 计费模式，默认为Month 按月收费,可选范围['Month','Year','Dynamic'] |No|
 | **Name** | string | UPath实例名字 |No|
 | **UPathId** | string | UPath加速线路实例ID |No|
-| **Bandwidth** | integer | 带宽，单位Mbps |No|
+| **Bandwidth** | int | 带宽，单位Mbps |No|
 | **LineId** | string | 选择的线路 |No|
 | **UGAList** | array[[*PathXUGAInfo*](#PathXUGAInfo)] | 与该UPath绑定的UGA列表 |No|
-| **CreateTime** | integer | UPath创建的时间，10位时间戳 |No|
-| **ExpireTime** | integer | UPath的过期时间，10位时间戳 |No|
+| **CreateTime** | int | UPath创建的时间，10位时间戳 |No|
+| **ExpireTime** | int | UPath的过期时间，10位时间戳 |No|
 | **LineFromName** | string | 线路入口名称 |No|
 | **LineToName** | string | 线路出口名称 |No|
 | **OutPublicIpList** | array[[*OutPublicIpInfo*](#OutPublicIpInfo)] | 线路出口IP数组 |No|
@@ -144,6 +144,7 @@ https://api.ucloud.cn/?Action=DescribeUPath
   ]
 }
 ```
+
 
 
 

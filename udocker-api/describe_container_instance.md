@@ -34,19 +34,19 @@
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **NodeId** | string | 容器所属节点ID |No|
 | **ClusterId** | string | 容器所属资源池ID |No|
-| **Offset** | integer | 偏移量，默认为0 |No|
-| **Limit** | integer | 总量限制，默认20，最大值10000 |No|
 | **ContainerIds.N** | string | 容器ID |No|
+| **Offset** | int | 偏移量，默认为0 |No|
+| **Limit** | int | 总量限制，默认20，最大值10000 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **TotalCount** | integer | 总数 |**Yes**|
-| **ContainerSet** | array[[*ContainerSet*](#ContainerSet)] | 容器列表 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **TotalCount** | int | 总数 |**Yes**|
+| **ContainerSet** | array[[*ContainerSet*](#ContainerSet)] | 容器列表 |No|
 
 #### 数据模型
 
@@ -61,12 +61,12 @@
 | **Name** | string | 容器名 |No|
 | **Image** | string | 容器镜像 |No|
 | **Zone** | string | 可用区 |No|
-| **CPU** | number | CPU个数 |No|
-| **Memory** | integer | 内存容量，MB |No|
+| **CPU** | float | CPU个数 |No|
+| **Memory** | int | 内存容量，MB |No|
 | **Cmd** | string | 容器启动命令 |No|
 | **State** | string | 状态 |No|
 | **IPSet** | array[[*IPSet*](#IPSet)] | IP |No|
-| **CreateTime** | integer | Unix时间戳 |No|
+| **CreateTime** | int | Unix时间戳 |No|
 | **Volume** | string | 容器内挂载的目录 |No|
 | **Enviroment** | array[[*EnviromentSet*](#EnviromentSet)] | 环境变量 |No|
 
@@ -77,7 +77,7 @@
 | **Type** | string | IP类型  国际:International, BGP:Bgp, 内网:Private |No|
 | **IPId** | string | IP资源ID  （只在当前IP为外网IP时返回） |No|
 | **IP** | string | IP地址 |No|
-| **Bandwidth** | integer | IP对应的带宽, 单位:Mb （只在当前IP为外网IP时返回） |No|
+| **Bandwidth** | int | IP对应的带宽, 单位:Mb （只在当前IP为外网IP时返回） |No|
 | **VPCId** | string | VPCId |No|
 | **SubnetId** | string | 子网ID |No|
 
@@ -203,6 +203,7 @@ https://api.ucloud.cn/?Action=DescribeContainerInstance
   "TotalCount": 2
 }
 ```
+
 
 
 

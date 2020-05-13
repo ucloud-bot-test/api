@@ -32,18 +32,18 @@
 | **ProjectId** | string | 项目ID。请参考[GetProjectList接口](api/summary/get_project_list) |**Yes**|
 | **SSLId** | string | SSL证书的Id，不传分页获取证书列表 |No|
 | **SearchValue** | string | 不为空则按证书名称、证书域名模糊搜索 分页返回结果 |No|
-| **Limit** | integer | 最大返回条数，默认100，最大400 |No|
-| **Offset** | integer | 偏移值 默认为0 |No|
+| **Limit** | int | 最大返回条数，默认100，最大400 |No|
+| **Offset** | int | 偏移值 默认为0 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*PathXSSLSet*](#PathXSSLSet)] | SSL证书详细信息，具体结构见 PathXSSLSet |No|
-| **TotalCount** | integer | 符合条件的证书总数 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*PathXSSLSet*](#PathXSSLSet)] | SSL证书详细信息，具体结构见 PathXSSLSet |No|
+| **TotalCount** | int | 符合条件的证书总数 |No|
 
 #### 数据模型
 
@@ -55,10 +55,10 @@
 | **SSLId** | string | SSL证书的Id |No|
 | **SSLName** | string | SSL证书的名字 |No|
 | **SubjectName** | string | 证书域名 |No|
-| **ExpireTime** | integer | 证书过期时间 时间戳 |No|
-| **SourceType** | integer | 证书来源，0：用户上传 1: 免费颁发 |No|
+| **ExpireTime** | int | 证书过期时间 时间戳 |No|
+| **SourceType** | int | 证书来源，0：用户上传 1: 免费颁发 |No|
 | **SSLMD5** | string | SSL证书（用户证书、私钥、ca证书合并）内容md5值 |No|
-| **CreateTime** | integer | SSL证书的创建时间 时间戳 |No|
+| **CreateTime** | int | SSL证书的创建时间 时间戳 |No|
 | **SSLBindedTargetSet** | array[[*SSLBindedTargetSet*](#SSLBindedTargetSet)] | SSL证书绑定的对象 |No|
 | **SSLContent** | string | SSL证书内容 |No|
 
@@ -108,6 +108,7 @@ https://api.ucloud.cn/?Action=DescribePathXSSL
   "TotalCount": 8
 }
 ```
+
 
 
 

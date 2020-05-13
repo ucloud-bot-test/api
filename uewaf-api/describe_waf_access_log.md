@@ -31,20 +31,20 @@
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
 | **FullDomain** | string | 域名 |**Yes**|
-| **BeginTime** | integer | 时间戳，默认为最近1小时 |No|
-| **EndTime** | integer | 时间戳，默认为最近1小时 |No|
-| **Offset** | integer | 列表起始位置偏移量，默认为0 |No|
-| **Limit** | integer | 返回数据长度，最大100 |No|
+| **BeginTime** | int | 时间戳，默认为最近1小时 |No|
+| **EndTime** | int | 时间戳，默认为最近1小时 |No|
 | **RawQuery.N** | string | 查询字段，形式为 字段名:查询内容 ，模糊查询以斜杠包围内容，如 ：/test/  |No|
+| **Offset** | int | 列表起始位置偏移量，默认为0 |No|
+| **Limit** | int | 返回数据长度，最大100 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Res** | string | JSON数组 |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **Res** | object | JSON数组 |**Yes**|
 
 
 
@@ -105,6 +105,7 @@ https://api.ucloud.cn/?Action=DescribeWafAccessLog
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -30,20 +30,20 @@
 | 参数名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
 | **ProjectId** | string | 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](api/summary/get_project_list) |No|
-| **Type** | integer | 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天粒度，3表示按照一分钟粒度） |**Yes**|
-| **BeginTime** | integer | 查询的起始时间，格式为Unix Timestamp。 |**Yes**|
-| **EndTime** | integer | 查询的结束时间，格式为Unix Timestamp。 |**Yes**|
-| **Areacode** | string | 查询带宽区域 cn代表国内 abroad代表海外，只支持国内 |No|
+| **Type** | int | 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天粒度，3表示按照一分钟粒度） |**Yes**|
+| **BeginTime** | int | 查询的起始时间，格式为Unix Timestamp。 |**Yes**|
+| **EndTime** | int | 查询的结束时间，格式为Unix Timestamp。 |**Yes**|
 | **DomainId.N** | string | 域名id，创建域名时生成的id。默认全部域名 |No|
+| **Areacode** | string | 查询带宽区域 cn代表国内 abroad代表海外，只支持国内 |No|
 
 ### 响应字段
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **HttpCodeV2Detail** | array[[*HttpCodeV2Detail*](#HttpCodeV2Detail)] | 状态码详情 |No|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **HttpCodeV2Detail** | array[[*HttpCodeV2Detail*](#HttpCodeV2Detail)] | 状态码详情 |No|
 
 #### 数据模型
 
@@ -52,63 +52,63 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **Time** | integer | 时间 |**Yes**|
-| **Http100** | integer | http100数量 |No|
-| **Http101** | integer | http101数量 |No|
-| **Http102** | integer | http102数量 |No|
-| **Http200** | integer | http200数量 |No|
-| **Http201** | integer | http201数量 |No|
-| **Http202** | integer | http202数量 |No|
-| **Http203** | integer | http203数量 |No|
-| **Http204** | integer | http204数量 |No|
-| **Http205** | integer | http205数量 |No|
-| **Http206** | integer | http206数量 |No|
-| **Http207** | integer | http207数量 |No|
-| **Http300** | integer | http300数量 |No|
-| **Http301** | integer | http301数量 |No|
-| **Http302** | integer | http302数量 |No|
-| **Http303** | integer | http303数量 |No|
-| **Http304** | integer | http304数量 |No|
-| **Http305** | integer | http305数量 |No|
-| **Http306** | integer | http306数量 |No|
-| **Http307** | integer | http307数量 |No|
-| **Http400** | integer | http400数量 |No|
-| **Http401** | integer | http401数量 |No|
-| **Http402** | integer | http402数量 |No|
-| **Http403** | integer | http403数量 |No|
-| **Http404** | integer | http404数量 |No|
-| **Http405** | integer | http405数量 |No|
-| **Http406** | integer | http406数量 |No|
-| **Http407** | integer | http407数量 |No|
-| **Http408** | integer | http408数量 |No|
-| **Http409** | integer | http409数量 |No|
-| **Http410** | integer | http410数量 |No|
-| **Http411** | integer | http411数量 |No|
-| **Http412** | integer | http412数量 |No|
-| **Http413** | integer | http413数量 |No|
-| **Http414** | integer | http414数量 |No|
-| **Http415** | integer | http415数量 |No|
-| **Http416** | integer | http416数量 |No|
-| **Http417** | integer | http417数量 |No|
-| **Http418** | integer | http418数量 |No|
-| **Http421** | integer | http421数量 |No|
-| **Http422** | integer | http422数量 |No|
-| **Http423** | integer | http423数量 |No|
-| **Http424** | integer | http424数量 |No|
-| **Http425** | integer | http425数量 |No|
-| **Http426** | integer | http426数量 |No|
-| **Http449** | integer | http449数量 |No|
-| **Http451** | integer | http451数量 |No|
-| **Http500** | integer | http500数量 |No|
-| **Http501** | integer | http501数量 |No|
-| **Http502** | integer | http502数量 |No|
-| **Http503** | integer | http503数量 |No|
-| **Http504** | integer | http504数量 |No|
-| **Http505** | integer | http505数量 |No|
-| **Http506** | integer | http506数量 |No|
-| **Http507** | integer | http507数量 |No|
-| **Http509** | integer | http509数量 |No|
-| **Http510** | integer | http510数量 |No|
+| **Time** | int | 时间 |**Yes**|
+| **Http100** | int | http100数量 |No|
+| **Http101** | int | http101数量 |No|
+| **Http102** | int | http102数量 |No|
+| **Http200** | int | http200数量 |No|
+| **Http201** | int | http201数量 |No|
+| **Http202** | int | http202数量 |No|
+| **Http203** | int | http203数量 |No|
+| **Http204** | int | http204数量 |No|
+| **Http205** | int | http205数量 |No|
+| **Http206** | int | http206数量 |No|
+| **Http207** | int | http207数量 |No|
+| **Http300** | int | http300数量 |No|
+| **Http301** | int | http301数量 |No|
+| **Http302** | int | http302数量 |No|
+| **Http303** | int | http303数量 |No|
+| **Http304** | int | http304数量 |No|
+| **Http305** | int | http305数量 |No|
+| **Http306** | int | http306数量 |No|
+| **Http307** | int | http307数量 |No|
+| **Http400** | int | http400数量 |No|
+| **Http401** | int | http401数量 |No|
+| **Http402** | int | http402数量 |No|
+| **Http403** | int | http403数量 |No|
+| **Http404** | int | http404数量 |No|
+| **Http405** | int | http405数量 |No|
+| **Http406** | int | http406数量 |No|
+| **Http407** | int | http407数量 |No|
+| **Http408** | int | http408数量 |No|
+| **Http409** | int | http409数量 |No|
+| **Http410** | int | http410数量 |No|
+| **Http411** | int | http411数量 |No|
+| **Http412** | int | http412数量 |No|
+| **Http413** | int | http413数量 |No|
+| **Http414** | int | http414数量 |No|
+| **Http415** | int | http415数量 |No|
+| **Http416** | int | http416数量 |No|
+| **Http417** | int | http417数量 |No|
+| **Http418** | int | http418数量 |No|
+| **Http421** | int | http421数量 |No|
+| **Http422** | int | http422数量 |No|
+| **Http423** | int | http423数量 |No|
+| **Http424** | int | http424数量 |No|
+| **Http425** | int | http425数量 |No|
+| **Http426** | int | http426数量 |No|
+| **Http449** | int | http449数量 |No|
+| **Http451** | int | http451数量 |No|
+| **Http500** | int | http500数量 |No|
+| **Http501** | int | http501数量 |No|
+| **Http502** | int | http502数量 |No|
+| **Http503** | int | http503数量 |No|
+| **Http504** | int | http504数量 |No|
+| **Http505** | int | http505数量 |No|
+| **Http506** | int | http506数量 |No|
+| **Http507** | int | http507数量 |No|
+| **Http509** | int | http509数量 |No|
+| **Http510** | int | http510数量 |No|
 
 ## 示例
 
@@ -145,6 +145,7 @@ https://api.ucloud.cn/?Action=GetNewUcdnDomainHttpCodeV2
   "RetCode": 0
 }
 ```
+
 
 
 

@@ -38,10 +38,10 @@
 
 | 字段名 | 类型 | 描述信息 | 必填 |
 |:---|:---|:---|:---|
-| **DataSet** | array[[*ResourceTemplateBound*](#ResourceTemplateBound)] | 请见ResourceTemplateBound |**Yes**|
-| **RetCode** | integer | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
+| **RetCode** | int | 返回状态码，为 0 则为成功返回，非 0 为失败 |**Yes**|
 | **Action** | string | 操作指令名称 |**Yes**|
-| **Message** | string | 返回错误消息，当 RetCode 非 0 时提供详细的描述信息 |No|
+| **Message** | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息 |No|
+| **DataSet** | array[[*ResourceTemplateBound*](#ResourceTemplateBound)] | 请见ResourceTemplateBound |**Yes**|
 
 #### 数据模型
 
@@ -52,7 +52,7 @@
 |:---|:---|:---|:---|
 | **HasAlarmTemlate** | string | 是否绑定了告警模板，Yes：是；No：否。若为No，不展示AlarmTemplateId、AlarmTemplateName、Remark |**Yes**|
 | **ResourceId** | string | 资源id |**Yes**|
-| **AlarmTemplateId** | integer | 告警模板id |No|
+| **AlarmTemplateId** | int | 告警模板id |No|
 | **AlarmTemplateName** | string | 告警模板名称 |No|
 | **IsDefault** | string | 是否默认模板，Yes：是；No：否 |No|
 | **Remark** | string | 模板备注 |No|
@@ -89,6 +89,7 @@ https://api.ucloud.cn/?Action=GetResourceAlarmTemplate
   "RetCode": 0
 }
 ```
+
 
 
 
